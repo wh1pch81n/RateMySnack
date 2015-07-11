@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82DAEB731B5198CD00EC8D5C /* NewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DAEB721B5198CD00EC8D5C /* NewClass.swift */; };
 		C473686E1B50458400E97743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686D1B50458400E97743 /* AppDelegate.swift */; };
 		C47368701B50458400E97743 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686F1B50458400E97743 /* ViewController.swift */; };
 		C47368731B50458400E97743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47368711B50458400E97743 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82DAEB721B5198CD00EC8D5C /* NewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewClass.swift; sourceTree = "<group>"; };
 		C47368681B50458400E97743 /* RateMySnack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RateMySnack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C473686C1B50458400E97743 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C473686D1B50458400E97743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				C47368741B50458400E97743 /* Images.xcassets */,
 				C47368761B50458400E97743 /* LaunchScreen.xib */,
 				C473686B1B50458400E97743 /* Supporting Files */,
+				82DAEB721B5198CD00EC8D5C /* NewClass.swift */,
 			);
 			path = RateMySnack;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DAEB731B5198CD00EC8D5C /* NewClass.swift in Sources */,
 				C47368701B50458400E97743 /* ViewController.swift in Sources */,
 				C473686E1B50458400E97743 /* AppDelegate.swift in Sources */,
 			);
@@ -411,6 +415,7 @@
 				C47368891B50458400E97743 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C473688A1B50458400E97743 /* Build configuration list for PBXNativeTarget "RateMySnackTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				C473688C1B50458400E97743 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
