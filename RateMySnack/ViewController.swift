@@ -17,6 +17,12 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
         DreamersClass.sayHello()
         
+        for i in 1...45{
+            DreamersClass.sayHello()
+            println(i)
+        }
+        
+        
         
         
         
