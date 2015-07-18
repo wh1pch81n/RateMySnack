@@ -12,7 +12,7 @@ class Dreamers{
     
     
     func sayHello(){
-        println("Hellox100")
+        println("Hellox23")
         
     }
 }
