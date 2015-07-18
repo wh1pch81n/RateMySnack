@@ -7,20 +7,19 @@
 //
 
 import UIKit
-
+class SnackObject : FormObject {
+	var snackName : String 
+}
 class ViewController: UIViewController {
 
  
 	override func viewDidLoad() {
         super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-        var greetme = Derrick()
-        greetme.sayHello()
-      
-        for i in 1...100 {
-            greetme.sayHello()
-            println(i)
-        }
+
+     var kindBar : SnackObject = SnackObject()
+     kindBar.snackName = "snickers"
+     kindBar.snackName = "Luna Bar" 
         
         
         
