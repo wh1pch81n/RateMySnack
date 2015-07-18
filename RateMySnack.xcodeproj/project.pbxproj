@@ -24,6 +24,7 @@
 		2A4AA07C1B5B119500DDDA0B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4AA0781B5B119500DDDA0B /* ParseUI.framework */; };
 		2A4AA07F1B5B12E700DDDA0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4AA07E1B5B12E700DDDA0B /* UIKit.framework */; };
 		2A4AA0811B5B138A00DDDA0B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4AA0801B5B138A00DDDA0B /* MobileCoreServices.framework */; };
+		2A4AA0831B5B16FB00DDDA0B /* BackEndServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AA0821B5B16FB00DDDA0B /* BackEndServer.swift */; };
 		7F62C0201B52EAF200CF0FCC /* Derrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F62C01F1B52EAF200CF0FCC /* Derrick.swift */; };
 		82DAEB731B5198CD00EC8D5C /* NewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DAEB721B5198CD00EC8D5C /* NewClass.swift */; };
 		C473686E1B50458400E97743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686D1B50458400E97743 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		2A4AA0781B5B119500DDDA0B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		2A4AA07E1B5B12E700DDDA0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A4AA0801B5B138A00DDDA0B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2A4AA0821B5B16FB00DDDA0B /* BackEndServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackEndServer.swift; sourceTree = "<group>"; };
 		7F62C01F1B52EAF200CF0FCC /* Derrick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Derrick.swift; sourceTree = "<group>"; };
 		82DAEB721B5198CD00EC8D5C /* NewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewClass.swift; sourceTree = "<group>"; };
 		C47368681B50458400E97743 /* RateMySnack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RateMySnack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 			children = (
 				C473686D1B50458400E97743 /* AppDelegate.swift */,
 				C473686F1B50458400E97743 /* ViewController.swift */,
+				2A4AA0821B5B16FB00DDDA0B /* BackEndServer.swift */,
 				C47368711B50458400E97743 /* Main.storyboard */,
 				C47368741B50458400E97743 /* Images.xcassets */,
 				C47368761B50458400E97743 /* LaunchScreen.xib */,
@@ -296,6 +299,7 @@
 				7F62C0201B52EAF200CF0FCC /* Derrick.swift in Sources */,
 				82DAEB731B5198CD00EC8D5C /* NewClass.swift in Sources */,
 				2A02DF671B5AE13100558DC8 /* Dreamers.swift in Sources */,
+				2A4AA0831B5B16FB00DDDA0B /* BackEndServer.swift in Sources */,
 				C47368701B50458400E97743 /* ViewController.swift in Sources */,
 				C473686E1B50458400E97743 /* AppDelegate.swift in Sources */,
 			);
