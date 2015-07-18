@@ -9,10 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var DreamersClass = Dreamers()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+        DreamersClass.sayHello()
+        
+        for i in 1...45{
+            DreamersClass.sayHello()
+            println(i)
+        }
+        
+        
+        
+        
+        
+        
 	}
 
 	override func didReceiveMemoryWarning() {
