@@ -7,8 +7,14 @@
 //
 
 import UIKit
+
+
 class SnackObject : FormObject {
-	var snackName : String 
+	var snackName : String
+    
+    init(name:String ) {
+       snackName = name
+    }
 }
 class ViewController: UIViewController {
     
@@ -19,9 +25,12 @@ class ViewController: UIViewController {
 
 		// Do any additional setup after loading the view, typically from a nib.
 
-     var kindBar : SnackObject = SnackObject()
-     kindBar.snackName = "snickers"
-     kindBar.snackName = "Luna Bar" 
+     var kindBar : SnackObject = SnackObject(name: "Oreos")
+        
+        BackendDelegate.submit(kindBar, completionHandler:{ (err:NSError) -> Void in
+            
+        });
+
         
 	}
 
