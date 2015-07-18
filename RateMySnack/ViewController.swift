@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class ViewController: UIViewController {
     
@@ -27,6 +29,12 @@ class ViewController: UIViewController {
         for i in 1...100 {
             greetme.sayHello()
             println(i)
+        }
+        
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            println("Object has been saved.")
         }
     }
     
