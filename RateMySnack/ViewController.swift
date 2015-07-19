@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Parse
-import Bolts
-
 
 class SnackObject : FormObject {
 	var snackName : String
@@ -20,26 +17,14 @@ class SnackObject : FormObject {
 }
 class ViewController: UIViewController {
     
-    var DreamersClass = Dreamers()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		// Do any additional setup after loading the view, typically from a nib.
-
-     var kindBar : SnackObject = SnackObject(name: "Oreos")
         
-        BackendDelegate.submit(kindBar, completionHandler:{ (err:NSError) -> Void in
-            
+        var kindBar : SnackObject = SnackObject(name: "PopCorn")
+        BackEndServer.submit(kindBar, completionHandler:{ (err:NSError?) -> Void in
+            print("Just submitted Snack")
         });
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
-        var item: FormObject = FormTest()
-        BackEndServer.submit(item, completionHandler:{ (NSError) -> Void in
-            println("done")
-        })
-    }
 }
 
