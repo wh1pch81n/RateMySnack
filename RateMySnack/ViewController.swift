@@ -8,31 +8,35 @@
 
 import UIKit
 
+
+class SnackObject : FormObject {
+	var snackName : String
+    
+    init(name:String ) {
+       snackName = name
+    }
+}
 class ViewController: UIViewController {
     
     var DreamersClass = Dreamers()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        DreamersClass.sayHello()
+
+		// Do any additional setup after loading the view, typically from a nib.
+
+     var kindBar : SnackObject = SnackObject(name: "Oreos")
         
-        for i in 1...45{
-            DreamersClass.sayHello()
-        }
-        var greetme = Derrick()
-        greetme.sayHello()
+        BackendDelegate.submit(kindBar, completionHandler:{ (err:NSError) -> Void in
+            
+        });
+
         
-        for i in 1...100 {
-            greetme.sayHello()
-            println(i)
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	}
+
+	 override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
 }
 

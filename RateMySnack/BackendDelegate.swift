@@ -13,6 +13,6 @@ protocol FormObject {
 }
 
 protocol BackendDelegate {
-    func submit(item:FormObject, completionHandler completion:((NSError) -> Void));
-    func retrieve(requestCompleted request:((NSError, [FormObject]) -> Void));
+    static func submit(item:FormObject, completionHandler completion:((NSError) -> Void));
+    static func retrieve(requestCompleted request:((NSError, [FormObject]) -> Void));
 }
