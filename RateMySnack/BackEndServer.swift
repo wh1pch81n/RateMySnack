@@ -10,29 +10,23 @@ import Foundation
 import Parse
 import Bolts
 
-class FormTest: FormObject {
-    var snackName:String = "Kitkat"
-}
-
 class BackEndServer: BackendDelegate {
     
-    static func submit(item:FormObject, completionHandler completion:((NSError) -> Void)) {
+    static func submit(item: FormObject, completionHandler completion: ((err: NSError?) -> Void)) {
         var snack:PFObject = PFObject(className: "AllSnacks")
         snack["SnackName"] = item.snackName
         
         snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if error == nil{
+            if error == nil {
                 println(success)
-            }else {
+            } else {
                 println(error)
             }
-             completion(error!)
+            completion(err: error)
         }
-        
     }
     
-    static func retrieve(requestCompleted request:((NSError, [FormObject]) -> Void)) {
-        
+    static func retrieve(requestCompleted request: ((err: NSError?, objs: [FormObject]) -> Void)) {
         
     }
 
