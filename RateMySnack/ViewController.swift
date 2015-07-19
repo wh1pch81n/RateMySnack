@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 
 class SnackObject : FormObject {
@@ -30,13 +32,14 @@ class ViewController: UIViewController {
         BackendDelegate.submit(kindBar, completionHandler:{ (err:NSError) -> Void in
             
         });
-
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
-	}
-
-	 override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
+        var item: FormObject = FormTest()
+        BackEndServer.submit(item, completionHandler:{ (NSError) -> Void in
+            println("done")
+        })
+    }
 }
 
