@@ -12,7 +12,8 @@ import Bolts
 
 class BackEndServer: BackendDelegate {
     
-    var objects = [PFObject]()
+    
+ 
     
     static func submit(item: FormObject, completionHandler completion: ((err: NSError?) -> Void)) {
         var snack:PFObject = PFObject(className: "AllSnacks")
@@ -31,18 +32,37 @@ class BackEndServer: BackendDelegate {
     static func retrieve(requestCompleted request: ((err: NSError?, objs: [FormObject]) -> Void)) {
         
         var findSnacks:PFQuery = PFQuery(className: "AllSnacks")
-        findSnacks.whereKey("objectId", containsString: "SnackName")
+       // findSnacks.whereKey("objectId", containsString: "SnackName")
+        findSnacks.includeKey("objectId")
+        
+//        findSnacks.getFirstObjectInBackgroundWithBlock { (objects: PFObject?, error: NSError?) -> Void in
+//            if error == nil{
+//                println(objects)
+//            }
+//        }
         
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-            if (error == nil){
-            
-
-                println("snack info fetched")
+            var nameOfSnack: [FormObject] = []
+            if error == nil{
+             //   request(err: nil, objs: objects)
                 
-            } else {
-                println("failed to fetch")
+                if let objs = objects {
+                    //Querying everything inside of the class but only displaying the 1st(0) String
+                    //println(objs[0]["SnackName"])
+                    for i in objs {
+                        var fo = Snack(name: i["SnackName"] as! String)
+                        nameOfSnack.append(fo)
+                    }
+                    
+                    request(err: nil, objs: nameOfSnack)
+                    //println(nameOfSnack)
+                }
+//                println(objects)
             }
-            
         }
-    }
+    
+    
+}
+    
+    
 }

@@ -8,13 +8,6 @@
 
 import UIKit
 
-class SnackObject : FormObject {
-	var snackName : String
-    
-    init(name:String ) {
-       snackName = name
-    }
-}
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
