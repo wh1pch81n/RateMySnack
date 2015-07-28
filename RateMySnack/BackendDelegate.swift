@@ -13,6 +13,7 @@ Describes the kind of object that will hold on to snack info.
 */
 protocol FormObject {
     var snackName:String { get set }
+    var snackDescription:String { get set }
 }
 
 protocol BackendDelegate {
