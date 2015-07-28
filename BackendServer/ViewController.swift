@@ -9,8 +9,9 @@
 import UIKit
 
 // This is to be used only for Testing
-class FormTest: FormObject {
-    var snackName:String = "3 musketeers"
+class FormTest: SnackProtocol {
+    var name:String = "3 musketeers"
+    var description:String = "A chocolate"
 }
 
 class ViewController: UIViewController {
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        var item: FormObject = FormTest()
+        var item: SnackProtocol = FormTest()
         BackEndServer.submit(item, completionHandler:{ (err:NSError?) -> Void in
             println("done")
         })

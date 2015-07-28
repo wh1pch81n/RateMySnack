@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SnackObject : FormObject {
-	var snackName : String
-    
-    init(name:String ) {
-       snackName = name
+class SnackObject : SnackProtocol {
+	var name:String
+    var description:String
+    init(name:String, description:String) {
+       self.name = name
+        self.description = description
     }
 }
 class ViewController: UIViewController {
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var kindBar : SnackObject = SnackObject(name: "PopCorn")
+        var kindBar : SnackObject = SnackObject(name: "PopCorn", description: "Core that make the world go round...")
         BackEndServer.submit(kindBar, completionHandler:{ (err:NSError?) -> Void in
             print("Just submitted Snack")
         });

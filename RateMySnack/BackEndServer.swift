@@ -12,9 +12,9 @@ import Bolts
 
 class BackEndServer: BackendDelegate {
     
-    static func submit(item: FormObject, completionHandler completion: ((err: NSError?) -> Void)) {
+    static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
         var snack:PFObject = PFObject(className: "AllSnacks")
-        snack["SnackName"] = item.snackName
+        snack["SnackName"] = item.name
         
         snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if error == nil {
@@ -26,7 +26,7 @@ class BackEndServer: BackendDelegate {
         }
     }
     
-    static func retrieve(requestCompleted request: ((err: NSError?, objs: [FormObject]) -> Void)) {
+    static func retrieve(requestCompleted request: ((err: NSError?, objs: [SnackProtocol]) -> Void)) {
         
     }
 
