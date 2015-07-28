@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        BackEndServer.retrieve { (err: NSError?, objs: [FormObject] ) -> Void in
+        BackEndServer.retrieve { (err: NSError?, objs: [SnackProtocol] ) -> Void in
             if err == nil {
                 for i in objs { // looping though each object *i* in the array *objs*
-                    print(i.snackName)
+                    print(i.name)
                     println(",")
                 }
             } else {
