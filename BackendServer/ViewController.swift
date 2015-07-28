@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Parse
-import Bolts
+
 
 // This is to be used only for Testing
 class FormTest: FormObject {
@@ -18,7 +17,7 @@ class FormTest: FormObject {
 
 class ViewController: UIViewController {
     
-    var objects = [PFObject]()
+    
     
 
     override func viewDidLoad() {
@@ -33,10 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-     //   var item: FormObject = FormTest()
-       // BackEndServer.submit(item, completionHandler:{ (err:NSError?) -> Void in
-         //   println("done")
-       // })
+
         
         BackEndServer.retrieve { (err: NSError?, objs: [FormObject] ) -> Void in
             if err == nil{
