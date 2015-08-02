@@ -15,6 +15,7 @@ class BackEndServer: BackendDelegate {
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
         var snack:PFObject = PFObject(className: "AllSnacks")
         snack["SnackName"] = item.name
+        snack.addUniqueObject("AllSnack", forKey: "SnackName")
         
         snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if error == nil {
