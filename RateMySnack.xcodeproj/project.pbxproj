@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0C19001B6466FB005A5F48 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C18FF1B6466FA005A5F48 /* Snack.swift */; };
+		2A0C19011B646723005A5F48 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C18FF1B6466FA005A5F48 /* Snack.swift */; };
 		7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
 		7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260171B5B5E9800F3288C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260161B5B5E9800F3288C /* CFNetwork.framework */; };
@@ -68,7 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A4AA0821B5B16FB00DDDA0B /* BackEndServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackEndServer.swift; sourceTree = "<group>"; };
+		2A0C18FF1B6466FA005A5F48 /* Snack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
+		2A4AA0821B5B16FB00DDDA0B /* BackEndServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackEndServer.swift; path = ../RateMySnack/BackEndServer.swift; sourceTree = "<group>"; };
 		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendDelegate.swift; sourceTree = "<group>"; };
 		7FE2600D1B5B5E6300F3288C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7FE260111B5B5E7800F3288C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 			children = (
 				7FE260361B5B610A00F3288C /* AppDelegate.swift */,
 				7FE260381B5B610A00F3288C /* ViewController.swift */,
+				2A4AA0821B5B16FB00DDDA0B /* BackEndServer.swift */,
 				7FE2603A1B5B610A00F3288C /* Main.storyboard */,
 				7FE2603D1B5B610A00F3288C /* Images.xcassets */,
 				7FE2603F1B5B610A00F3288C /* LaunchScreen.xib */,
@@ -246,8 +250,8 @@
 			children = (
 				C473686D1B50458400E97743 /* AppDelegate.swift */,
 				C473686F1B50458400E97743 /* ViewController.swift */,
+				2A0C18FF1B6466FA005A5F48 /* Snack.swift */,
 				7F67A94E1B5AF95400230509 /* BackendDelegate.swift */,
-				2A4AA0821B5B16FB00DDDA0B /* BackEndServer.swift */,
 				C47368711B50458400E97743 /* Main.storyboard */,
 				C47368741B50458400E97743 /* Images.xcassets */,
 				C47368761B50458400E97743 /* LaunchScreen.xib */,
@@ -447,6 +451,7 @@
 				7FE260391B5B610A00F3288C /* ViewController.swift in Sources */,
 				7FE260371B5B610A00F3288C /* AppDelegate.swift in Sources */,
 				7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */,
+				2A0C19011B646723005A5F48 /* Snack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +472,7 @@
 				82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */,
 				C473686E1B50458400E97743 /* AppDelegate.swift in Sources */,
 				7FE260281B5B5F6B00F3288C /* BackEndServer.swift in Sources */,
+				2A0C19001B6466FB005A5F48 /* Snack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

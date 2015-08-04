@@ -8,13 +8,6 @@
 
 import UIKit
 
-class SnackObject : FormObject {
-	var snackName : String
-    
-    init(name:String ) {
-       snackName = name
-    }
-}
 class ViewController: UIViewController {
     
         @IBAction func buttonPressed(sender: UIButton) {
@@ -35,21 +28,22 @@ class ViewController: UIViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
         
+
         var starView = RMSStarView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         self.view.addSubview(starView)
         
         starView.starEnabled(false)
-        
+
     }
     
         
         
-        
-//        var kindBar : SnackObject = SnackObject(name: "PopCorn")
-//        BackEndServer.submit(kindBar, completionHandler:{ (err:NSError?) -> Void in
-//            print("Just submitted Snack")
-//        });
+//    var kindBar : Snack = Snack(name: "PopCorn", description: "Core that make the world go round...")
+//    BackEndServer.submit(kindBar, completionHandler:{ (err:NSError?) -> Void in
+//    print("Just submitted Snack")
+//    });
+
     }
-    
+
 
 
