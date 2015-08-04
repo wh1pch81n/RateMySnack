@@ -41,6 +41,7 @@
 		7FE260721B5B62C700F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260731B5B62C700F3288C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260111B5B5E7800F3288C /* Parse.framework */; };
 		7FE260741B5B62C700F3288C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2600D1B5B5E6300F3288C /* Bolts.framework */; };
+		82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5308B1B644EC900B07F24 /* RMSStarView.swift */; };
 		C473686E1B50458400E97743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686D1B50458400E97743 /* AppDelegate.swift */; };
 		C47368701B50458400E97743 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686F1B50458400E97743 /* ViewController.swift */; };
 		C47368731B50458400E97743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47368711B50458400E97743 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		7FE260461B5B610A00F3288C /* BackendServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackendServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE2604B1B5B610A00F3288C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE2604C1B5B610A00F3288C /* BackendServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendServerTests.swift; sourceTree = "<group>"; };
+		82B5308B1B644EC900B07F24 /* RMSStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSStarView.swift; sourceTree = "<group>"; };
 		C47368681B50458400E97743 /* RateMySnack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RateMySnack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C473686C1B50458400E97743 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C473686D1B50458400E97743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				C47368741B50458400E97743 /* Images.xcassets */,
 				C47368761B50458400E97743 /* LaunchScreen.xib */,
 				C473686B1B50458400E97743 /* Supporting Files */,
+				82B5308B1B644EC900B07F24 /* RMSStarView.swift */,
 			);
 			path = RateMySnack;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			files = (
 				7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */,
 				C47368701B50458400E97743 /* ViewController.swift in Sources */,
+				82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */,
 				C473686E1B50458400E97743 /* AppDelegate.swift in Sources */,
 				7FE260281B5B5F6B00F3288C /* BackEndServer.swift in Sources */,
 			);
@@ -735,6 +739,7 @@
 				7FE260501B5B610A00F3288C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FE260511B5B610A00F3288C /* Build configuration list for PBXNativeTarget "BackendServerTests" */ = {
 			isa = XCConfigurationList;
@@ -743,6 +748,7 @@
 				7FE260531B5B610A00F3288C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C47368631B50458400E97743 /* Build configuration list for PBXProject "RateMySnack" */ = {
 			isa = XCConfigurationList;
