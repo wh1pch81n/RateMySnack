@@ -10,6 +10,14 @@ import UIKit
 
 class RMSStarView: UIView {
     var stars : [UIView]
+    var enabled : Bool = false {
+        didSet {
+            self.starEnabled(enabled)
+        }
+    }
+    
+    
+    
     override init(frame: CGRect) {
         var starOn = EnabledView()
         starOn.frame = frame
@@ -26,7 +34,7 @@ class RMSStarView: UIView {
         
         
         
-        self.starEnabled(false)
+        self.enabled = false
 
     }
 
