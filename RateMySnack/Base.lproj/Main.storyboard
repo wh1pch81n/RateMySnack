@@ -1,25 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RateMySnack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYK-Wq-gNb">
+                                <rect key="frame" x="16" y="28" width="100" height="100"/>
+                                <connections>
+                                    <segue destination="gCK-K1-Fpm" kind="embed" id="m4C-Rr-JEB"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="340" y="280"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nW0-9p-FxH">
+            <objects>
+                <viewController id="gCK-K1-Fpm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7dz-1Y-98k"/>
+                        <viewControllerLayoutGuide type="bottom" id="cmz-Ws-9TO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l96-HF-B3B">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-fi-VPe" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
+                                <rect key="frame" x="20" y="0.0" width="20" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-4S-lqo" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
+                                <rect key="frame" x="40" y="0.0" width="20" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXH-3J-6WU" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
+                                <rect key="frame" x="60" y="0.0" width="20" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-ch-mEV" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-K0-SjX" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
+                                <rect key="frame" x="80" y="0.0" width="20" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3wa-K0-SjX" secondAttribute="trailing" id="75z-or-2HZ"/>
+                            <constraint firstItem="3wa-K0-SjX" firstAttribute="leading" secondItem="LXH-3J-6WU" secondAttribute="trailing" id="CeZ-k2-nwe"/>
+                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="LXH-3J-6WU" secondAttribute="bottom" id="D8O-Vp-qrc"/>
+                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="cc6-ch-mEV" secondAttribute="bottom" id="Eaa-vi-4Sz"/>
+                            <constraint firstItem="cc6-ch-mEV" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="IVr-ru-IFg"/>
+                            <constraint firstItem="cc6-ch-mEV" firstAttribute="width" secondItem="kXs-fi-VPe" secondAttribute="width" id="K6U-9R-Fu9"/>
+                            <constraint firstItem="3wa-K0-SjX" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="NBA-gF-bST"/>
+                            <constraint firstItem="LXH-3J-6WU" firstAttribute="leading" secondItem="5f5-4S-lqo" secondAttribute="trailing" id="NT0-6N-z9e"/>
+                            <constraint firstItem="cc6-ch-mEV" firstAttribute="leading" secondItem="l96-HF-B3B" secondAttribute="leading" id="SM3-gt-bDZ"/>
+                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="kXs-fi-VPe" secondAttribute="bottom" id="U6e-pb-z6z"/>
+                            <constraint firstItem="5f5-4S-lqo" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="UU1-1b-uGi"/>
+                            <constraint firstItem="kXs-fi-VPe" firstAttribute="leading" secondItem="cc6-ch-mEV" secondAttribute="trailing" id="YD2-Jg-ikI"/>
+                            <constraint firstItem="5f5-4S-lqo" firstAttribute="leading" secondItem="kXs-fi-VPe" secondAttribute="trailing" id="d18-O7-OE3"/>
+                            <constraint firstItem="kXs-fi-VPe" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="kfP-8g-UKw"/>
+                            <constraint firstItem="cc6-ch-mEV" firstAttribute="width" secondItem="LXH-3J-6WU" secondAttribute="width" id="lAo-TH-Kq5"/>
+                            <constraint firstItem="LXH-3J-6WU" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="pZ7-MN-Q1e"/>
+                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="5f5-4S-lqo" secondAttribute="bottom" id="qKi-HH-aFj"/>
+                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="3wa-K0-SjX" secondAttribute="bottom" id="qud-rc-i91"/>
+                            <constraint firstItem="cc6-ch-mEV" firstAttribute="width" secondItem="5f5-4S-lqo" secondAttribute="width" id="tXJ-Jm-Dny"/>
+                            <constraint firstItem="cc6-ch-mEV" firstAttribute="width" secondItem="3wa-K0-SjX" secondAttribute="width" id="zeV-c6-cUA"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGm-9S-V0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="280"/>
         </scene>
     </scenes>
 </document>

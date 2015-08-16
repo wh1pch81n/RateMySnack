@@ -9,33 +9,36 @@
 import UIKit
 
 class RMSStarView: UIView {
-    var stars : [UIView]
+    var stars : [UIView]!
     var enabled : Bool = false {
         didSet {
             self.starEnabled(enabled)
         }
     }
     
-    
-    
     override init(frame: CGRect) {
-        var starOn = EnabledView()
-        starOn.frame = frame
-        
-        var starOff = DisabledView()
-        starOff.frame = frame
-        
-        self.stars = [starOff, starOn]
-        
         super.init(frame: frame)
+        addStars()
+    }
+    
+    func addStars() {
+        var starOn = EnabledView()
+        var starOff = DisabledView()
+
+        self.stars = [starOff, starOn]
         
         self.addSubview(self.stars[1])
         self.addSubview(self.stars[0])
         
+        starOff.setTranslatesAutoresizingMaskIntoConstraints(false)
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[v]|", options: NSLayoutFormatOptions.allZeros, metrics: nil, views: ["v" : starOff]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[v]|", options: NSLayoutFormatOptions.allZeros, metrics: nil, views: ["v" : starOff]))
         
+        starOn.setTranslatesAutoresizingMaskIntoConstraints(false)
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[v]|", options: NSLayoutFormatOptions.allZeros, metrics: nil, views: ["v" : starOn]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[v]|", options: NSLayoutFormatOptions.allZeros, metrics: nil, views: ["v" : starOn]))
         
         self.enabled = false
-
     }
 
     func starEnabled(on:Bool) {
@@ -48,7 +51,8 @@ class RMSStarView: UIView {
     }
     
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        addStars()
     }
 }
 
