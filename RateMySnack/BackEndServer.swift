@@ -14,8 +14,10 @@ class BackEndServer: BackendDelegate {
  
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
         var snack:PFObject = PFObject(className: "AllSnacks")
-        snack["SnackName"] = item.name
-        snack.addUniqueObject("AllSnack", forKey: "SnackName")
+        var AllSnacks:PFObject = PFObject()
+       // snack["SnackName"] = item.name
+       // snack.addUniqueObject("AllSnack", forKey: "SnackName")
+        
         
         snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if error == nil {
@@ -45,4 +47,20 @@ class BackEndServer: BackendDelegate {
             }
         }
     }
+    
+    func noSameSnack()  {
+        
+        var newSnack: PFObject = PFObject()
+        var sameSnack = PFQuery(className: "AllSnack")
+        sameSnack.findObjectsInBackgroundWithBlock { ([AnyObject]?, error: NSError?) -> Void in
+            if error != nil || newSnack == sameSnack{
+                println("Same snack found")
+            }else {
+                newSnack.saveInBackground()
+            }
+            
+        }
+        
+    }
+    
 }
