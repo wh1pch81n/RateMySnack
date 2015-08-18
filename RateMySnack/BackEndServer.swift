@@ -13,18 +13,19 @@ import Bolts
 class BackEndServer: BackendDelegate {
  
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
+        
+        <#Does the snack name ready exist?#>
+        <#add logic such that it will only submit if the snack name doesn't already exist#>
+        
+        // Creates an instance of AllSnack Object
         var snack:PFObject = PFObject(className: "AllSnacks")
-        var AllSnacks:PFObject = PFObject()
-       // snack["SnackName"] = item.name
-       // snack.addUniqueObject("AllSnack", forKey: "SnackName")
         
-        
+        // sets the SnackName property based on the item name
+        snack["SnackName"] = item.name
+    
+        // Save new snack in background asynhronously
         snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if error == nil {
-                println(success)
-            } else {
-                println(error)
-            }
+            // When the save finishes call the completion block
             completion(err: error)
         }
     }
@@ -48,19 +49,23 @@ class BackEndServer: BackendDelegate {
         }
     }
     
-    func noSameSnack()  {
+    private static func hasSnackNamed(snackName: String, withClassName name: String = "AllSnacks") -> Bool {
+        // Make Query "AllSnacks"
+        var queryAllSnack = PFQuery(className: "AllSnacks")
         
-        var newSnack: PFObject = PFObject()
-        var sameSnack = PFQuery(className: "AllSnack")
-        sameSnack.findObjectsInBackgroundWithBlock { ([AnyObject]?, error: NSError?) -> Void in
-            if error != nil || newSnack == sameSnack{
-                println("Same snack found")
-            }else {
-                newSnack.saveInBackground()
-            }
-            
+        // Refine queryAllSnack query to include all with the specified snameName
+        <#Implement me!#>
+        
+        // Begin the query and perform it it synchronously
+        var err : NSError?
+        var objectsThatMatch : [AnyObject]? = queryAllSnack.findObjects(&err)
+        
+        if err == nil {
+            // If objectsThatMatch is empty then return false otherwise return true
+            <#Implement me!#>
         }
         
+        return <#Implement Me!#>
     }
     
 }
