@@ -45,23 +45,93 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-fi-VPe" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="20" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fG-IW-A7J">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="7fG-IW-A7J" secondAttribute="bottom" id="9OD-Oi-p26"/>
+                                    <constraint firstItem="7fG-IW-A7J" firstAttribute="top" secondItem="kXs-fi-VPe" secondAttribute="top" id="Da7-fI-w6d"/>
+                                    <constraint firstAttribute="trailing" secondItem="7fG-IW-A7J" secondAttribute="trailing" id="n4O-T4-Lb3"/>
+                                    <constraint firstItem="7fG-IW-A7J" firstAttribute="leading" secondItem="kXs-fi-VPe" secondAttribute="leading" id="p6o-BC-lsr"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-4S-lqo" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="40" y="0.0" width="20" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-51-uCn">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Tpu-51-uCn" firstAttribute="top" secondItem="5f5-4S-lqo" secondAttribute="top" id="HHh-fw-Ygo"/>
+                                    <constraint firstItem="Tpu-51-uCn" firstAttribute="leading" secondItem="5f5-4S-lqo" secondAttribute="leading" id="QBx-ni-xsw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tpu-51-uCn" secondAttribute="trailing" id="Xcs-HV-fDq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tpu-51-uCn" secondAttribute="bottom" id="wOg-QV-Ogi"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXH-3J-6WU" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="60" y="0.0" width="20" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL9-jq-bZz">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OL9-jq-bZz" secondAttribute="trailing" id="6gN-EZ-mc1"/>
+                                    <constraint firstAttribute="bottom" secondItem="OL9-jq-bZz" secondAttribute="bottom" id="Ryc-JK-QSd"/>
+                                    <constraint firstItem="OL9-jq-bZz" firstAttribute="top" secondItem="LXH-3J-6WU" secondAttribute="top" id="trp-p7-mEa"/>
+                                    <constraint firstItem="OL9-jq-bZz" firstAttribute="leading" secondItem="LXH-3J-6WU" secondAttribute="leading" id="y5n-fo-P2e"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-ch-mEV" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-fd-uPL">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6Yd-fd-uPL" firstAttribute="leading" secondItem="cc6-ch-mEV" secondAttribute="leading" id="HzM-ew-1XK"/>
+                                    <constraint firstItem="6Yd-fd-uPL" firstAttribute="top" secondItem="cc6-ch-mEV" secondAttribute="top" id="Krb-a1-3aZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Yd-fd-uPL" secondAttribute="bottom" id="WVG-qO-kCn"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Yd-fd-uPL" secondAttribute="trailing" id="Wg7-wd-eSz"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-K0-SjX" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="80" y="0.0" width="20" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-PH-hdg">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="O9T-PH-hdg" firstAttribute="leading" secondItem="3wa-K0-SjX" secondAttribute="leading" id="4p0-PJ-QKB"/>
+                                    <constraint firstAttribute="bottom" secondItem="O9T-PH-hdg" secondAttribute="bottom" id="MOf-Jg-DIo"/>
+                                    <constraint firstItem="O9T-PH-hdg" firstAttribute="top" secondItem="3wa-K0-SjX" secondAttribute="top" id="cWh-Xg-0cu"/>
+                                    <constraint firstAttribute="trailing" secondItem="O9T-PH-hdg" secondAttribute="trailing" id="v4C-9E-fXl"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

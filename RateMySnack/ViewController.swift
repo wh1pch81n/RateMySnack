@@ -10,28 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-        @IBAction func buttonPressed(sender: UIButton) {
-        
-        
-        var starRateView = UIButton()
-        var viewState = UIButton()
+
+
+     
+        override func viewDidLoad() {
+            var viewState = UIView()
             
 //            if     {
 //            } else
-
-            
-            }
-    
-
-            
-     
-        override func viewDidLoad() {
         super.viewDidLoad()
         
-
-
-
     }
+}
+
+
+
     
         
         
@@ -40,7 +33,7 @@ class ViewController: UIViewController {
 //    print("Just submitted Snack")
 //    });
 
-    }
+
 
 
 
