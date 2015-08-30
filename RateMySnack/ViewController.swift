@@ -9,15 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
 
-
-     
-        override func viewDidLoad() {
-            var viewState = ()
-            
-//            if     {
-//            } else
+    override func viewDidLoad() {
+        
         super.viewDidLoad()
         
     }
