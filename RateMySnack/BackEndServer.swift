@@ -14,8 +14,8 @@ class BackEndServer: BackendDelegate {
  
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
         
-        <#Does the snack name ready exist?#>
-        <#add logic such that it will only submit if the snack name doesn't already exist#>
+//        <#Does the snack name ready exist?#>
+//        <#add logic such that it will only submit if the snack name doesn't already exist#>
         
         // Creates an instance of AllSnack Object
         var snack:PFObject = PFObject(className: "AllSnacks")
@@ -51,21 +51,28 @@ class BackEndServer: BackendDelegate {
     
     private static func hasSnackNamed(snackName: String, withClassName name: String = "AllSnacks") -> Bool {
         // Make Query "AllSnacks"
-        var queryAllSnack = PFQuery(className: "AllSnacks")
+        var queryAllSnack = PFQuery() //1.querying for objects with the class name "AllSnacks"
         
         // Refine queryAllSnack query to include all with the specified snameName
-        <#Implement me!#>
+        queryAllSnack.parseClassName = "AllSnack"
+        queryAllSnack.whereKey("SnackName", equalTo: snackName) //2.Key = colum ; equalTo <the input of data>
+        queryAllSnack.selectKeys(["SnackName"]) //3.Only pulling data from the specified key
+        queryAllSnack.limit = 1 //4.setting a limit of returning of the same snack as 1
         
         // Begin the query and perform it it synchronously
         var err : NSError?
-        var objectsThatMatch : [AnyObject]? = queryAllSnack.findObjects(&err)
-        
-        if err == nil {
+        var objectsThatMatch : [AnyObject]? = queryAllSnack.findObjects(&err) //TODO:you can actually simplied this line of code with countObject
+        objectsThatMatch?.count
+        if err == nil  {
             // If objectsThatMatch is empty then return false otherwise return true
-            <#Implement me!#>
+            if let objectsThatMatch2 = objectsThatMatch {
+                if objectsThatMatch2.count == 0{
+            return false
+                }
+            }
         }
         
-        return <#Implement Me!#>
+        return true
     }
     
 }
