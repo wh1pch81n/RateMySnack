@@ -9,15 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        var kindBar : Snack = Snack(name: "PopCorn", description: "Core that make the world go round...")
-        BackEndServer.submit(kindBar, completionHandler:{ (err:NSError?) -> Void in
-            print("Just submitted Snack")
-        });
     }
-    
 }
+
+
+
+    
+        
+        
+//    var kindBar : Snack = Snack(name: "PopCorn", description: "Core that make the world go round...")
+//    BackEndServer.submit(kindBar, completionHandler:{ (err:NSError?) -> Void in
+//    print("Just submitted Snack")
+//    });
+
+
+
+
 
