@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
      
         override func viewDidLoad() {
-            var viewState = UIView()
+            var viewState = ()
             
 //            if     {
 //            } else

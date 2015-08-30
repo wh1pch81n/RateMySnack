@@ -60,6 +60,7 @@ class EnabledView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.yellowColor()
+        self.userInteractionEnabled = false
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -70,9 +71,10 @@ class EnabledView: UIView {
 class DisabledView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.darkGrayColor()
         self.layer.borderColor = UIColor.grayColor().CGColor
         self.layer.borderWidth = CGFloat(1)
+        self.userInteractionEnabled = false
     }
 
     required init(coder aDecoder: NSCoder) {

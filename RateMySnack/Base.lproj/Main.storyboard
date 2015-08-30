@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="340" y="280"/>
         </scene>
-        <!--View Controller-->
+        <!--Star View Controller-->
         <scene sceneID="nW0-9p-FxH">
             <objects>
-                <viewController id="gCK-K1-Fpm" sceneMemberID="viewController">
+                <viewController id="gCK-K1-Fpm" customClass="RMSStarViewController" customModule="RateMySnack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7dz-1Y-98k"/>
                         <viewControllerLayoutGuide type="bottom" id="cmz-Ws-9TO"/>
@@ -46,11 +46,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-fi-VPe" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="20" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fG-IW-A7J">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fG-IW-A7J">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="Fcn-8c-Z2o"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,11 +67,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-4S-lqo" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="40" y="0.0" width="20" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-51-uCn">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-51-uCn">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="Zna-Qf-dW2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,11 +88,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXH-3J-6WU" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="60" y="0.0" width="20" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL9-jq-bZz">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL9-jq-bZz">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="IbB-Jb-Lbg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,11 +109,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-ch-mEV" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-fd-uPL">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-fd-uPL">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="uZx-IC-7E1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,11 +130,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-K0-SjX" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
                                 <rect key="frame" x="80" y="0.0" width="20" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-PH-hdg">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-PH-hdg">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="0L9-mO-CnV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,6 +174,13 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="starFour" destination="3wa-K0-SjX" id="d07-Eu-m6K"/>
+                        <outlet property="starOne" destination="kXs-fi-VPe" id="Ned-jx-P64"/>
+                        <outlet property="starThree" destination="LXH-3J-6WU" id="Jlj-ko-lXz"/>
+                        <outlet property="starTwo" destination="5f5-4S-lqo" id="bfP-M6-POW"/>
+                        <outlet property="starZero" destination="cc6-ch-mEV" id="W7P-Tb-OJJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGm-9S-V0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
