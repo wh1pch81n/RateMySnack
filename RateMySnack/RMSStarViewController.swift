@@ -16,9 +16,13 @@ class RMSStarViewController: UIViewController {
     @IBOutlet weak var starThree: RMSStarView!
     @IBOutlet weak var starFour: RMSStarView!
     
-    @IBAction func tappedStar(buttonthatwasjustclicked: UIButton) {
-        
-        var tag = buttonthatwasjustclicked.tag
+    /**
+    Turns the stars on or off depending on which star was tapped by the user
+    
+    :param: buttonThatWasJustClicked a reference to the UIButton that sent a message to the target
+    */
+    @IBAction func tappedStar(buttonThatWasJustClicked: UIButton) {
+        var tag = buttonThatWasJustClicked.tag
         var starSettings: (Bool, Bool, Bool, Bool, Bool) = (false, false, false, false, false)
         
         if tag == 1 {
