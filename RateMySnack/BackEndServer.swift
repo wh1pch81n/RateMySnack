@@ -11,10 +11,10 @@ import Parse
 import Bolts
 
 class BackEndServer: BackendDelegate {
- 
+    
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
         if BackEndServer.hasSnackNamed(item.name) {
-            completion(err: NSError(domain: "RMBackendError", code: RMSBackendError.Duplication.rawValue, userInfo: nil))
+            completion(err: NSError(domain: .Backend, code: RMSBackendError.Duplication.rawValue))
             return
         }
         // Creates an instance of AllSnack Object
@@ -29,10 +29,10 @@ class BackEndServer: BackendDelegate {
                 return
             }
             if error?.code == PFErrorCode.ErrorTimeout.rawValue {
-                completion(err: NSError(domain: "RMBackendError", code: RMSBackendError.Timeout.rawValue, userInfo: nil))
+                completion(err: NSError(domain: .Backend, code: RMSBackendError.Timeout.rawValue))
                 return
             }
-            completion(err: NSError(domain: "RMSBackendError", code: RMSBackendError.UnexpectedNetworkError.rawValue, userInfo: nil))//Lost coonnection
+            completion(err: NSError(domain: .Backend, code: RMSBackendError.UnexpectedNetworkError.rawValue)) //Lost coonnection
         }
     }
     
@@ -43,7 +43,7 @@ class BackEndServer: BackendDelegate {
         
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             var nameOfSnack: [SnackProtocol] = []
-            if error == nil{
+            if error == nil {
                 if let objs = objects {
                     for i in objs {
                         var fo = Snack(name: i["SnackName"] as! String, description: "")
@@ -71,8 +71,8 @@ class BackEndServer: BackendDelegate {
         if err == nil  {
             // If objectsThatMatch is empty then return false otherwise return true
             if let objectsThatMatch2 = objectsThatMatch {
-                if objectsThatMatch2.count == 0{
-            return false
+                if objectsThatMatch2.count == 0 {
+                    return false
                 }
             }
         }
