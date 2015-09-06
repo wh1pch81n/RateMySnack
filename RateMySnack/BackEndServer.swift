@@ -16,17 +16,44 @@ class BackEndServer: BackendDelegate {
         
 //        <#Does the snack name ready exist?#>
 //        <#add logic such that it will only submit if the snack name doesn't already exist#>
+       
         
+        //if NSTimer takes longer than 10s stops summiting but 
+        
+       
         // Creates an instance of AllSnack Object
         var snack:PFObject = PFObject(className: "AllSnacks")
         
         // sets the SnackName property based on the item name
         snack["SnackName"] = item.name
-    
-        // Save new snack in background asynhronously
-        snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            // When the save finishes call the completion block
-            completion(err: error)
+        
+        
+        
+        if BackEndServer.hasSnackNamed(item.name) {
+            
+            var duplication = NSError(domain: "", code: RMSBackendError.Duplication.rawValue, userInfo: nil)
+            completion(err: duplication)
+            
+            
+            
+        } else {
+            var timeOut = NSError(domain: "", code: RMSBackendError.Timeout.rawValue, userInfo: nil)
+            // Save new snack in background asynhronously
+            
+            snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                // When the save finishes call the completion block
+                if (success) {
+                    completion(err: nil)
+                } else {
+                    if error?.code == PFErrorCode.ErrorTimeout.rawValue {
+                        completion(err: timeOut)
+                    } else {
+                        var unexpectedError = NSError(domain: "RMSBackendError", code: RMSBackendError.UnexpectedNetworkError.rawValue, userInfo: nil)
+                        completion(err: unexpectedError)//Lost coonnection
+                    }
+                }
+            }
+            
         }
     }
     
@@ -51,10 +78,9 @@ class BackEndServer: BackendDelegate {
     
     private static func hasSnackNamed(snackName: String, withClassName name: String = "AllSnacks") -> Bool {
         // Make Query "AllSnacks"
-        var queryAllSnack = PFQuery() //1.querying for objects with the class name "AllSnacks"
+        var queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
         
         // Refine queryAllSnack query to include all with the specified snameName
-        queryAllSnack.parseClassName = "AllSnack"
         queryAllSnack.whereKey("SnackName", equalTo: snackName) //2.Key = colum ; equalTo <the input of data>
         queryAllSnack.selectKeys(["SnackName"]) //3.Only pulling data from the specified key
         queryAllSnack.limit = 1 //4.setting a limit of returning of the same snack as 1
