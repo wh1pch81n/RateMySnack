@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             }
         }
         
-        BackEndServer.submit(Snack(name: "Lays", description: ""), completionHandler: { (err: NSError?) -> Void in
+        BackEndServer.submit(Snack(name: "Dotidos", description: ""), completionHandler: { (err: NSError?) -> Void in
             if err == nil {
                 println("snack saved")
             } else if err?.code == RMSBackendError.Duplication.rawValue {

@@ -13,47 +13,26 @@ import Bolts
 class BackEndServer: BackendDelegate {
  
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
-        
-//        <#Does the snack name ready exist?#>
-//        <#add logic such that it will only submit if the snack name doesn't already exist#>
-       
-        
-        //if NSTimer takes longer than 10s stops summiting but 
-        
-       
+        if BackEndServer.hasSnackNamed(item.name) {
+            completion(err: NSError(domain: "RMBackendError", code: RMSBackendError.Duplication.rawValue, userInfo: nil))
+            return
+        }
         // Creates an instance of AllSnack Object
         var snack:PFObject = PFObject(className: "AllSnacks")
-        
         // sets the SnackName property based on the item name
         snack["SnackName"] = item.name
-        
-        
-        
-        if BackEndServer.hasSnackNamed(item.name) {
-            
-            var duplication = NSError(domain: "", code: RMSBackendError.Duplication.rawValue, userInfo: nil)
-            completion(err: duplication)
-            
-            
-            
-        } else {
-            var timeOut = NSError(domain: "", code: RMSBackendError.Timeout.rawValue, userInfo: nil)
-            // Save new snack in background asynhronously
-            
-            snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                // When the save finishes call the completion block
-                if (success) {
-                    completion(err: nil)
-                } else {
-                    if error?.code == PFErrorCode.ErrorTimeout.rawValue {
-                        completion(err: timeOut)
-                    } else {
-                        var unexpectedError = NSError(domain: "RMSBackendError", code: RMSBackendError.UnexpectedNetworkError.rawValue, userInfo: nil)
-                        completion(err: unexpectedError)//Lost coonnection
-                    }
-                }
+        // Save new snack in background asynhronously
+        snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            // When the save finishes call the completion block
+            if (success) {
+                completion(err: nil)
+                return
             }
-            
+            if error?.code == PFErrorCode.ErrorTimeout.rawValue {
+                completion(err: NSError(domain: "RMBackendError", code: RMSBackendError.Timeout.rawValue, userInfo: nil))
+                return
+            }
+            completion(err: NSError(domain: "RMSBackendError", code: RMSBackendError.UnexpectedNetworkError.rawValue, userInfo: nil))//Lost coonnection
         }
     }
     
