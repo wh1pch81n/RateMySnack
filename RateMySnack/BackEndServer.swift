@@ -13,16 +13,26 @@ import Bolts
 class BackEndServer: BackendDelegate {
  
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
+        if BackEndServer.hasSnackNamed(item.name) {
+            completion(err: NSError(domain: "RMBackendError", code: RMSBackendError.Duplication.rawValue, userInfo: nil))
+            return
+        }
+        // Creates an instance of AllSnack Object
         var snack:PFObject = PFObject(className: "AllSnacks")
+        // sets the SnackName property based on the item name
         snack["SnackName"] = item.name
-        
+        // Save new snack in background asynhronously
         snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if error == nil {
-                println(success)
-            } else {
-                println(error)
+            // When the save finishes call the completion block
+            if (success) {
+                completion(err: nil)
+                return
             }
-            completion(err: error)
+            if error?.code == PFErrorCode.ErrorTimeout.rawValue {
+                completion(err: NSError(domain: "RMBackendError", code: RMSBackendError.Timeout.rawValue, userInfo: nil))
+                return
+            }
+            completion(err: NSError(domain: "RMSBackendError", code: RMSBackendError.UnexpectedNetworkError.rawValue, userInfo: nil))//Lost coonnection
         }
     }
     
@@ -44,4 +54,30 @@ class BackEndServer: BackendDelegate {
             }
         }
     }
+    
+    private static func hasSnackNamed(snackName: String, withClassName name: String = "AllSnacks") -> Bool {
+        // Make Query "AllSnacks"
+        var queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
+        
+        // Refine queryAllSnack query to include all with the specified snameName
+        queryAllSnack.whereKey("SnackName", equalTo: snackName) //2.Key = colum ; equalTo <the input of data>
+        queryAllSnack.selectKeys(["SnackName"]) //3.Only pulling data from the specified key
+        queryAllSnack.limit = 1 //4.setting a limit of returning of the same snack as 1
+        
+        // Begin the query and perform it it synchronously
+        var err : NSError?
+        var objectsThatMatch : [AnyObject]? = queryAllSnack.findObjects(&err) //TODO:you can actually simplied this line of code with countObject
+        objectsThatMatch?.count
+        if err == nil  {
+            // If objectsThatMatch is empty then return false otherwise return true
+            if let objectsThatMatch2 = objectsThatMatch {
+                if objectsThatMatch2.count == 0{
+            return false
+                }
+            }
+        }
+        
+        return true
+    }
+    
 }
