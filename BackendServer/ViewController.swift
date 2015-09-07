@@ -24,15 +24,15 @@ class ViewController: UIViewController {
             }
         }
         
-        BackEndServer.submit(Snack(name: "Dotidos", description: ""), completionHandler: { (err: NSError?) -> Void in
+        var sn = "Doritos"
+        BackEndServer.submit(Snack(name: sn, description: ""), completionHandler: { (err: NSError?) -> Void in
             if err == nil {
-                println("snack saved")
+                println("snack \(sn) saved")
             } else if err?.code == RMSBackendError.Duplication.rawValue {
-                println("same snack found")
+                println("Already has \(sn)")
             }
         })
     }
-    
     
 }
 

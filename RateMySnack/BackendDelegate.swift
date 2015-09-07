@@ -9,9 +9,9 @@
 import Foundation
 
 enum RMSBackendError : Int {
-    case Timeout = 1
-    case Duplication = 2
-    case UnexpectedNetworkError = 404
+    case Timeout
+    case Duplication
+    case UnexpectedNetworkError
 }
 
 /**
