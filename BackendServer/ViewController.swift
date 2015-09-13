@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             }
         }
         
-        var sn = "Doritos"
+        var sn = "Coriander"
         BackEndServer.submit(Snack(name: sn, description: ""), completionHandler: { (err: NSError?) -> Void in
             if err == nil {
                 println("snack \(sn) saved")
