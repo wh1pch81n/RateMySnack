@@ -22,7 +22,10 @@ enum AllSnacksKeys : String {
 typealias AllSnacks = PFObject
 
 extension AllSnacks {
-    static func AllSnackObject() -> AllSnacks {
-        return PFObject(className: AllSnacksKeys.allSnacks)
+    static func createAllSnackObject(snack: SnackProtocol) -> AllSnacks {
+        var obj = PFObject(className: AllSnacksKeys.allSnacks)
+        obj.snackName = snack.snackName
+        obj.snackDescription = snack.snackDescription
+        return obj
     }
 }

@@ -25,16 +25,30 @@ enum ParseKeys : String {
     static var clientKey = ParseKeys.ClientKey.rawValue
 }
 
-extension PFObject {
-    subscript(property: AllSnacksKeys) -> AnyObject? {
+extension PFObject : SnackProtocol {
+    var snackName:String {
         get {
-            assert(self.parseClassName == AllSnacksKeys.allSnacks)
-            return self[property.rawValue]
+            assert(parseClassName == AllSnacksKeys.allSnacks)
+            let _snackName: AnyObject? = self[AllSnacksKeys.snackName]
+            assert(_snackName != nil, "Parse Server Object has nil snackName on \(self)")
+            return _snackName as! String
         }
-        set(newValue) {
-            assert(self.parseClassName == AllSnacksKeys.allSnacks)
-            self[property.rawValue] = newValue
+        set {
+            assert(parseClassName == AllSnacksKeys.allSnacks)
+            self[AllSnacksKeys.snackName] = newValue
         }
     }
     
+    var snackDescription:String {
+        get {
+            assert(parseClassName == AllSnacksKeys.allSnacks)
+            let _snackDescription: AnyObject? = self[AllSnacksKeys.snackDescription]
+            assert(_snackDescription != nil, "Parse Server Object has nil snackDescription on \(self)")
+            return _snackDescription as! String
+        }
+        set {
+            assert(parseClassName == AllSnacksKeys.allSnacks)
+            self[AllSnacksKeys.snackDescription] = newValue
+        }
+    }
 }

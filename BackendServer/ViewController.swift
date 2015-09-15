@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         BackEndServer.retrieve { (err: NSError?, objs: [SnackProtocol] ) -> Void in
             if err == nil {
                 for i in objs { // looping though each object *i* in the array *objs*
-                    print(i.name)
+                    print(i.snackName)
                     println(",")
                 }
             } else {

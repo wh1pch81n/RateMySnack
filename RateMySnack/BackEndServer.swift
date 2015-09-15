@@ -13,14 +13,13 @@ import Bolts
 class BackEndServer: BackendDelegate {
     
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
-        if BackEndServer.hasSnackNamed(item.name) {
+        if BackEndServer.hasSnackNamed(item.snackName) {
             completion(err: NSError(domain: .Backend, code: RMSBackendError.duplication))
             return
         }
         // Creates an instance of AllSnack Object
-        var snack = PFObject.AllSnackObject()
-        // sets the SnackName property based on the item name
-        snack[.SnackName] = item.name
+        var snack = PFObject.createAllSnackObject(item)
+
         // Save new snack in background asynhronously
         snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             // When the save finishes call the completion block
@@ -44,9 +43,9 @@ class BackEndServer: BackendDelegate {
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             var nameOfSnack: [SnackProtocol] = []
             if error == nil {
-                if let objs = objects as! [AllSnacks]? {
+                if let objs = objects {
                     for i in objs {
-                        var fo = Snack(name: i[.SnackName] as! String, description: "")
+                        var fo = Snack(snack: i as! SnackProtocol)
                         nameOfSnack.append(fo)
                     }
                     request(err: error, objs: nameOfSnack)
