@@ -2,6 +2,7 @@ import Foundation
 
 enum RMSErrorDomain : String {
     case Backend = "RMSBackendErrorDomain"
+    static let backend = RMSErrorDomain.Backend.rawValue
 }
 
 extension NSError {

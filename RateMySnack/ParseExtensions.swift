@@ -13,42 +13,14 @@ enum ParseObjectKeys : String {
     case ObjectId = "objectId"
     case CreatedAt = "createdAt"
     case UpdatedAt = "updatedAt"
-    static var objectId = ParseObjectKeys.ObjectId.rawValue
-    static var createdAt = ParseObjectKeys.CreatedAt.rawValue
-    static var updatedAt = ParseObjectKeys.UpdatedAt.rawValue
+    static let objectId = ParseObjectKeys.ObjectId.rawValue
+    static let createdAt = ParseObjectKeys.CreatedAt.rawValue
+    static let updatedAt = ParseObjectKeys.UpdatedAt.rawValue
 }
 
 enum ParseKeys : String {
     case ApplicationId = "r7EqA8YMRx0ew2OaE2ebKZnErKWdJgmR1hBtQBAQ"
     case ClientKey = "tIWDqmLYrdcquuzznkZS9iJ5CqX8ieOYZhhT4bnz"
-    static var applicationId = ParseKeys.ApplicationId.rawValue
-    static var clientKey = ParseKeys.ClientKey.rawValue
-}
-
-extension PFObject : SnackProtocol {
-    var snackName:String {
-        get {
-            assert(parseClassName == AllSnacksKeys.allSnacks)
-            let _snackName: AnyObject? = self[AllSnacksKeys.snackName]
-            assert(_snackName != nil, "Parse Server Object has nil snackName on \(self)")
-            return _snackName as! String
-        }
-        set {
-            assert(parseClassName == AllSnacksKeys.allSnacks)
-            self[AllSnacksKeys.snackName] = newValue
-        }
-    }
-    
-    var snackDescription:String {
-        get {
-            assert(parseClassName == AllSnacksKeys.allSnacks)
-            let _snackDescription: AnyObject? = self[AllSnacksKeys.snackDescription]
-            assert(_snackDescription != nil, "Parse Server Object has nil snackDescription on \(self)")
-            return _snackDescription as! String
-        }
-        set {
-            assert(parseClassName == AllSnacksKeys.allSnacks)
-            self[AllSnacksKeys.snackDescription] = newValue
-        }
-    }
+    static let applicationId = ParseKeys.ApplicationId.rawValue
+    static let clientKey = ParseKeys.ClientKey.rawValue
 }
