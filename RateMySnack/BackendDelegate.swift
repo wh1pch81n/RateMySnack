@@ -12,6 +12,9 @@ enum RMSBackendError : Int {
     case Timeout
     case Duplication
     case UnexpectedNetworkError
+    static var timeout = RMSBackendError.Timeout.rawValue
+    static var duplication = RMSBackendError.Duplication.rawValue
+    static var unexpectedNetworkError = RMSBackendError.UnexpectedNetworkError.rawValue
 }
 
 /**

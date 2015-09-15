@@ -14,7 +14,7 @@ class BackEndServer: BackendDelegate {
     
     static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
         if BackEndServer.hasSnackNamed(item.name) {
-            completion(err: NSError(domain: .Backend, code: RMSBackendError.Duplication.rawValue))
+            completion(err: NSError(domain: .Backend, code: RMSBackendError.duplication))
             return
         }
         // Creates an instance of AllSnack Object
@@ -29,17 +29,17 @@ class BackEndServer: BackendDelegate {
                 return
             }
             if error?.code == PFErrorCode.ErrorTimeout.rawValue {
-                completion(err: NSError(domain: .Backend, code: RMSBackendError.Timeout.rawValue))
+                completion(err: NSError(domain: .Backend, code: RMSBackendError.timeout))
                 return
             }
-            completion(err: NSError(domain: .Backend, code: RMSBackendError.UnexpectedNetworkError.rawValue)) //Lost coonnection
+            completion(err: NSError(domain: .Backend, code: RMSBackendError.unexpectedNetworkError)) //Lost coonnection
         }
     }
     
     static func retrieve(requestCompleted request: ((err: NSError?, objs: [SnackProtocol]) -> Void)) {
         
-        var findSnacks = PFQuery(className: AllSnacksKeys.AllSnacks.rawValue)
-        findSnacks.includeKey(ParseObjectKeys.ObjectId.rawValue)
+        var findSnacks = PFQuery(className: AllSnacksKeys.allSnacks)
+        findSnacks.includeKey(ParseObjectKeys.objectId)
         
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             var nameOfSnack: [SnackProtocol] = []
@@ -55,14 +55,14 @@ class BackEndServer: BackendDelegate {
         }
     }
     
-    private static func hasSnackNamed(snackName: String, withClassName name: String = AllSnacksKeys.AllSnacks.rawValue) -> Bool {
+    private static func hasSnackNamed(snackName: String, withClassName name: String = AllSnacksKeys.allSnacks) -> Bool {
         // Make Query "AllSnacks"
         var queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
         
         // Refine queryAllSnack query to include all with the specified snameName
         
-        queryAllSnack.whereKey(AllSnacksKeys.SnackName.rawValue, equalTo: snackName) //2.Key = colum ; equalTo <the input of data>
-        queryAllSnack.selectKeys([AllSnacksKeys.SnackName.rawValue]) //3.Only pulling data from the specified key
+        queryAllSnack.whereKey(AllSnacksKeys.snackName, equalTo: snackName) //2.Key = colum ; equalTo <the input of data>
+        queryAllSnack.selectKeys([AllSnacksKeys.snackName]) //3.Only pulling data from the specified key
         queryAllSnack.limit = 1 //4.setting a limit of returning of the same snack as 1
         
         // Begin the query and perform it it synchronously

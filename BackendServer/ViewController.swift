@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         BackEndServer.submit(Snack(name: sn, description: ""), completionHandler: { (err: NSError?) -> Void in
             if err == nil {
                 println("snack \(sn) saved")
-            } else if err?.code == RMSBackendError.Duplication.rawValue {
+            } else if err?.code == RMSBackendError.duplication {
                 println("Already has \(sn)")
             }
         })

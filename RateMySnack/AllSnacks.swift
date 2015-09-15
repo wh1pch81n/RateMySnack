@@ -14,12 +14,15 @@ enum AllSnacksKeys : String {
     case AllSnacks = "AllSnacks"
     case SnackName = "SnackName"
     case SnackDescription = "SnackDescription"
+    static var allSnacks = AllSnacksKeys.AllSnacks.rawValue
+    static var snackName = AllSnacksKeys.SnackName.rawValue
+    static var snackDescription = AllSnacksKeys.SnackDescription.rawValue
 }
 
 typealias AllSnacks = PFObject
 
 extension AllSnacks {
     static func AllSnackObject() -> AllSnacks {
-        return PFObject(className: AllSnacksKeys.AllSnacks.rawValue)
+        return PFObject(className: AllSnacksKeys.allSnacks)
     }
 }
