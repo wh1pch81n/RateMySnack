@@ -13,9 +13,6 @@ enum RMSBackendError : ErrorType {
     case Timeout
     case Duplication
     case UnexpectedNetworkError
-    static let timeout = RMSBackendError.Timeout.rawValue
-    static let duplication = RMSBackendError.Duplication.rawValue
-    static let unexpectedNetworkError = RMSBackendError.UnexpectedNetworkError.rawValue
 }
 
 /**

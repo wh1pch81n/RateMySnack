@@ -14,12 +14,11 @@ class BackEndServer: BackendDelegate {
 
     static func submit(item: SnackProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void)) {
         do {
-            let result = try BackEndServer.hasSnackNamed(item.name)
+            let result = try BackEndServer.hasSnack(item)
             guard result else {
                 // Creates an instance of AllSnack Object
-                let snack:AllSnack = PFObject.allSnackObject(item)
-                // sets the SnackName property based on the item name
-                snack["SnackName"] = item.name
+                let snack = PFObject.createAllSnacks(item)
+
                 // Save new snack in background asynhronously
                 snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                     // When the save finishes call the completion block
@@ -51,7 +50,7 @@ class BackEndServer: BackendDelegate {
             if error == nil {
                 if let objs = objects {
                     for i in objs {
-                        var fo = Snack(snack: i as! SnackProtocol)
+                        let fo = Snack(snack: i)
                         nameOfSnack.append(fo)
                     }
                     request(objs: nameOfSnack, err: nil)
@@ -60,13 +59,13 @@ class BackEndServer: BackendDelegate {
         }
     }
     
-    private static func hasSnackNamed(snackName: String, withClassName name: String = AllSnacksKeys.allSnacks) throws -> Bool {
+    private static func hasSnack(snack: SnackProtocol, withClassName name: String = AllSnacksKeys.allSnacks) throws -> Bool {
         // Make Query "AllSnacks"
         let queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
         
         // Refine queryAllSnack query to include all with the specified snameName
         
-        queryAllSnack.whereKey(AllSnacksKeys.snackName, equalTo: snackName) //2.Key = colum ; equalTo <the input of data>
+        queryAllSnack.whereKey(AllSnacksKeys.snackName, equalTo: snack.snackName) //2.Key = colum ; equalTo <the input of data>
         queryAllSnack.selectKeys([AllSnacksKeys.snackName]) //3.Only pulling data from the specified key
         queryAllSnack.limit = 1 //4.setting a limit of returning of the same snack as 1
         

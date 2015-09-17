@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        
         BackEndServer.retrieve { (objs: [SnackProtocol], err: RMSBackendError?) -> Void in
             if err == nil {
                 for i in objs { // looping though each object *i* in the array *objs*
@@ -25,7 +24,7 @@ class ViewController: UIViewController {
             }
         }
         
-        let sn = "kk"
+        let sn = "redpenny"
         BackEndServer.submit(Snack(name: sn, description: ""), completionHandler: { (err: RMSBackendError?) -> Void in
             if err == nil {
                 print("snack \(sn) saved")
