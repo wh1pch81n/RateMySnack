@@ -19,8 +19,8 @@ enum RMSBackendError : ErrorType {
 Describes the kind of object that will hold on to snack info.
 */
 protocol SnackProtocol {
-    var name:String { get set }
-    var description:String { get set }
+    var snackName:String { get set }
+    var snackDescription:String { get set }
 }
 
 protocol BackendDelegate {
