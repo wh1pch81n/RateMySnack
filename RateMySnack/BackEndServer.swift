@@ -11,36 +11,42 @@ import Parse
 import Bolts
 
 class BackEndServer: BackendDelegate {
-    
-    static func submit(item: SnackProtocol, completionHandler completion: ((err: NSError?) -> Void)) {
-        if BackEndServer.hasSnackNamed(item.snackName) {
-            completion(err: NSError(domain: .Backend, code: RMSBackendError.duplication))
-            return
-        }
-        // Creates an instance of AllSnack Object
-        var snack = PFObject.createAllSnackObject(item)
 
-        // Save new snack in background asynhronously
-        snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            // When the save finishes call the completion block
-            if (success) {
-                completion(err: nil)
+    static func submit(item: SnackProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void)) {
+        do {
+            let result = try BackEndServer.hasSnackNamed(item.name)
+            guard result else {
+                // Creates an instance of AllSnack Object
+                let snack:AllSnack = PFObject.allSnackObject(item)
+                // sets the SnackName property based on the item name
+                snack["SnackName"] = item.name
+                // Save new snack in background asynhronously
+                snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                    // When the save finishes call the completion block
+                    if (success) {
+                        completion(err: nil)
+                        return
+                    }
+                    if error?.code == PFErrorCode.ErrorTimeout.rawValue {
+                        completion(err: RMSBackendError.Timeout)
+                        return
+                    }
+                    completion(err: RMSBackendError.UnexpectedNetworkError) //Lost coonnection
+                }
                 return
             }
-            if error?.code == PFErrorCode.ErrorTimeout.rawValue {
-                completion(err: NSError(domain: .Backend, code: RMSBackendError.timeout))
-                return
-            }
-            completion(err: NSError(domain: .Backend, code: RMSBackendError.unexpectedNetworkError)) //Lost coonnection
+            completion(err: RMSBackendError.Duplication)
+        } catch {
+            completion(err: RMSBackendError.UnexpectedNetworkError)
         }
     }
     
-    static func retrieve(requestCompleted request: ((err: NSError?, objs: [SnackProtocol]) -> Void)) {
+    static func retrieve(requestCompleted request: ((objs: [SnackProtocol], err: RMSBackendError?) -> Void)) {
         
-        var findSnacks = PFQuery(className: AllSnacksKeys.allSnacks)
+        let findSnacks = PFQuery(className: AllSnacksKeys.allSnacks)
         findSnacks.includeKey(ParseObjectKeys.objectId)
         
-        findSnacks.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+        findSnacks.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             var nameOfSnack: [SnackProtocol] = []
             if error == nil {
                 if let objs = objects {
@@ -48,15 +54,15 @@ class BackEndServer: BackendDelegate {
                         var fo = Snack(snack: i as! SnackProtocol)
                         nameOfSnack.append(fo)
                     }
-                    request(err: error, objs: nameOfSnack)
+                    request(objs: nameOfSnack, err: nil)
                 }
             }
         }
     }
     
-    private static func hasSnackNamed(snackName: String, withClassName name: String = AllSnacksKeys.allSnacks) -> Bool {
+    private static func hasSnackNamed(snackName: String, withClassName name: String = AllSnacksKeys.allSnacks) throws -> Bool {
         // Make Query "AllSnacks"
-        var queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
+        let queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
         
         // Refine queryAllSnack query to include all with the specified snameName
         
@@ -64,20 +70,19 @@ class BackEndServer: BackendDelegate {
         queryAllSnack.selectKeys([AllSnacksKeys.snackName]) //3.Only pulling data from the specified key
         queryAllSnack.limit = 1 //4.setting a limit of returning of the same snack as 1
         
-        // Begin the query and perform it it synchronously
-        var err : NSError?
-        var objectsThatMatch : [AnyObject]? = queryAllSnack.findObjects(&err) //TODO:you can actually simplied this line of code with countObject
-        objectsThatMatch?.count
-        if err == nil  {
+        do {
+            // Begin the query and perform it it synchronously
+            var objectsThatMatch : [PFObject]?
+            objectsThatMatch = try queryAllSnack.findObjects()
             // If objectsThatMatch is empty then return false otherwise return true
-            if let objectsThatMatch2 = objectsThatMatch {
-                if objectsThatMatch2.count == 0 {
-                    return false
-                }
+            if let _objectsThatMatch = objectsThatMatch
+                where _objectsThatMatch.count > 0 {
+                    return true
             }
-        }
-        
-        return true
+            return false
+        } catch {
+            throw RMSBackendError.UnexpectedNetworkError
+        } //TODO:you can actually simplied this line of code with countObject
     }
     
 }
