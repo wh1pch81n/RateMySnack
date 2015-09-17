@@ -18,13 +18,13 @@ Draws a star on the given context
 */
 func starDrawing(context: CGContextRef, rect: CGRect)(_ fillColor: UIColor, _ borderColor: UIColor) {
     // Offsets used to give the star a more star-like look within the containing frame
-    var starArmY = CGRectGetMaxY(rect) * 0.4
-    var starFeetOffset = CGRectGetMaxX(rect) * 0.15
-    var starTopOffset = CGRectGetMaxY(rect) * 0.05
-    var strokeWidth = CGFloat(2.0)
+    let starArmY = CGRectGetMaxY(rect) * 0.4
+    let starFeetOffset = CGRectGetMaxX(rect) * 0.15
+    let starTopOffset = CGRectGetMaxY(rect) * 0.05
+    let strokeWidth = CGFloat(2.0)
     
     // A path for a 5-point star
-    var path: CGMutablePathRef = CGPathCreateMutable()
+    let path: CGMutablePathRef = CGPathCreateMutable()
     CGPathMoveToPoint(path, nil, CGRectGetMinX(rect) + starFeetOffset, CGRectGetMaxY(rect) - strokeWidth) // BL
     CGPathAddLineToPoint(path, nil, CGRectGetMidX(rect), CGRectGetMinY(rect) + starTopOffset + strokeWidth) // Top
     CGPathAddLineToPoint(path, nil, CGRectGetMaxX(rect) - starFeetOffset, CGRectGetMaxY(rect) - strokeWidth) // BR
@@ -53,7 +53,7 @@ class RMSStarView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        var drawing = starDrawing(UIGraphicsGetCurrentContext(), rect)
+        let drawing = starDrawing(UIGraphicsGetCurrentContext()!, rect: rect)
         if self.enabled {
             drawing(UIColor.yellowColor(), UIColor.orangeColor())
         } else {
