@@ -19,9 +19,9 @@ enum AllSnacksKeys : String {
     static let snackDescription = AllSnacksKeys.SnackDescription.rawValue
 }
 
-typealias AllSnacks = PFObject
+//typealias AllSnacks = PFObject
 
-extension AllSnacks : SnackProtocol {
+class AllSnacks : PFObject, SnackProtocol {
     var snackName:String {
         get {
             assert(parseClassName == AllSnacksKeys.allSnacks)
