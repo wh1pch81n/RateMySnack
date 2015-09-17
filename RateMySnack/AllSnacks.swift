@@ -19,9 +19,11 @@ enum AllSnacksKeys : String {
     static let snackDescription = AllSnacksKeys.SnackDescription.rawValue
 }
 
-typealias AllSnacks = PFObject
-
-extension AllSnacks : SnackProtocol {
+/**
+Not a true subclass of AllSnacks but at least this method allows for us to use the properties of AllSnacks.
+In time there may be more Parse classes than Allsnacks therefore there are asserts in this code to verify that it is the correct class.
+*/
+extension PFObject: SnackProtocol {
     var snackName:String {
         get {
             assert(parseClassName == AllSnacksKeys.allSnacks)
@@ -48,10 +50,10 @@ extension AllSnacks : SnackProtocol {
         }
     }
     
-    static func createAllSnackObject(snack: SnackProtocol) -> AllSnacks {
-        var obj = PFObject(className: AllSnacksKeys.allSnacks)
-        obj.snackName = snack.snackName
-        obj.snackDescription = snack.snackDescription
+    static func createAllSnacks(snack: SnackProtocol) -> PFObject {
+        let obj = PFObject(className: AllSnacksKeys.allSnacks)
+        obj[AllSnacksKeys.snackName] = snack.snackName
+        obj[AllSnacksKeys.snackDescription] = snack.snackDescription
         return obj
     }
 }
