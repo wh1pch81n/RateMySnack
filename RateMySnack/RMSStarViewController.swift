@@ -22,7 +22,7 @@ class RMSStarViewController: UIViewController {
     :param: buttonThatWasJustClicked a reference to the UIButton that sent a message to the target
     */
     @IBAction func tappedStar(buttonThatWasJustClicked: UIButton) {
-        var tag = buttonThatWasJustClicked.tag
+        let tag = buttonThatWasJustClicked.tag
         var starSettings: (Bool, Bool, Bool, Bool, Bool) = (false, false, false, false, false)
         
         if tag == 1 {

@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum RMSBackendError : Int {
+enum RMSBackendError : ErrorType {
+    case None
     case Timeout
     case Duplication
     case UnexpectedNetworkError
@@ -26,14 +27,14 @@ protocol BackendDelegate {
     /**
     Submits ⬆️ a FormObject to the object that comforms to BackendDelegate
     
-    :param: item an object that conforms to FormObject
-    :param: completion a block with one parameter for NSError? and void return type.  It's called by the object that conforms to the BackendDelegate when the request finishes
+    - parameter item: an object that conforms to FormObject
+    - parameter completion: a block with one parameter for NSError? and void return type.  It's called by the object that conforms to the BackendDelegate when the request finishes
     */
-    static func submit(item:SnackProtocol, completionHandler completion:((err:NSError?) -> Void))
+    static func submit(item: SnackProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void))
     /**
     Requests ⬇️ all snack data from the server
     
-    :param: request a block with one parameter for NSError? and one parameter for an array of FormObjects. It is called when the request to the server is complete.
+    - parameter request: a block with one parameter for NSError? and one parameter for an array of FormObjects. It is called when the request to the server is complete.
     */
-    static func retrieve(requestCompleted request:((err:NSError?, objs:[SnackProtocol]) -> Void))
+    static func retrieve(requestCompleted request: ((objs: [SnackProtocol], err: RMSBackendError?) -> Void))
 }

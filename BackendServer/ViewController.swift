@@ -13,23 +13,24 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        BackEndServer.retrieve { (err: NSError?, objs: [SnackProtocol] ) -> Void in
+
+        BackEndServer.retrieve { (objs: [SnackProtocol], err: RMSBackendError?) -> Void in
             if err == nil {
                 for i in objs { // looping though each object *i* in the array *objs*
-                    print(i.name)
-                    println(",")
+                    print(i.name, terminator: "")
+                    print(",")
                 }
             } else {
-                println(err)
+                print(err)
             }
         }
         
-        var sn = "Doritos"
-        BackEndServer.submit(Snack(name: sn, description: ""), completionHandler: { (err: NSError?) -> Void in
+        let sn = "kk"
+        BackEndServer.submit(Snack(name: sn, description: ""), completionHandler: { (err: RMSBackendError?) -> Void in
             if err == nil {
-                println("snack \(sn) saved")
-            } else if err?.code == RMSBackendError.Duplication.rawValue {
-                println("Already has \(sn)")
+                print("snack \(sn) saved")
+            } else if err == .Duplication {
+                print("Already has \(sn)")
             }
         })
     }
