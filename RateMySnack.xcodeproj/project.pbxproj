@@ -17,6 +17,7 @@
 		7F0706651BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */; };
 		7F0706661BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */; };
 		7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
+		7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
 		7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260171B5B5E9800F3288C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260161B5B5E9800F3288C /* CFNetwork.framework */; };
 		7FE260191B5B5EA700F3288C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260181B5B5EA700F3288C /* CoreGraphics.framework */; };
@@ -465,6 +466,7 @@
 				7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */,
 				2A0C19011B646723005A5F48 /* Snack.swift in Sources */,
 				7F0706631BA3E1E700DBE9A5 /* AllSnacks.swift in Sources */,
+				7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
