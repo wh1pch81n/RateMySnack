@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		2A0C19001B6466FB005A5F48 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C18FF1B6466FA005A5F48 /* Snack.swift */; };
 		2A0C19011B646723005A5F48 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C18FF1B6466FA005A5F48 /* Snack.swift */; };
+		2A7B292E1BAEA8B600EF04FB /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
+		2AB3D2CC1BAE0CF2002D84E3 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; settings = {ASSET_TAGS = (); }; };
+		2AB3D2CE1BAE0F58002D84E3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CD1BAE0F58002D84E3 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7F0706621BA3E1E700DBE9A5 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706611BA3E1E700DBE9A5 /* AllSnacks.swift */; };
 		7F0706631BA3E1E700DBE9A5 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706611BA3E1E700DBE9A5 /* AllSnacks.swift */; };
 		7F0706651BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */; };
 		7F0706661BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */; };
 		7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
+		7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
 		7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260171B5B5E9800F3288C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260161B5B5E9800F3288C /* CFNetwork.framework */; };
 		7FE260191B5B5EA700F3288C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260181B5B5EA700F3288C /* CoreGraphics.framework */; };
@@ -73,6 +77,9 @@
 /* Begin PBXFileReference section */
 		2A0C18FF1B6466FA005A5F48 /* Snack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		2A4AA0821B5B16FB00DDDA0B /* BackEndServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackEndServer.swift; path = ../RateMySnack/BackEndServer.swift; sourceTree = "<group>"; };
+		2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSPopUp.swift; sourceTree = "<group>"; };
+		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		2AB3D2CD1BAE0F58002D84E3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7F0706611BA3E1E700DBE9A5 /* AllSnacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSnacks.swift; sourceTree = "<group>"; };
 		7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseExtensions.swift; sourceTree = "<group>"; };
 		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +228,8 @@
 		C473685F1B50458400E97743 = {
 			isa = PBXGroup;
 			children = (
+				2AB3D2CD1BAE0F58002D84E3 /* MapViewController.swift */,
+				2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */,
 				2A4AA07D1B5B11B200DDDA0B /* frameworks */,
 				C473686A1B50458400E97743 /* RateMySnack */,
 				C47368801B50458400E97743 /* RateMySnackTests */,
@@ -256,6 +265,7 @@
 				C473686B1B50458400E97743 /* Supporting Files */,
 				82B5308B1B644EC900B07F24 /* RMSStarView.swift */,
 				82D700C81B927AC300967D64 /* RMSStarViewController.swift */,
+				2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */,
 			);
 			path = RateMySnack;
 			sourceTree = "<group>";
@@ -431,6 +441,7 @@
 				C47368731B50458400E97743 /* Main.storyboard in Resources */,
 				C47368781B50458400E97743 /* LaunchScreen.xib in Resources */,
 				C47368751B50458400E97743 /* Images.xcassets in Resources */,
+				2AB3D2CC1BAE0CF2002D84E3 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +466,7 @@
 				7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */,
 				2A0C19011B646723005A5F48 /* Snack.swift in Sources */,
 				7F0706631BA3E1E700DBE9A5 /* AllSnacks.swift in Sources */,
+				7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +484,9 @@
 			files = (
 				7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */,
 				82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */,
+				2A7B292E1BAEA8B600EF04FB /* RMSPopUp.swift in Sources */,
 				7F0706651BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */,
+				2AB3D2CE1BAE0F58002D84E3 /* MapViewController.swift in Sources */,
 				C47368701B50458400E97743 /* ViewController.swift in Sources */,
 				82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */,
 				C473686E1B50458400E97743 /* AppDelegate.swift in Sources */,
