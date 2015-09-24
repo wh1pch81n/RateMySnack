@@ -10,11 +10,11 @@ import Foundation
 import Parse
 import Bolts
 
-class BackEndServer: BackendDelegate {
+class BESInterface: BackendDelegate {
 
     static func submit(item: SnackProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void)) {
         do {
-            let result = try BackEndServer.hasSnack(item)
+            let result = try BESInterface.hasSnack(item)
             guard result else {
                 // Creates an instance of AllSnack Object
                 let snack = PFObject.createAllSnacks(item)

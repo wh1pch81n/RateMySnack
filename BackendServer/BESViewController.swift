@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BESViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         successPopUpOn(self) { (UIAlertAction) -> () in  print("cow a bunga") }
-        
-        BackEndServer.retrieve { (objs: [SnackProtocol], err: RMSBackendError?) -> Void in
+
+        BESInterface.retrieve { (objs: [SnackProtocol], err: RMSBackendError?) -> Void in
+
             if err == nil {
                 for i in objs { // looping though each object *i* in the array *objs*
                     print(i.snackName, terminator: "")
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
         }
         
         let sn = "redpenny"
-        BackEndServer.submit(Snack(name: sn, description: ""), completionHandler: { (err: RMSBackendError?) -> Void in
+        BESInterface.submit(Snack(name: sn, description: ""), completionHandler: { (err: RMSBackendError?) -> Void in
             if err == nil {
                 print("snack \(sn) saved")
             } else if err == .Duplication {
