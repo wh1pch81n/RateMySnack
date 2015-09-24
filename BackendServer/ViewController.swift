@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        successPopUpOn(self) { () -> () in
+        }
+        
         BackEndServer.retrieve { (objs: [SnackProtocol], err: RMSBackendError?) -> Void in
             if err == nil {
                 for i in objs { // looping though each object *i* in the array *objs*
