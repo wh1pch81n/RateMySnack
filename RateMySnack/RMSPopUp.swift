@@ -9,38 +9,37 @@
 import Foundation
 import UIKit
 
-func successPopUpOn(vc: UIViewController, complete: () -> ()) {
+func successPopUpOn(vc: UIViewController, didDismiss block: (UIAlertAction) -> ()) {
     let alart = UIAlertController(title: "Successful!",
         message: "Successfully submitted Snack for review.",
         preferredStyle: UIAlertControllerStyle.Alert)
     
     let okAction = UIAlertAction(title: "OK",
         style: UIAlertActionStyle.Default,
-        handler: nil)
+        handler: block)
     alart.addAction(okAction)
-    vc.presentViewController(alart, animated: true, completion: complete)
+    vc.presentViewController(alart, animated: true, completion: nil)
 }
 
-func failPopUpOn(vc: UIViewController, complete: () -> ()) {
+func failPopUpOn(vc: UIViewController, didDismiss block: (UIAlertAction) -> ()) {
     let alart = UIAlertController(title: "Ops!",
         message: "There was a problem processing your snack. Please try again later.",
         preferredStyle: UIAlertControllerStyle.Alert)
     
     let okAction = UIAlertAction(title: "OK",
         style: UIAlertActionStyle.Default,
-        handler: nil)
+        handler: block)
     alart.addAction(okAction)
-    vc.presentViewController(alart, animated: true, completion: complete)
+    vc.presentViewController(alart, animated: true, completion: nil)
 }
 
-func duplicationPopUpOn(vc: UIViewController, complete: () -> ()) {
+func duplicationPopUpOn(vc: UIViewController, didDismiss block: (UIAlertAction) -> ()) {
     let alart = UIAlertController(title: "Ops!",
         message: "This snack already exists.",
         preferredStyle: UIAlertControllerStyle.Alert)
-    
     let okAction = UIAlertAction(title: "OK",
         style: UIAlertActionStyle.Default,
-        handler: nil)
+        handler: block)
     alart.addAction(okAction)
-    vc.presentViewController(alart, animated: true, completion: complete)
+    vc.presentViewController(alart, animated: true, completion: nil)
 }
