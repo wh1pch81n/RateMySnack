@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        successPopUpOn(self) { }
+        successPopUpOn(self) { (UIAlertAction) -> () in  print("cow a bunga") }
         
         BackEndServer.retrieve { (objs: [SnackProtocol], err: RMSBackendError?) -> Void in
             if err == nil {
