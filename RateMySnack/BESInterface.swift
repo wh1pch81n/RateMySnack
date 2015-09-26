@@ -84,4 +84,57 @@ class BESInterface: BackendDelegate {
         } //TODO:you can actually simplied this line of code with countObject
     }
     
+    static func getRatingOfSnack(snack: SnackProtocol, completion: (rating: UInt, err: RMSBackendError?) -> ()) {
+      
+        func getTotalNumberOf(snack: SnackProtocol)(withRating rating: UInt) throws -> (rating: UInt, total:UInt) {
+            assert(RMSStarRatingLimit.minimum < rating && rating <= RMSStarRatingLimit.maximum)
+            
+            let queryTotal = PFQuery(className: "StarRating")
+            
+            queryTotal.whereKey("AllSnacks", equalTo: PFObject.createAllSnacks(snack))
+            queryTotal.whereKey("Rating", equalTo: rating)
+            var err: NSError?
+            let totalRatingsForSnack = queryTotal.countObjects(&err)
+            if totalRatingsForSnack == -1 {
+                throw RMSBackendError.UnexpectedNetworkError
+            }
+            return (rating: rating, total: UInt(totalRatingsForSnack))
+        }
+            
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            let totalNumberOfSnacks = getTotalNumberOf(snack)
+            do {
+                let ratings = [
+                    try totalNumberOfSnacks(withRating: 1),
+                    try totalNumberOfSnacks(withRating: 2),
+                    try totalNumberOfSnacks(withRating: 3),
+                    try totalNumberOfSnacks(withRating: 4),
+                    try totalNumberOfSnacks(withRating: 5),
+                ]
+                
+                guard let totalRatings: UInt = ratings
+                    .map({ UInt($0.total) })
+                    .reduce(0, combine: +)
+                    where totalRatings != 0 else
+                {
+                    completion(rating: 0, err: nil)
+                    return
+                }
+                
+                guard let sumOfRatings: UInt = ratings
+                    .map({ UInt($0.rating) * UInt($0.total) })
+                    .reduce(0, combine: +)
+                    where sumOfRatings != 0 else
+                {
+                    completion(rating: 0, err: nil)
+                    return
+                }
+                
+                let rating = sumOfRatings / totalRatings
+                completion(rating: rating, err: nil)
+            } catch {
+                completion(rating:0, err: RMSBackendError.UnexpectedNetworkError)
+            }
+        }
+    }
 }

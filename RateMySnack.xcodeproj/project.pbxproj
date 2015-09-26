@@ -78,10 +78,10 @@
 
 /* Begin PBXFileReference section */
 		2A0C18FF1B6466FA005A5F48 /* Snack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
+		2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BESInterface.swift; path = ../RateMySnack/BESInterface.swift; sourceTree = "<group>"; };
 		2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSPopUp.swift; sourceTree = "<group>"; };
 		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		2AB3D2CD1BAE0F58002D84E3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BESInterface.swift; path = ../RateMySnack/BESInterface.swift; sourceTree = "<group>"; };
 		7F0706611BA3E1E700DBE9A5 /* AllSnacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSnacks.swift; sourceTree = "<group>"; };
 		7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseExtensions.swift; sourceTree = "<group>"; };
 		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendDelegate.swift; sourceTree = "<group>"; };
