@@ -10,6 +10,6 @@ struct Snack: SnackProtocol {
     }
     
     init(snack obj: SnackProtocol) {
-        self.init(name: obj.snackName, description: obj.snackDescription)
+        self.init(objectId: obj.objectId!, name: obj.snackName, description: obj.snackDescription)
     }
 }
