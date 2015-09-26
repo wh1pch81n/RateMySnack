@@ -84,15 +84,22 @@ class BESInterface: BackendDelegate {
         } //TODO:you can actually simplied this line of code with countObject
     }
     
+    /**
+    Retrieves the average rating of a SnackProtocol object based on its objectId
+    - parameter snack: An object that conforms to the SnackProtocol
+    - parameter completion: a block object with rating and err
+    */
+    typealias RatingTotal = (rating: UInt, total:UInt)
     static func getRatingOfSnack(snack: SnackProtocol, completion: (rating: UInt, err: RMSBackendError?) -> ()) {
       
-        func getTotalNumberOf(snack: SnackProtocol)(withRating rating: UInt) throws -> (rating: UInt, total:UInt) {
+        func getTotalNumberOf(snack: SnackProtocol, withRating rating: UInt) throws -> RatingTotal {
             assert(RMSStarRatingLimit.minimum < rating && rating <= RMSStarRatingLimit.maximum)
+            assert(snack.objectId != nil)
             
-            let queryTotal = PFQuery(className: "StarRating")
+            let queryTotal = PFQuery(className: StarRatingKeys.starRating)
             
-            queryTotal.whereKey("AllSnacks", equalTo: PFObject.createAllSnacks(snack))
-            queryTotal.whereKey("Rating", equalTo: rating)
+            queryTotal.whereKey(StarRatingKeys.allSnacks, equalTo: PFObject.createAllSnacks(snack))
+            queryTotal.whereKey(StarRatingKeys.rating, equalTo: rating)
             var err: NSError?
             let totalRatingsForSnack = queryTotal.countObjects(&err)
             if totalRatingsForSnack == -1 {
@@ -102,29 +109,14 @@ class BESInterface: BackendDelegate {
         }
             
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            let totalNumberOfSnacks = getTotalNumberOf(snack)
             do {
-                let ratings = [
-                    try totalNumberOfSnacks(withRating: 1),
-                    try totalNumberOfSnacks(withRating: 2),
-                    try totalNumberOfSnacks(withRating: 3),
-                    try totalNumberOfSnacks(withRating: 4),
-                    try totalNumberOfSnacks(withRating: 5),
-                ]
-                
-                guard let totalRatings: UInt = ratings
-                    .map({ UInt($0.total) })
-                    .reduce(0, combine: +)
-                    where totalRatings != 0 else
-                {
-                    completion(rating: 0, err: nil)
-                    return
+                var ratings = [RatingTotal](); for i: UInt in 1...5 {
+                    ratings.append(try getTotalNumberOf(snack, withRating: i))
                 }
                 
-                guard let sumOfRatings: UInt = ratings
-                    .map({ UInt($0.rating) * UInt($0.total) })
-                    .reduce(0, combine: +)
-                    where sumOfRatings != 0 else
+                guard let totalRatings: UInt = ratings.map({ $0.total }).reduce(0, combine: +)
+                    , let sumOfRatings: UInt = ratings.map({ $0.rating * $0.total }).reduce(0, combine: +)
+                    where (totalRatings & sumOfRatings) != 0 else
                 {
                     completion(rating: 0, err: nil)
                     return
