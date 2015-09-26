@@ -11,9 +11,9 @@ import Parse
 import Bolts
 
 enum AllSnacksKeys: String {
-    case AllSnacks = "AllSnacks"
-    case SnackName = "SnackName"
-    case SnackDescription = "SnackDescription"
+    case AllSnacks
+    case SnackName
+    case SnackDescription
     static let allSnacks = AllSnacksKeys.AllSnacks.rawValue
     static let snackName = AllSnacksKeys.SnackName.rawValue
     static let snackDescription = AllSnacksKeys.SnackDescription.rawValue
