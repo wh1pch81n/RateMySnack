@@ -1,8 +1,10 @@
-struct Snack : SnackProtocol {
-    var snackName : String
-    var snackDescription : String
+struct Snack: SnackProtocol {
+    var objectId: String?
+    var snackName: String
+    var snackDescription: String
     
-    init(name:String, description:String) {
+    init(objectId: String, name: String, description: String) {
+        self.objectId = objectId
         self.snackName = name
         self.snackDescription = description
     }
