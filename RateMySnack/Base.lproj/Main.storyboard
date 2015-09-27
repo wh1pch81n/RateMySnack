@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nim-2X-i43">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="280"/>
+            <point key="canvasLocation" x="869" y="208"/>
         </scene>
         <!--Star View Controller-->
         <scene sceneID="nW0-9p-FxH">
@@ -40,14 +41,14 @@
                         <viewControllerLayoutGuide type="bottom" id="cmz-Ws-9TO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="l96-HF-B3B">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-fi-VPe" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="20" y="0.0" width="20" height="100"/>
+                                <rect key="frame" x="48" y="0.0" width="48" height="128"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fG-IW-A7J">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -65,10 +66,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-4S-lqo" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="40" y="0.0" width="20" height="100"/>
+                                <rect key="frame" x="96" y="0.0" width="48" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-51-uCn">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-51-uCn">
+                                        <rect key="frame" x="0.0" y="-15" width="48" height="128"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -86,10 +87,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXH-3J-6WU" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="60" y="0.0" width="20" height="100"/>
+                                <rect key="frame" x="144" y="0.0" width="48" height="128"/>
                                 <subviews>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL9-jq-bZz">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -107,10 +108,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-ch-mEV" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-fd-uPL">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -128,10 +129,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-K0-SjX" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="80" y="0.0" width="20" height="100"/>
+                                <rect key="frame" x="192" y="0.0" width="48" height="128"/>
                                 <subviews>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-PH-hdg">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -184,7 +185,124 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGm-9S-V0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="280"/>
+            <point key="canvasLocation" x="916.5" y="726"/>
+        </scene>
+        <!--Snack Submission Form View Controller-->
+        <scene sceneID="j8b-4x-G6t">
+            <objects>
+                <viewController id="Nim-2X-i43" customClass="RMSSnackSubmissionFormViewController" customModule="RateMySnack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PhR-LS-53y"/>
+                        <viewControllerLayoutGuide type="bottom" id="eJa-dO-dJo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KeL-ef-uTY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Snack Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0N-hg-0FD">
+                                <rect key="frame" x="235" y="63" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="147" y="58" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-EB-1at">
+                                <rect key="frame" x="174" y="131" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="75" y="118" width="240" height="128"/>
+                                </variation>
+                            </textView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQa-2W-PRr">
+                                <rect key="frame" x="174" y="261" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="75" y="259" width="240" height="82"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="gCK-K1-Fpm" kind="embed" id="Rwg-AX-tGa"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks3-Wn-KP6">
+                                <rect key="frame" x="276" y="402" width="49" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.77031603786216785" blue="0.0049957719468309847" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="19"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="0.2197520694" blue="0.1436641649" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="147" y="408" width="97" height="43"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7H-j4-v0k">
+                                <rect key="frame" x="276" y="472" width="48" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="171" y="472" width="48" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="Nim-2X-i43" kind="show" id="gmY-bd-D4j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate My Snack" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lR6-tu-63n">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" red="1" green="0.2197520694" blue="0.1436641649" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="102" y="7" width="187" height="43"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98802781105041504" green="0.33055176250637119" blue="0.18990767467694336" alpha="1" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lR6-tu-63n"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="lR6-tu-63n"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="snackDescription" destination="bYS-EB-1at" id="p0Y-5i-wbN"/>
+                        <outlet property="snackNameEntry" destination="e0N-hg-0FD" id="U0h-Cp-4MX"/>
+                        <outlet property="submitButton" destination="Ks3-Wn-KP6" id="xMb-NV-HfM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xSr-LJ-n1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259.5" y="953"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cxN-gs-1K3">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4G9-6o-PV6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LtZ-9f-jWL"/>
+                        <viewControllerLayoutGuide type="bottom" id="8hT-Ed-tN1"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9te-DA-kMV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Okg-4B-Rky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rwg-AX-tGa"/>
+    </inferredMetricsTieBreakers>
 </document>

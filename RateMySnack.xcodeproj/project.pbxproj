@@ -45,6 +45,7 @@
 		7FE260721B5B62C700F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260731B5B62C700F3288C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260111B5B5E7800F3288C /* Parse.framework */; };
 		7FE260741B5B62C700F3288C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2600D1B5B5E6300F3288C /* Bolts.framework */; };
+		825F6C241BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; };
 		82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5308B1B644EC900B07F24 /* RMSStarView.swift */; };
 		82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D700C81B927AC300967D64 /* RMSStarViewController.swift */; };
 		C473686E1B50458400E97743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686D1B50458400E97743 /* AppDelegate.swift */; };
@@ -99,6 +100,7 @@
 		7FE260461B5B610A00F3288C /* BackendServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackendServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE2604B1B5B610A00F3288C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE2604C1B5B610A00F3288C /* BackendServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendServerTests.swift; sourceTree = "<group>"; };
+		825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSSnackSubmissionFormViewController.swift; sourceTree = "<group>"; };
 		82B5308B1B644EC900B07F24 /* RMSStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSStarView.swift; sourceTree = "<group>"; };
 		82D700C81B927AC300967D64 /* RMSStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSStarViewController.swift; sourceTree = "<group>"; };
 		C47368681B50458400E97743 /* RateMySnack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RateMySnack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				C473686C1B50458400E97743 /* Info.plist */,
+				825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -372,7 +375,8 @@
 		C47368601B50458400E97743 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Ho, Derrick";
 				TargetAttributes = {
 					7FE260311B5B610A00F3288C = {
@@ -475,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				825F6C241BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift in Sources */,
 				7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */,
 				82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */,
 				C47368701B50458400E97743 /* ViewController.swift in Sources */,
@@ -578,6 +583,7 @@
 				);
 				INFOPLIST_FILE = BackendServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GA.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -592,6 +598,7 @@
 				);
 				INFOPLIST_FILE = BackendServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GA.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -610,6 +617,7 @@
 				);
 				INFOPLIST_FILE = BackendServerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GA.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BackendServer.app/BackendServer";
 			};
@@ -625,6 +633,7 @@
 				);
 				INFOPLIST_FILE = BackendServerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GA.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BackendServer.app/BackendServer";
 			};
@@ -651,6 +660,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -724,6 +734,7 @@
 				INFOPLIST_FILE = RateMySnack/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "code4fun.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -740,6 +751,7 @@
 				INFOPLIST_FILE = RateMySnack/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "code4fun.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

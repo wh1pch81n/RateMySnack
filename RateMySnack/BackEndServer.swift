@@ -18,7 +18,7 @@ class BackEndServer: BackendDelegate {
             return
         }
         // Creates an instance of AllSnack Object
-        var snack:PFObject = PFObject(className: "AllSnacks")
+        let snack:PFObject = PFObject(className: "AllSnacks")
         // sets the SnackName property based on the item name
         snack["SnackName"] = item.name
         // Save new snack in background asynhronously
@@ -38,7 +38,7 @@ class BackEndServer: BackendDelegate {
     
     static func retrieve(requestCompleted request: ((err: NSError?, objs: [SnackProtocol]) -> Void)) {
         
-        var findSnacks:PFQuery = PFQuery(className: "AllSnacks")
+        let findSnacks:PFQuery = PFQuery(className: "AllSnacks")
         findSnacks.includeKey("objectId")
         
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -46,7 +46,7 @@ class BackEndServer: BackendDelegate {
             if error == nil {
                 if let objs = objects {
                     for i in objs {
-                        var fo = Snack(name: i["SnackName"] as! String, description: "")
+                        let fo = Snack(name: i["SnackName"] as! String, description: "")
                         nameOfSnack.append(fo)
                     }
                     request(err: error, objs: nameOfSnack)
@@ -57,7 +57,7 @@ class BackEndServer: BackendDelegate {
     
     private static func hasSnackNamed(snackName: String, withClassName name: String = "AllSnacks") -> Bool {
         // Make Query "AllSnacks"
-        var queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
+        let queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
         
         // Refine queryAllSnack query to include all with the specified snameName
         queryAllSnack.whereKey("SnackName", equalTo: snackName) //2.Key = colum ; equalTo <the input of data>
@@ -66,7 +66,7 @@ class BackEndServer: BackendDelegate {
         
         // Begin the query and perform it it synchronously
         var err : NSError?
-        var objectsThatMatch : [AnyObject]? = queryAllSnack.findObjects(&err) //TODO:you can actually simplied this line of code with countObject
+        let objectsThatMatch : [AnyObject]? = queryAllSnack.findObjects(&err) //TODO:you can actually simplied this line of code with countObject
         objectsThatMatch?.count
         if err == nil  {
             // If objectsThatMatch is empty then return false otherwise return true
