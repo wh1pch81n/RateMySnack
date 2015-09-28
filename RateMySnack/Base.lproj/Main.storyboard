@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nim-2X-i43">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,175 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYK-Wq-gNb">
-                                <rect key="frame" x="16" y="28" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzI-S6-UmI">
+                                <rect key="frame" x="16" y="20" width="288" height="30"/>
+                                <state key="normal" title="Click to add Snack">
+                                    <color key="titleColor" red="1" green="0.096646149190000002" blue="0.15666739390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="gCK-K1-Fpm" kind="embed" id="m4C-Rr-JEB"/>
+                                    <segue destination="Nim-2X-i43" kind="presentation" id="Lts-tc-Sdp"/>
                                 </connections>
-                            </containerView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HzI-S6-UmI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Qt4-1r-iPb"/>
+                            <constraint firstItem="HzI-S6-UmI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Qy6-VR-S1m"/>
+                            <constraint firstItem="HzI-S6-UmI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="f0w-Um-RMW"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="208"/>
+            <point key="canvasLocation" x="-176" y="191"/>
         </scene>
-        <!--Star View Controller-->
-        <scene sceneID="nW0-9p-FxH">
+        <!--RMSStarViewController-->
+        <scene sceneID="1tx-0a-qQ3">
             <objects>
-                <viewController id="gCK-K1-Fpm" customClass="RMSStarViewController" customModule="RateMySnack" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7dz-1Y-98k"/>
-                        <viewControllerLayoutGuide type="bottom" id="cmz-Ws-9TO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="l96-HF-B3B">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-fi-VPe" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="48" y="0.0" width="48" height="128"/>
-                                <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fG-IW-A7J">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="Fcn-8c-Z2o"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="7fG-IW-A7J" secondAttribute="bottom" id="9OD-Oi-p26"/>
-                                    <constraint firstItem="7fG-IW-A7J" firstAttribute="top" secondItem="kXs-fi-VPe" secondAttribute="top" id="Da7-fI-w6d"/>
-                                    <constraint firstAttribute="trailing" secondItem="7fG-IW-A7J" secondAttribute="trailing" id="n4O-T4-Lb3"/>
-                                    <constraint firstItem="7fG-IW-A7J" firstAttribute="leading" secondItem="kXs-fi-VPe" secondAttribute="leading" id="p6o-BC-lsr"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-4S-lqo" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="96" y="0.0" width="48" height="128"/>
-                                <subviews>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-51-uCn">
-                                        <rect key="frame" x="0.0" y="-15" width="48" height="128"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="Zna-Qf-dW2"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Tpu-51-uCn" firstAttribute="top" secondItem="5f5-4S-lqo" secondAttribute="top" id="HHh-fw-Ygo"/>
-                                    <constraint firstItem="Tpu-51-uCn" firstAttribute="leading" secondItem="5f5-4S-lqo" secondAttribute="leading" id="QBx-ni-xsw"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tpu-51-uCn" secondAttribute="trailing" id="Xcs-HV-fDq"/>
-                                    <constraint firstAttribute="bottom" secondItem="Tpu-51-uCn" secondAttribute="bottom" id="wOg-QV-Ogi"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXH-3J-6WU" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="144" y="0.0" width="48" height="128"/>
-                                <subviews>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL9-jq-bZz">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="IbB-Jb-Lbg"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="OL9-jq-bZz" secondAttribute="trailing" id="6gN-EZ-mc1"/>
-                                    <constraint firstAttribute="bottom" secondItem="OL9-jq-bZz" secondAttribute="bottom" id="Ryc-JK-QSd"/>
-                                    <constraint firstItem="OL9-jq-bZz" firstAttribute="top" secondItem="LXH-3J-6WU" secondAttribute="top" id="trp-p7-mEa"/>
-                                    <constraint firstItem="OL9-jq-bZz" firstAttribute="leading" secondItem="LXH-3J-6WU" secondAttribute="leading" id="y5n-fo-P2e"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-ch-mEV" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
-                                <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-fd-uPL">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="uZx-IC-7E1"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="6Yd-fd-uPL" firstAttribute="leading" secondItem="cc6-ch-mEV" secondAttribute="leading" id="HzM-ew-1XK"/>
-                                    <constraint firstItem="6Yd-fd-uPL" firstAttribute="top" secondItem="cc6-ch-mEV" secondAttribute="top" id="Krb-a1-3aZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="6Yd-fd-uPL" secondAttribute="bottom" id="WVG-qO-kCn"/>
-                                    <constraint firstAttribute="trailing" secondItem="6Yd-fd-uPL" secondAttribute="trailing" id="Wg7-wd-eSz"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-K0-SjX" customClass="RMSStarView" customModule="RateMySnack" customModuleProvider="target">
-                                <rect key="frame" x="192" y="0.0" width="48" height="128"/>
-                                <subviews>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-PH-hdg">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedStar:" destination="gCK-K1-Fpm" eventType="touchUpInside" id="0L9-mO-CnV"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="O9T-PH-hdg" firstAttribute="leading" secondItem="3wa-K0-SjX" secondAttribute="leading" id="4p0-PJ-QKB"/>
-                                    <constraint firstAttribute="bottom" secondItem="O9T-PH-hdg" secondAttribute="bottom" id="MOf-Jg-DIo"/>
-                                    <constraint firstItem="O9T-PH-hdg" firstAttribute="top" secondItem="3wa-K0-SjX" secondAttribute="top" id="cWh-Xg-0cu"/>
-                                    <constraint firstAttribute="trailing" secondItem="O9T-PH-hdg" secondAttribute="trailing" id="v4C-9E-fXl"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3wa-K0-SjX" secondAttribute="trailing" id="75z-or-2HZ"/>
-                            <constraint firstItem="3wa-K0-SjX" firstAttribute="leading" secondItem="LXH-3J-6WU" secondAttribute="trailing" id="CeZ-k2-nwe"/>
-                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="LXH-3J-6WU" secondAttribute="bottom" id="D8O-Vp-qrc"/>
-                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="cc6-ch-mEV" secondAttribute="bottom" id="Eaa-vi-4Sz"/>
-                            <constraint firstItem="cc6-ch-mEV" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="IVr-ru-IFg"/>
-                            <constraint firstItem="cc6-ch-mEV" firstAttribute="width" secondItem="kXs-fi-VPe" secondAttribute="width" id="K6U-9R-Fu9"/>
-                            <constraint firstItem="3wa-K0-SjX" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="NBA-gF-bST"/>
-                            <constraint firstItem="LXH-3J-6WU" firstAttribute="leading" secondItem="5f5-4S-lqo" secondAttribute="trailing" id="NT0-6N-z9e"/>
-                            <constraint firstItem="cc6-ch-mEV" firstAttribute="leading" secondItem="l96-HF-B3B" secondAttribute="leading" id="SM3-gt-bDZ"/>
-                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="kXs-fi-VPe" secondAttribute="bottom" id="U6e-pb-z6z"/>
-                            <constraint firstItem="5f5-4S-lqo" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="UU1-1b-uGi"/>
-                            <constraint firstItem="kXs-fi-VPe" firstAttribute="leading" secondItem="cc6-ch-mEV" secondAttribute="trailing" id="YD2-Jg-ikI"/>
-                            <constraint firstItem="5f5-4S-lqo" firstAttribute="leading" secondItem="kXs-fi-VPe" secondAttribute="trailing" id="d18-O7-OE3"/>
-                            <constraint firstItem="kXs-fi-VPe" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="kfP-8g-UKw"/>
-                            <constraint firstItem="cc6-ch-mEV" firstAttribute="width" secondItem="LXH-3J-6WU" secondAttribute="width" id="lAo-TH-Kq5"/>
-                            <constraint firstItem="LXH-3J-6WU" firstAttribute="top" secondItem="7dz-1Y-98k" secondAttribute="bottom" id="pZ7-MN-Q1e"/>
-                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="5f5-4S-lqo" secondAttribute="bottom" id="qKi-HH-aFj"/>
-                            <constraint firstItem="cmz-Ws-9TO" firstAttribute="top" secondItem="3wa-K0-SjX" secondAttribute="bottom" id="qud-rc-i91"/>
-                            <constraint firstItem="cc6-ch-mEV" firstAttribute="width" secondItem="5f5-4S-lqo" secondAttribute="width" id="tXJ-Jm-Dny"/>
-                            <constraint firstItem="cc6-ch-mEV" firstAttribute="width" secondItem="3wa-K0-SjX" secondAttribute="width" id="zeV-c6-cUA"/>
-                        </constraints>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="starFour" destination="3wa-K0-SjX" id="d07-Eu-m6K"/>
-                        <outlet property="starOne" destination="kXs-fi-VPe" id="Ned-jx-P64"/>
-                        <outlet property="starThree" destination="LXH-3J-6WU" id="Jlj-ko-lXz"/>
-                        <outlet property="starTwo" destination="5f5-4S-lqo" id="bfP-M6-POW"/>
-                        <outlet property="starZero" destination="cc6-ch-mEV" id="W7P-Tb-OJJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TGm-9S-V0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="RMSStarViewController" storyboardName="Guage" referencedIdentifier="RMSStarViewController" id="7CL-jL-oxt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TpB-5I-KNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916.5" y="726"/>
+            <point key="canvasLocation" x="233" y="576"/>
         </scene>
         <!--Snack Submission Form View Controller-->
         <scene sceneID="j8b-4x-G6t">
@@ -196,84 +58,125 @@
                         <viewControllerLayoutGuide type="bottom" id="eJa-dO-dJo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KeL-ef-uTY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Snack Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0N-hg-0FD">
-                                <rect key="frame" x="235" y="63" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="147" y="58" width="97" height="30"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQ5-Uq-pC9">
+                                <rect key="frame" x="16" y="20" width="288" height="444"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZfN-Nv-fDl">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="444"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Snack Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0N-hg-0FD">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQa-2W-PRr">
+                                                <rect key="frame" x="0.0" y="46" width="250" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="bGk-dL-0cX"/>
+                                                    <constraint firstAttribute="height" constant="50" id="iBS-6u-XHP"/>
+                                                </constraints>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="75" y="259" width="240" height="82"/>
+                                                </variation>
+                                                <connections>
+                                                    <segue destination="7CL-jL-oxt" kind="embed" id="U2O-V0-KyV"/>
+                                                </connections>
+                                            </containerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Describe the Snack:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFA-BV-7aw">
+                                                <rect key="frame" x="0.0" y="112" width="154" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-EB-1at">
+                                                <rect key="frame" x="0.0" y="149" width="242" height="235"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Co5-2v-AbU">
+                                                <rect key="frame" x="0.0" y="400" width="250" height="44"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-8I-j3d">
+                                                        <rect key="frame" x="16" y="0.0" width="218" height="44"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7H-j4-v0k">
+                                                                <rect key="frame" x="0.0" y="0.0" width="83" height="44"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="83" id="xiS-Cm-OhL"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Cancel">
+                                                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="tappedCancelButton:" destination="Nim-2X-i43" eventType="touchUpInside" id="OEP-Hn-Jsn"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks3-Wn-KP6">
+                                                                <rect key="frame" x="99" y="0.0" width="119" height="44"/>
+                                                                <color key="backgroundColor" red="1" green="0.77031603786216785" blue="0.0049957719468309847" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="19"/>
+                                                                <state key="normal" title="Submit">
+                                                                    <color key="titleColor" red="1" green="0.2197520694" blue="0.1436641649" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="tappedSubmitButton:" destination="Nim-2X-i43" eventType="touchUpInside" id="lux-kt-nZq"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="1fm-TJ-vW8"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="EN0-8I-j3d" firstAttribute="top" secondItem="Co5-2v-AbU" secondAttribute="top" id="7Yf-cd-BNG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EN0-8I-j3d" secondAttribute="trailing" constant="16" id="BcL-FX-rh9"/>
+                                                    <constraint firstItem="EN0-8I-j3d" firstAttribute="leading" secondItem="Co5-2v-AbU" secondAttribute="leading" constant="16" id="MMT-Mv-eeT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EN0-8I-j3d" secondAttribute="bottom" id="Sqz-cm-WIz"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bYS-EB-1at" secondAttribute="trailing" constant="8" id="9NW-Rq-d2E"/>
+                                            <constraint firstAttribute="trailing" secondItem="e0N-hg-0FD" secondAttribute="trailing" id="Ouf-Vv-vnc"/>
+                                            <constraint firstItem="Co5-2v-AbU" firstAttribute="top" secondItem="bYS-EB-1at" secondAttribute="bottom" constant="16" id="dI1-74-Otg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Co5-2v-AbU" secondAttribute="trailing" id="xcp-Ak-YTF"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZfN-Nv-fDl" secondAttribute="bottom" id="09V-Q4-ieg"/>
+                                    <constraint firstItem="ZfN-Nv-fDl" firstAttribute="top" secondItem="fQ5-Uq-pC9" secondAttribute="top" id="ILe-Zr-hAO"/>
+                                    <constraint firstItem="ZfN-Nv-fDl" firstAttribute="centerY" secondItem="fQ5-Uq-pC9" secondAttribute="centerY" id="K0m-tn-c00"/>
+                                    <constraint firstItem="ZfN-Nv-fDl" firstAttribute="centerY" secondItem="fQ5-Uq-pC9" secondAttribute="centerY" id="QRN-Ac-gEK"/>
+                                    <constraint firstItem="ZfN-Nv-fDl" firstAttribute="leading" secondItem="fQ5-Uq-pC9" secondAttribute="leading" id="Vtv-ob-QUd"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZfN-Nv-fDl" secondAttribute="trailing" id="WkM-KT-akY"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="K0m-tn-c00"/>
+                                    </mask>
                                 </variation>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-EB-1at">
-                                <rect key="frame" x="174" y="131" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="75" y="118" width="240" height="128"/>
-                                </variation>
-                            </textView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQa-2W-PRr">
-                                <rect key="frame" x="174" y="261" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="75" y="259" width="240" height="82"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="gCK-K1-Fpm" kind="embed" id="Rwg-AX-tGa"/>
-                                </connections>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks3-Wn-KP6">
-                                <rect key="frame" x="276" y="402" width="49" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.77031603786216785" blue="0.0049957719468309847" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="19"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" red="1" green="0.2197520694" blue="0.1436641649" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="147" y="408" width="97" height="43"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7H-j4-v0k">
-                                <rect key="frame" x="276" y="472" width="48" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="472" width="48" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="Nim-2X-i43" kind="show" id="gmY-bd-D4j"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate My Snack" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lR6-tu-63n">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="highlightedColor" red="1" green="0.2197520694" blue="0.1436641649" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="102" y="7" width="187" height="43"/>
-                                </variation>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.98802781105041504" green="0.33055176250637119" blue="0.18990767467694336" alpha="1" colorSpace="calibratedRGB"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="lR6-tu-63n"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="lR6-tu-63n"/>
-                            </mask>
-                        </variation>
+                        <constraints>
+                            <constraint firstItem="eJa-dO-dJo" firstAttribute="top" secondItem="fQ5-Uq-pC9" secondAttribute="bottom" constant="16" id="Bfb-CL-fQk"/>
+                            <constraint firstItem="fQ5-Uq-pC9" firstAttribute="leading" secondItem="KeL-ef-uTY" secondAttribute="leadingMargin" id="XeW-JA-9PI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fQ5-Uq-pC9" secondAttribute="trailing" id="bUu-nr-Yg5"/>
+                            <constraint firstItem="fQ5-Uq-pC9" firstAttribute="top" secondItem="PhR-LS-53y" secondAttribute="bottom" id="p5A-N8-IZY"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="Bfb-CL-fQk" id="Qbc-YL-JR2"/>
                         <outlet property="snackDescription" destination="bYS-EB-1at" id="p0Y-5i-wbN"/>
                         <outlet property="snackNameEntry" destination="e0N-hg-0FD" id="U0h-Cp-4MX"/>
                         <outlet property="submitButton" destination="Ks3-Wn-KP6" id="xMb-NV-HfM"/>
@@ -281,28 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSr-LJ-n1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259.5" y="953"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="cxN-gs-1K3">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4G9-6o-PV6" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LtZ-9f-jWL"/>
-                        <viewControllerLayoutGuide type="bottom" id="8hT-Ed-tN1"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9te-DA-kMV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Okg-4B-Rky" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="233" y="191"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Rwg-AX-tGa"/>
-    </inferredMetricsTieBreakers>
 </document>
