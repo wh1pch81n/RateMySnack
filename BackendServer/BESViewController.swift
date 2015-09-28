@@ -12,7 +12,9 @@ class BESViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        BESInterface.getRatingOfSnack(Snack(objectId: "gppjXFzUQg", name: "", description: "")) { (rating, err) -> () in
+        var s = Snack(name: "", description: "")
+        s.objectId = "gppjXFzUQg"
+        BESInterface.getRatingOfSnack(s) { (rating, err) -> () in
             if err != nil {
                 
             }

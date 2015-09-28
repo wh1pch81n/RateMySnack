@@ -52,6 +52,7 @@ extension PFObject: SnackProtocol {
     
     static func createAllSnacks(snack: SnackProtocol) -> PFObject {
         let obj = PFObject(className: AllSnacksKeys.allSnacks)
+        obj.objectId = snack.objectId
         obj[AllSnacksKeys.snackName] = snack.snackName
         obj[AllSnacksKeys.snackDescription] = snack.snackDescription
         return obj
