@@ -10,23 +10,12 @@ import Foundation
 import UIKit
 
 private let CONSTRAINT_FOR_BOTTOM_WHEN_NO_KEYBOARD = CGFloat(16)
-private let CONSTRAINT_CHANGE_ANIMATION_TIME = NSTimeInterval(5)
+private let CONSTRAINT_CHANGE_ANIMATION_TIME = NSTimeInterval(0.5)
 
 enum RMSSubmissionFormError: ErrorType {
     case SnackName
     case SnackDescription
 //    case SnackRating // TODO: Include a value for the Star Rating
-}
-
-infix operator >% { associativity right precedence 90 }
-/**
-Looks like a pair of scissors.  Will create a split string based on delimiters
-- parameter stringToSplit: This string will be split based on the delimiter
-- parameter delimiters: Each character in this string will be used to separate stringToSplit
-- returns: An array of string components separated by the delimiters
-*/
-func >%(stringToSplit: String, delimiters: String) -> [String] {
-    return (stringToSplit as NSString).componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: delimiters))
 }
 
 func keyboardFrameFrom(notification: NSNotification) -> CGRect? {
@@ -35,7 +24,7 @@ func keyboardFrameFrom(notification: NSNotification) -> CGRect? {
 
 class RMSSnackSubmissionFormViewController: UIViewController {
     
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var snackNameEntry: UITextField!
     @IBOutlet var snackDescription: UITextView!
     @IBOutlet var submitButton: UIButton!
@@ -63,9 +52,9 @@ class RMSSnackSubmissionFormViewController: UIViewController {
             }
         }
         
-        keyboardNotification(UIKeyboardWillChangeFrameNotification) { self.bottomConstraint.constant = $0 }
-        keyboardNotification(UIKeyboardWillShowNotification) { self.bottomConstraint.constant = $0 }
-        keyboardNotification(UIKeyboardDidHideNotification) { _ in self.bottomConstraint.constant = CONSTRAINT_FOR_BOTTOM_WHEN_NO_KEYBOARD }
+        keyboardNotification(UIKeyboardWillChangeFrameNotification) { self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: $0, right: 0) }
+        keyboardNotification(UIKeyboardWillShowNotification) { self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: $0, right: 0) }
+        keyboardNotification(UIKeyboardDidHideNotification) { _ in self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: CONSTRAINT_FOR_BOTTOM_WHEN_NO_KEYBOARD, right: 0) }
     }
     
     func cleanFormData() {

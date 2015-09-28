@@ -18,6 +18,7 @@
 		7F0706661BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */; };
 		7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
 		7F69D9871BB9137C0079FF0E /* Guage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F69D9861BB9137C0079FF0E /* Guage.storyboard */; settings = {ASSET_TAGS = (); }; };
+		7F84F99D1BB9F53300D22757 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; settings = {ASSET_TAGS = (); }; };
 		7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
 		7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260171B5B5E9800F3288C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260161B5B5E9800F3288C /* CFNetwork.framework */; };
@@ -84,6 +85,7 @@
 		7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseExtensions.swift; sourceTree = "<group>"; };
 		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendDelegate.swift; sourceTree = "<group>"; };
 		7F69D9861BB9137C0079FF0E /* Guage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Guage.storyboard; sourceTree = "<group>"; };
+		7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorOverload.swift; sourceTree = "<group>"; };
 		7FE2600D1B5B5E6300F3288C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7FE260111B5B5E7800F3288C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7FE260141B5B5E9100F3288C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -262,6 +264,7 @@
 				C47368741B50458400E97743 /* Images.xcassets */,
 				C47368761B50458400E97743 /* LaunchScreen.xib */,
 				825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */,
+				7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */,
 				82B5308B1B644EC900B07F24 /* RMSStarView.swift */,
 				82D700C81B927AC300967D64 /* RMSStarViewController.swift */,
 				2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */,
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F84F99D1BB9F53300D22757 /* OperatorOverload.swift in Sources */,
 				825F6C241BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift in Sources */,
 				7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */,
 				82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */,
