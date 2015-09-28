@@ -18,6 +18,8 @@
 		7F0706661BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */; };
 		7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
 		7F69D9851BB85AAF0079FF0E /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 7F69D9841BB85AAF0079FF0E /* ReadMe.md */; settings = {ASSET_TAGS = (); }; };
+		7F69D9871BB9137C0079FF0E /* Guage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F69D9861BB9137C0079FF0E /* Guage.storyboard */; settings = {ASSET_TAGS = (); }; };
+		7F84F99D1BB9F53300D22757 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; settings = {ASSET_TAGS = (); }; };
 		7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
 		7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260171B5B5E9800F3288C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260161B5B5E9800F3288C /* CFNetwork.framework */; };
@@ -25,7 +27,6 @@
 		7FE2601B1B5B5EB100F3288C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2601A1B5B5EB100F3288C /* CoreLocation.framework */; };
 		7FE2601D1B5B5EBE00F3288C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2601C1B5B5EBE00F3288C /* QuartzCore.framework */; };
 		7FE2601F1B5B5EC900F3288C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2601E1B5B5EC900F3288C /* Security.framework */; };
-		7FE260211B5B5ED200F3288C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260201B5B5ED200F3288C /* StoreKit.framework */; };
 		7FE260231B5B5EE300F3288C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260221B5B5EE300F3288C /* SystemConfiguration.framework */; };
 		7FE260281B5B5F6B00F3288C /* BESInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */; };
 		7FE260371B5B610A00F3288C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE260361B5B610A00F3288C /* AppDelegate.swift */; };
@@ -39,7 +40,6 @@
 		7FE260671B5B628100F3288C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260111B5B5E7800F3288C /* Parse.framework */; };
 		7FE260681B5B628100F3288C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2600D1B5B5E6300F3288C /* Bolts.framework */; };
 		7FE2606B1B5B62C700F3288C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260221B5B5EE300F3288C /* SystemConfiguration.framework */; };
-		7FE2606C1B5B62C700F3288C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260201B5B5ED200F3288C /* StoreKit.framework */; };
 		7FE2606D1B5B62C700F3288C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2601E1B5B5EC900F3288C /* Security.framework */; };
 		7FE2606E1B5B62C700F3288C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2601C1B5B5EBE00F3288C /* QuartzCore.framework */; };
 		7FE2606F1B5B62C700F3288C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2601A1B5B5EB100F3288C /* CoreLocation.framework */; };
@@ -48,6 +48,7 @@
 		7FE260721B5B62C700F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260731B5B62C700F3288C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260111B5B5E7800F3288C /* Parse.framework */; };
 		7FE260741B5B62C700F3288C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2600D1B5B5E6300F3288C /* Bolts.framework */; };
+		825F6C241BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; };
 		82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5308B1B644EC900B07F24 /* RMSStarView.swift */; };
 		82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D700C81B927AC300967D64 /* RMSStarViewController.swift */; };
 		C473686E1B50458400E97743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686D1B50458400E97743 /* AppDelegate.swift */; };
@@ -85,6 +86,9 @@
 		7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseExtensions.swift; sourceTree = "<group>"; };
 		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendDelegate.swift; sourceTree = "<group>"; };
 		7F69D9841BB85AAF0079FF0E /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		7F69D9861BB9137C0079FF0E /* Guage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Guage.storyboard; sourceTree = "<group>"; };
+		7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorOverload.swift; sourceTree = "<group>"; };
+		7F84F9A51BBA034D00D22757 /* ParseVisualModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParseVisualModel.xcdatamodel; sourceTree = "<group>"; };
 		7FE2600D1B5B5E6300F3288C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7FE260111B5B5E7800F3288C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7FE260141B5B5E9100F3288C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -93,7 +97,6 @@
 		7FE2601A1B5B5EB100F3288C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7FE2601C1B5B5EBE00F3288C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7FE2601E1B5B5EC900F3288C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		7FE260201B5B5ED200F3288C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7FE260221B5B5EE300F3288C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7FE260321B5B610A00F3288C /* BackendServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackendServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE260351B5B610A00F3288C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		7FE260461B5B610A00F3288C /* BackendServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackendServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE2604B1B5B610A00F3288C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE2604C1B5B610A00F3288C /* BackendServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendServerTests.swift; sourceTree = "<group>"; };
+		825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSSnackSubmissionFormViewController.swift; sourceTree = "<group>"; };
 		82B5308B1B644EC900B07F24 /* RMSStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSStarView.swift; sourceTree = "<group>"; };
 		82D700C81B927AC300967D64 /* RMSStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSStarViewController.swift; sourceTree = "<group>"; };
 		C47368681B50458400E97743 /* RateMySnack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RateMySnack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +129,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FE2606B1B5B62C700F3288C /* SystemConfiguration.framework in Frameworks */,
-				7FE2606C1B5B62C700F3288C /* StoreKit.framework in Frameworks */,
 				7FE2606D1B5B62C700F3288C /* Security.framework in Frameworks */,
 				7FE2606E1B5B62C700F3288C /* QuartzCore.framework in Frameworks */,
 				7FE2606F1B5B62C700F3288C /* CoreLocation.framework in Frameworks */,
@@ -151,7 +154,6 @@
 				7FE260671B5B628100F3288C /* Parse.framework in Frameworks */,
 				7FE260681B5B628100F3288C /* Bolts.framework in Frameworks */,
 				7FE260231B5B5EE300F3288C /* SystemConfiguration.framework in Frameworks */,
-				7FE260211B5B5ED200F3288C /* StoreKit.framework in Frameworks */,
 				7FE2601F1B5B5EC900F3288C /* Security.framework in Frameworks */,
 				7FE2601D1B5B5EBE00F3288C /* QuartzCore.framework in Frameworks */,
 				7FE2601B1B5B5EB100F3288C /* CoreLocation.framework in Frameworks */,
@@ -175,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				7FE260221B5B5EE300F3288C /* SystemConfiguration.framework */,
-				7FE260201B5B5ED200F3288C /* StoreKit.framework */,
 				7FE2601E1B5B5EC900F3288C /* Security.framework */,
 				7FE2601C1B5B5EBE00F3288C /* QuartzCore.framework */,
 				7FE2601A1B5B5EB100F3288C /* CoreLocation.framework */,
@@ -263,12 +264,15 @@
 				7F0706611BA3E1E700DBE9A5 /* AllSnacks.swift */,
 				7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */,
 				C47368711B50458400E97743 /* Main.storyboard */,
+				7F69D9861BB9137C0079FF0E /* Guage.storyboard */,
 				C47368741B50458400E97743 /* Images.xcassets */,
 				C47368761B50458400E97743 /* LaunchScreen.xib */,
-				C473686B1B50458400E97743 /* Supporting Files */,
+				825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */,
+				7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */,
 				82B5308B1B644EC900B07F24 /* RMSStarView.swift */,
 				82D700C81B927AC300967D64 /* RMSStarViewController.swift */,
 				2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */,
+				C473686B1B50458400E97743 /* Supporting Files */,
 			);
 			path = RateMySnack;
 			sourceTree = "<group>";
@@ -277,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				C473686C1B50458400E97743 /* Info.plist */,
+				7F84F9A41BBA034D00D22757 /* ParseVisualModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -391,6 +396,12 @@
 					};
 					C47368671B50458400E97743 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = SX585CK9M9;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					C473687C1B50458400E97743 = {
 						CreatedOnToolsVersion = 6.4;
@@ -445,6 +456,7 @@
 				C47368781B50458400E97743 /* LaunchScreen.xib in Resources */,
 				C47368751B50458400E97743 /* Images.xcassets in Resources */,
 				2AB3D2CC1BAE0CF2002D84E3 /* Map.storyboard in Resources */,
+				7F69D9871BB9137C0079FF0E /* Guage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +497,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F84F99D1BB9F53300D22757 /* OperatorOverload.swift in Sources */,
+				825F6C241BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift in Sources */,
 				7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */,
 				82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */,
 				7F69D9851BB85AAF0079FF0E /* ReadMe.md in Sources */,
@@ -695,7 +709,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -734,7 +748,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -751,7 +765,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RateMySnack/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lsqlite3",
@@ -772,7 +786,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RateMySnack/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lsqlite3",
@@ -833,6 +847,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7F84F9A41BBA034D00D22757 /* ParseVisualModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7F84F9A51BBA034D00D22757 /* ParseVisualModel.xcdatamodel */,
+			);
+			currentVersion = 7F84F9A51BBA034D00D22757 /* ParseVisualModel.xcdatamodel */;
+			name = ParseVisualModel.xcdatamodeld;
+			path = ../BackendServer/ParseVisualModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C47368601B50458400E97743 /* Project object */;
 }
