@@ -86,6 +86,7 @@
 		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendDelegate.swift; sourceTree = "<group>"; };
 		7F69D9861BB9137C0079FF0E /* Guage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Guage.storyboard; sourceTree = "<group>"; };
 		7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorOverload.swift; sourceTree = "<group>"; };
+		7F84F9A51BBA034D00D22757 /* ParseVisualModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParseVisualModel.xcdatamodel; sourceTree = "<group>"; };
 		7FE2600D1B5B5E6300F3288C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7FE260111B5B5E7800F3288C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7FE260141B5B5E9100F3288C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -277,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				C473686C1B50458400E97743 /* Info.plist */,
+				7F84F9A41BBA034D00D22757 /* ParseVisualModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -841,6 +843,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7F84F9A41BBA034D00D22757 /* ParseVisualModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7F84F9A51BBA034D00D22757 /* ParseVisualModel.xcdatamodel */,
+			);
+			currentVersion = 7F84F9A51BBA034D00D22757 /* ParseVisualModel.xcdatamodel */;
+			name = ParseVisualModel.xcdatamodeld;
+			path = ../BackendServer/ParseVisualModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C47368601B50458400E97743 /* Project object */;
 }
