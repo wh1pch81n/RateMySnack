@@ -38,8 +38,8 @@
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>to update the map</string>
-	<key>NSLocationWhenUsageDescription</key>
-	<string>use your location to generate your wall feed</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Please allow us to use your current location.  It will only be used when the app is in use but will shut off auto matically when you aren't using the app.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -12,13 +12,14 @@
 		2A7B292E1BAEA8B600EF04FB /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
 		2AB3D2CC1BAE0CF2002D84E3 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; settings = {ASSET_TAGS = (); }; };
 		2AB7D1341BB67582000944A3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCD0301BB539D20057781E /* LocationManager.swift */; settings = {ASSET_TAGS = (); }; };
-		2AB7D1361BB91BD6000944A3 /* RMSMapPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapPicker.swift */; settings = {ASSET_TAGS = (); }; };
+		2AB7D1361BB91BD6000944A3 /* RMSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2ADCD0311BB539D20057781E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCD0301BB539D20057781E /* LocationManager.swift */; settings = {ASSET_TAGS = (); }; };
-		2AF54FBD1BBA74F200FAD40F /* RMSMapPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapPicker.swift */; settings = {ASSET_TAGS = (); }; };
+		2AF54FBD1BBA74F200FAD40F /* RMSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7F0706621BA3E1E700DBE9A5 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706611BA3E1E700DBE9A5 /* AllSnacks.swift */; };
 		7F0706631BA3E1E700DBE9A5 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706611BA3E1E700DBE9A5 /* AllSnacks.swift */; };
 		7F0706651BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */; };
 		7F0706661BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */; };
+		7F31D9D01BBAE79700B6CCE8 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
 		7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
 		7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
@@ -82,7 +83,7 @@
 		2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BESInterface.swift; path = ../RateMySnack/BESInterface.swift; sourceTree = "<group>"; };
 		2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSPopUp.swift; sourceTree = "<group>"; };
 		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		2AB7D1351BB91BD6000944A3 /* RMSMapPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSMapPicker.swift; sourceTree = "<group>"; };
+		2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSMapViewController.swift; sourceTree = "<group>"; };
 		2ADCD0301BB539D20057781E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = ../LocationManager.swift; sourceTree = "<group>"; };
 		7F0706611BA3E1E700DBE9A5 /* AllSnacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSnacks.swift; sourceTree = "<group>"; };
 		7F0706641BA4F9D200DBE9A5 /* ParseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseExtensions.swift; sourceTree = "<group>"; };
@@ -270,6 +271,7 @@
 				82B5308B1B644EC900B07F24 /* RMSStarView.swift */,
 				82D700C81B927AC300967D64 /* RMSStarViewController.swift */,
 				2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */,
+				2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */,
 			);
 			path = RateMySnack;
 			sourceTree = "<group>";
@@ -278,7 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				C473686C1B50458400E97743 /* Info.plist */,
-				2AB7D1351BB91BD6000944A3 /* RMSMapPicker.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -429,6 +430,7 @@
 				7FE2603C1B5B610A00F3288C /* Main.storyboard in Resources */,
 				7FE260411B5B610A00F3288C /* LaunchScreen.xib in Resources */,
 				7FE2603E1B5B610A00F3288C /* Images.xcassets in Resources */,
+				7F31D9D01BBAE79700B6CCE8 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +473,7 @@
 				7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */,
 				2A0C19011B646723005A5F48 /* Snack.swift in Sources */,
 				7F0706631BA3E1E700DBE9A5 /* AllSnacks.swift in Sources */,
-				2AF54FBD1BBA74F200FAD40F /* RMSMapPicker.swift in Sources */,
+				2AF54FBD1BBA74F200FAD40F /* RMSMapViewController.swift in Sources */,
 				7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */,
 				2AB7D1341BB67582000944A3 /* LocationManager.swift in Sources */,
 			);
@@ -492,7 +494,7 @@
 				7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */,
 				82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */,
 				2A7B292E1BAEA8B600EF04FB /* RMSPopUp.swift in Sources */,
-				2AB7D1361BB91BD6000944A3 /* RMSMapPicker.swift in Sources */,
+				2AB7D1361BB91BD6000944A3 /* RMSMapViewController.swift in Sources */,
 				7F0706651BA4F9D200DBE9A5 /* ParseExtensions.swift in Sources */,
 				C47368701B50458400E97743 /* ViewController.swift in Sources */,
 				82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */,
