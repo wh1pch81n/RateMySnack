@@ -3,24 +3,60 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="Htj-DV-wju">
             <objects>
-                <viewController id="aEw-Ke-cYT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RMSMapViewController" id="aEw-Ke-cYT" customClass="RMSMapViewController" customModule="BackendServer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pMa-Ji-8N3"/>
                         <viewControllerLayoutGuide type="bottom" id="fJ2-4P-PQr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="j8n-ok-jOT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qDs-tO-sus">
+                                <rect key="frame" x="20" y="20" width="336" height="318"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="318" id="bsH-DR-THE"/>
+                                    <constraint firstAttribute="width" constant="336" id="rfE-DG-uzD"/>
+                                </constraints>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaJ-wt-PFq">
+                                <rect key="frame" x="40" y="346" width="296" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgA-ZA-oQJ">
+                                <rect key="frame" x="165" y="384" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="updateCurrentLocationButtonTapped:" destination="aEw-Ke-cYT" eventType="touchUpInside" id="Pa4-QI-flo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PgA-ZA-oQJ" firstAttribute="centerX" secondItem="qDs-tO-sus" secondAttribute="centerX" id="13F-Yn-Rv2"/>
+                            <constraint firstItem="yaJ-wt-PFq" firstAttribute="leading" secondItem="qDs-tO-sus" secondAttribute="leading" constant="20" id="4g4-BU-JKF"/>
+                            <constraint firstItem="yaJ-wt-PFq" firstAttribute="top" secondItem="qDs-tO-sus" secondAttribute="bottom" constant="8" id="Moh-OA-e0w"/>
+                            <constraint firstItem="qDs-tO-sus" firstAttribute="leading" secondItem="j8n-ok-jOT" secondAttribute="leadingMargin" id="kKj-jA-C1D"/>
+                            <constraint firstItem="PgA-ZA-oQJ" firstAttribute="top" secondItem="yaJ-wt-PFq" secondAttribute="bottom" constant="8" id="uS5-Oj-SCB"/>
+                            <constraint firstItem="qDs-tO-sus" firstAttribute="trailing" secondItem="yaJ-wt-PFq" secondAttribute="trailing" constant="20" id="yUf-t2-Z40"/>
+                            <constraint firstItem="qDs-tO-sus" firstAttribute="top" secondItem="pMa-Ji-8N3" secondAttribute="bottom" id="zfE-vQ-V6r"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="qDs-tO-sus" id="zGr-qB-Kbx"/>
+                        <outlet property="textField" destination="yaJ-wt-PFq" id="03S-aF-1ux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Y2-BD-3Ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441" y="341"/>
+            <point key="canvasLocation" x="456" y="315"/>
         </scene>
     </scenes>
 </document>

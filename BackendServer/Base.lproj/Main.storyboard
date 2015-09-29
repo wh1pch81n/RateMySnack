@@ -16,33 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hUv-tP-eZA">
-                                <rect key="frame" x="20" y="20" width="336" height="318"/>
-                            </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0k-LO-e8t">
-                                <rect key="frame" x="37" y="340" width="303" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKl-bJ-Eac">
-                                <rect key="frame" x="144" y="386" width="89" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvq-rf-Kt8">
+                                <rect key="frame" x="20" y="28" width="72" height="30"/>
+                                <state key="normal" title="Show Map"/>
                                 <connections>
-                                    <action selector="updateCurrentLocationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RrD-No-apW"/>
+                                    <segue destination="tJN-6B-w9Q" kind="presentation" id="f4D-dk-zlf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="currentLocationTextfield" destination="a0k-LO-e8t" id="3dm-hF-zwx"/>
-                        <outlet property="mapView" destination="hUv-tP-eZA" id="uv3-5x-Db2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542.5" y="149.5"/>
+            <point key="canvasLocation" x="502.5" y="88.5"/>
+        </scene>
+        <!--RMSMapViewController-->
+        <scene sceneID="qYw-bP-Ag5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="RMSMapViewController" storyboardName="Map" referencedIdentifier="RMSMapViewController" id="tJN-6B-w9Q" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Fm-Nn-vyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897.5" y="71"/>
         </scene>
     </scenes>
 </document>

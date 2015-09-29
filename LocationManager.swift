@@ -224,9 +224,7 @@ class LocationManager: NSObject,CLLocationManagerDelegate {
         if showVerboseMessage {verbose = verboseMessage}
         completionHandler?(latitude: 0.0, longitude: 0.0, status: locationStatus as String, verboseMessage:verbose,error: error.localizedDescription)
         
-        if ((delegate != nil) && (delegate?.respondsToSelector(Selector("locationManagerReceivedError:")))!){
-            delegate?.locationManagerReceivedError!(error.localizedDescription)
-        }
+        delegate?.locationManagerReceivedError?(error.localizedDescription)
     }
     
     internal func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -245,10 +243,8 @@ class LocationManager: NSObject,CLLocationManagerDelegate {
         
         if showVerboseMessage {verbose = verboseMessage}
         
-        if(completionHandler != nil){
-            
-            completionHandler?(latitude: latitude, longitude: longitude, status: locationStatus as String,verboseMessage:verbose, error: nil)
-        }
+        completionHandler?(latitude: latitude, longitude: longitude, status: locationStatus as String,verboseMessage:verbose, error: nil)
+        
         
         lastKnownLatitude = coordLatLon.latitude
         lastKnownLongitude = coordLatLon.longitude
@@ -258,17 +254,11 @@ class LocationManager: NSObject,CLLocationManagerDelegate {
         
         hasLastKnownLocation = true
         
-        if (delegate != nil){
-            if((delegate?.respondsToSelector(Selector("locationFoundGetAsString:longitude:")))!){
-                delegate?.locationFoundGetAsString!(latitudeAsString,longitude:longitudeAsString)
-            }
-            if((delegate?.respondsToSelector(Selector("locationFound:longitude:")))!){
-                delegate?.locationFound(latitude,longitude:longitude)
-            }
-        }
+        delegate?.locationFoundGetAsString?(latitudeAsString,longitude:longitudeAsString)
+        delegate?.locationFound(latitude,longitude:longitude)
     }
     
-    
+
     internal func locationManager(manager: CLLocationManager,
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
             var hasAuthorised = false
