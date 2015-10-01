@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+    <entity name="AllSnacks" parentEntity="ParseObject" syncable="YES">
+        <attribute name="snackDescription" attributeType="String" syncable="YES"/>
+        <attribute name="snackName" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ParseObject" isAbstract="YES" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="StarRating" parentEntity="ParseObject" syncable="YES">
+        <attribute name="rating" attributeType="Integer 16" minValueString="1" maxValueString="5" defaultValueString="0" syncable="YES"/>
+        <relationship name="allSnacks" maxCount="1" deletionRule="Nullify" destinationEntity="AllSnacks" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" parentEntity="ParseObject" syncable="YES">
+        <attribute name="authData" attributeType="Binary" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailVerified" attributeType="Boolean" syncable="YES"/>
+        <attribute name="password" attributeType="String" syncable="YES"/>
+        <attribute name="username" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AllSnacks" positionX="-317" positionY="9" width="128" height="73"/>
+        <element name="StarRating" positionX="-126" positionY="9" width="128" height="88"/>
+        <element name="User" positionX="79" positionY="-9" width="128" height="118"/>
+        <element name="ParseObject" positionX="-117" positionY="173" width="128" height="88"/>
+    </elements>
+</model>
