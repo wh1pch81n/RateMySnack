@@ -85,7 +85,7 @@ class BESInterface: BackendDelegate {
     }
     
     /**
-    Retrieves the average rating of a SnackProtocol object based on its objectId
+    Retrieves the average rating of a SnackProtocol object based on its objectId. DEPRECATED: (Will be replaced with an Cloud Code Equivalent)
     - parameter snack: An object that conforms to the SnackProtocol
     - parameter completion: a block object with rating and err
     */
