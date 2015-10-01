@@ -10,10 +10,10 @@ import Foundation
 import Parse
 import Bolts
 
-enum AllSnacksKeys : String {
-    case AllSnacks = "AllSnacks"
-    case SnackName = "SnackName"
-    case SnackDescription = "SnackDescription"
+enum AllSnacksKeys: String {
+    case AllSnacks
+    case SnackName
+    case SnackDescription
     static let allSnacks = AllSnacksKeys.AllSnacks.rawValue
     static let snackName = AllSnacksKeys.SnackName.rawValue
     static let snackDescription = AllSnacksKeys.SnackDescription.rawValue
@@ -24,7 +24,7 @@ Not a true subclass of AllSnacks but at least this method allows for us to use t
 In time there may be more Parse classes than Allsnacks therefore there are asserts in this code to verify that it is the correct class.
 */
 extension PFObject: SnackProtocol {
-    var snackName:String {
+    var snackName: String {
         get {
             assert(parseClassName == AllSnacksKeys.allSnacks)
             let _snackName: AnyObject? = self[AllSnacksKeys.snackName]
@@ -37,7 +37,7 @@ extension PFObject: SnackProtocol {
         }
     }
     
-    var snackDescription:String {
+    var snackDescription: String {
         get {
             assert(parseClassName == AllSnacksKeys.allSnacks)
             let _snackDescription: AnyObject? = self[AllSnacksKeys.snackDescription]
@@ -52,6 +52,7 @@ extension PFObject: SnackProtocol {
     
     static func createAllSnacks(snack: SnackProtocol) -> PFObject {
         let obj = PFObject(className: AllSnacksKeys.allSnacks)
+        obj.objectId = snack.objectId
         obj[AllSnacksKeys.snackName] = snack.snackName
         obj[AllSnacksKeys.snackDescription] = snack.snackDescription
         return obj

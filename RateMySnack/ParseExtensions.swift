@@ -9,7 +9,7 @@
 import Parse
 import Bolts
 
-enum ParseObjectKeys : String {
+enum ParseObjectKeys: String {
     case ObjectId = "objectId"
     case CreatedAt = "createdAt"
     case UpdatedAt = "updatedAt"
@@ -18,7 +18,7 @@ enum ParseObjectKeys : String {
     static let updatedAt = ParseObjectKeys.UpdatedAt.rawValue
 }
 
-enum ParseKeys : String {
+enum ParseKeys: String {
     case ApplicationId = "r7EqA8YMRx0ew2OaE2ebKZnErKWdJgmR1hBtQBAQ"
     case ClientKey = "tIWDqmLYrdcquuzznkZS9iJ5CqX8ieOYZhhT4bnz"
     static let applicationId = ParseKeys.ApplicationId.rawValue

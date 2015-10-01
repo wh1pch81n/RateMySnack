@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RMSBackendError : ErrorType {
+enum RMSBackendError: ErrorType {
     case None
     case Timeout
     case Duplication
@@ -19,8 +19,9 @@ enum RMSBackendError : ErrorType {
 Describes the kind of object that will hold on to snack info.
 */
 protocol SnackProtocol {
-    var snackName:String { get set }
-    var snackDescription:String { get set }
+    var objectId: String? { get }
+    var snackName: String { get set }
+    var snackDescription: String { get set }
 }
 
 protocol BackendDelegate {
