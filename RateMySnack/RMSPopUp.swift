@@ -22,7 +22,7 @@ func successPopUpOn(vc: UIViewController, didDismiss block: (UIAlertAction) -> (
 }
 
 func failPopUpOn(vc: UIViewController, didDismiss block: (UIAlertAction) -> ()) {
-    let alart = UIAlertController(title: "Ops!",
+    let alart = UIAlertController(title: "Oops!",
         message: "There was a problem processing your snack. Please try again later.",
         preferredStyle: UIAlertControllerStyle.Alert)
     
@@ -34,7 +34,7 @@ func failPopUpOn(vc: UIViewController, didDismiss block: (UIAlertAction) -> ()) 
 }
 
 func duplicationPopUpOn(vc: UIViewController, didDismiss block: (UIAlertAction) -> ()) {
-    let alart = UIAlertController(title: "Ops!",
+    let alart = UIAlertController(title: "Oops!",
         message: "This snack already exists.",
         preferredStyle: UIAlertControllerStyle.Alert)
     let okAction = UIAlertAction(title: "OK",
@@ -42,4 +42,18 @@ func duplicationPopUpOn(vc: UIViewController, didDismiss block: (UIAlertAction) 
         handler: block)
     alart.addAction(okAction)
     vc.presentViewController(alart, animated: true, completion: nil)
+}
+
+func inCompletePopUp(vc: UIViewController, didDismiss block: (UIAlertAction) -> ()) {
+    let messageAlert = UIAlertController(title: "oops!",
+        message: "missing entry",
+        preferredStyle: UIAlertControllerStyle.Alert)
+        
+    let okAction = UIAlertAction(title: "OK",
+        style: UIAlertActionStyle.Default,
+        handler: block)
+    messageAlert.addAction(okAction)
+    vc.presentViewController(messageAlert, animated: true, completion: nil)
+        
+    
 }
