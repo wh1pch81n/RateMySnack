@@ -75,8 +75,7 @@ class RMSSnackSubmissionFormViewController: UIViewController {
         if snackDescription.text == "" {
             throw RMSSubmissionFormError.SnackDescription
         }
-        
-        }
+    }
 
 
     @IBAction func tappedCancelButton(sender: UIButton) {
@@ -94,16 +93,17 @@ class RMSSnackSubmissionFormViewController: UIViewController {
                 // TODO: It failes it should show the submission form again.
                 // <#code code #>
             }
-        } catch {
-            inCompletePopUp(self) { (UIAlertAction) -> () in
+        } catch RMSSubmissionFormError.SnackName {
+            incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackName, didDismiss: { (UIAlertAction) -> () in
                 
-            }
-
-        
-            // TODO: Display Error Pop Ups
+            })
+        } catch RMSSubmissionFormError.SnackDescription {
+            // TODO: What goes here?
             // code code
-   }
-}
-
+        } catch {
+            assertionFailure("Impossible Error")
+        }
+    }
+    
 }
 

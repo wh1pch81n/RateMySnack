@@ -13,7 +13,6 @@
 		2AB3D2CC1BAE0CF2002D84E3 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; settings = {ASSET_TAGS = (); }; };
 		2AB3D2CE1BAE0F58002D84E3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CD1BAE0F58002D84E3 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
-		7F69D9851BB85AAF0079FF0E /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 7F69D9841BB85AAF0079FF0E /* ReadMe.md */; settings = {ASSET_TAGS = (); }; };
 		7F69D9871BB9137C0079FF0E /* Guage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F69D9861BB9137C0079FF0E /* Guage.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7F84F99D1BB9F53300D22757 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; settings = {ASSET_TAGS = (); }; };
 		7F84F99F1BB9FD5300D22757 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99E1BB9FD5300D22757 /* AllSnacks.swift */; settings = {ASSET_TAGS = (); }; };
@@ -517,7 +516,6 @@
 				7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */,
 				82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */,
 				7FEF02E91BB5AC450058EF8C /* StarRating.swift in Sources */,
-				7F69D9851BB85AAF0079FF0E /* ReadMe.md in Sources */,
 				2A7B292E1BAEA8B600EF04FB /* RMSPopUp.swift in Sources */,
 				7F84F9A31BB9FEDE00D22757 /* AllSnacks.swift in Sources */,
 				2AB3D2CE1BAE0F58002D84E3 /* MapViewController.swift in Sources */,
