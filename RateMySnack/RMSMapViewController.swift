@@ -10,12 +10,24 @@ import Foundation
 import MapKit
 import CoreLocation
 
-class RMSMapViewController: UIViewController {
+protocol RMSMapPicker {
+    weak var delegate: RMSMapPickerDelegate? { get set }
+}
+
+protocol RMSMapPickerDelegate: class {
+    func mapDidTapCancel()
+    func mapDidTapSave(coordinate: CLLocationCoordinate2D)
+}
+
+class RMSMapViewController: UIViewController, UITextFieldDelegate, RMSMapPicker {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var textField: UITextField!
-    
+    weak var delegate: RMSMapPickerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyBoard")
+        self.view.addGestureRecognizer(tap)
+        self.textField.delegate = self
     }
     
     func displayLocation(location: CLLocation) {
@@ -38,8 +50,9 @@ class RMSMapViewController: UIViewController {
     func displayEnteredAdress(address: String) {
         LocationManager.sharedInstance.geocodeAddressString(address: address) { (geocodeInfo, placemark, error) -> Void in
             if let geocodeInfo = geocodeInfo {
-                guard let lattitude = CLLocationDegrees(geocodeInfo["latitude"] as! String),
-                let longtitude = CLLocationDegrees(geocodeInfo["longtitude"] as! String)
+                guard
+                    let lattitude = CLLocationDegrees(geocodeInfo["latitude"] as! String),
+                    let longtitude = CLLocationDegrees(geocodeInfo["longitude"] as! String)
                     else {
                         //Handle problem
                         return
@@ -58,6 +71,14 @@ class RMSMapViewController: UIViewController {
         }
     }
     
+    //Dismssing keyboard
+    func DismissKeyBoard() {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     // MARK: Buttons
     @IBAction func updateCurrentLocationButtonTapped(sender: AnyObject) {
         getLocation()
@@ -72,6 +93,5 @@ class RMSMapViewController: UIViewController {
             displayEnteredAdress(t)
         }
     }
-    
     
 }

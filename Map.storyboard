@@ -29,19 +29,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgA-ZA-oQJ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgA-ZA-oQJ">
                                 <rect key="frame" x="165" y="384" width="46" height="30"/>
-                                <state key="normal" title="Current"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="159" y="384" width="57" height="30"/>
-                                </variation>
+                                <state key="normal" title="Current">
+                                    <color key="titleColor" red="0.30906723479999998" green="0.30906723479999998" blue="0.30906723479999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="updateCurrentLocationButtonTapped:" destination="aEw-Ke-cYT" eventType="touchUpInside" id="Pa4-QI-flo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVI-6h-lGu">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.30906723479999998" green="0.30906723479999998" blue="0.30906723479999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedSearchAddressButton:" destination="aEw-Ke-cYT" eventType="touchUpInside" id="Tku-VC-TyF"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTh-Ao-FVe">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.42471590910000001" green="0.42471590910000001" blue="0.42471590910000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="159" y="562" width="58" height="30"/>
                                 </variation>
@@ -49,37 +60,41 @@
                                     <action selector="cancelButtonTapped:" destination="aEw-Ke-cYT" eventType="touchUpInside" id="Z54-yr-9iL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVI-6h-lGu">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Search"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="275" y="384" width="61" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="tappedSearchAddressButton:" destination="aEw-Ke-cYT" eventType="touchUpInside" id="Tku-VC-TyF"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PgA-ZA-oQJ" firstAttribute="centerX" secondItem="qDs-tO-sus" secondAttribute="centerX" id="13F-Yn-Rv2"/>
                             <constraint firstItem="yaJ-wt-PFq" firstAttribute="leading" secondItem="qDs-tO-sus" secondAttribute="leading" constant="20" id="4g4-BU-JKF"/>
+                            <constraint firstItem="PgA-ZA-oQJ" firstAttribute="centerX" secondItem="yaJ-wt-PFq" secondAttribute="centerX" id="CVn-ML-pVi"/>
                             <constraint firstItem="yaJ-wt-PFq" firstAttribute="top" secondItem="qDs-tO-sus" secondAttribute="bottom" constant="8" id="Moh-OA-e0w"/>
+                            <constraint firstItem="gVI-6h-lGu" firstAttribute="centerY" secondItem="PgA-ZA-oQJ" secondAttribute="centerY" id="fxk-aD-z5a"/>
+                            <constraint firstItem="PgA-ZA-oQJ" firstAttribute="top" secondItem="yaJ-wt-PFq" secondAttribute="bottom" constant="8" id="k3N-st-wfO"/>
                             <constraint firstItem="qDs-tO-sus" firstAttribute="leading" secondItem="j8n-ok-jOT" secondAttribute="leadingMargin" id="kKj-jA-C1D"/>
-                            <constraint firstItem="PgA-ZA-oQJ" firstAttribute="top" secondItem="yaJ-wt-PFq" secondAttribute="bottom" constant="8" id="uS5-Oj-SCB"/>
+                            <constraint firstItem="gVI-6h-lGu" firstAttribute="leading" secondItem="PgA-ZA-oQJ" secondAttribute="trailing" constant="68" id="o8h-7s-D2p"/>
                             <constraint firstItem="qDs-tO-sus" firstAttribute="trailing" secondItem="yaJ-wt-PFq" secondAttribute="trailing" constant="20" id="yUf-t2-Z40"/>
                             <constraint firstItem="qDs-tO-sus" firstAttribute="top" secondItem="pMa-Ji-8N3" secondAttribute="bottom" id="zfE-vQ-V6r"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="cTh-Ao-FVe"/>
                                 <exclude reference="gVI-6h-lGu"/>
+                                <exclude reference="cTh-Ao-FVe"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="CVn-ML-pVi"/>
+                                <exclude reference="k3N-st-wfO"/>
+                                <exclude reference="fxk-aD-z5a"/>
+                                <exclude reference="o8h-7s-D2p"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="cTh-Ao-FVe"/>
                                 <include reference="gVI-6h-lGu"/>
+                                <include reference="cTh-Ao-FVe"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="CVn-ML-pVi"/>
+                                <include reference="k3N-st-wfO"/>
+                                <include reference="fxk-aD-z5a"/>
+                                <include reference="o8h-7s-D2p"/>
                             </mask>
                         </variation>
                     </view>
