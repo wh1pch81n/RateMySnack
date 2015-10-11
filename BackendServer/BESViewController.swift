@@ -9,7 +9,7 @@
 import UIKit
 
 class BESViewController: UIViewController {
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         var s = Snack(name: "", description: "")
@@ -20,7 +20,6 @@ class BESViewController: UIViewController {
             }
             print(rating)
         }
-    
     }
     
 }

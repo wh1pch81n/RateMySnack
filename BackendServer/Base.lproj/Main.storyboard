@@ -13,13 +13,32 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvq-rf-Kt8">
+                                <rect key="frame" x="20" y="28" width="72" height="30"/>
+                                <state key="normal" title="Show Map"/>
+                                <connections>
+                                    <segue destination="tJN-6B-w9Q" kind="presentation" id="f4D-dk-zlf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="502.5" y="88.5"/>
+        </scene>
+        <!--RMSMapViewController-->
+        <scene sceneID="qYw-bP-Ag5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="RMSMapViewController" storyboardName="Map" referencedIdentifier="RMSMapViewController" id="tJN-6B-w9Q" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Fm-Nn-vyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897.5" y="71"/>
         </scene>
     </scenes>
 </document>
