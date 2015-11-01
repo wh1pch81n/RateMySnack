@@ -90,14 +90,20 @@ class RMSSnackSubmissionFormViewController: UIViewController {
             // <#code code #>
             
             BESInterface.submit(Snack(name: snackNameEntry.text!, description: snackDescription.text)) { (err) -> Void in
-                // TODO: It failes it should show the submission form again.
+//                if (error: true = RMSSubmissionFormError.SnackDescription {
+//                incompleteSnackFormPopUpOn(dismissViewControllerAnimated(true, completion: nil)
+//                    )
+                // TODO: It failes it should show the submission form again. i can dismiss the loading screen, and find out if there is an error, or duplicate or the other one, 3 pop ups i should handle here.
                 // <#code code #>
-            }
-        } catch RMSSubmissionFormError.SnackName {
+            
+        };)
+            catch RMSSubmissionFormError.SnackName {
             incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackName, didDismiss: { (UIAlertAction) -> () in
                 
             })
-        } catch RMSSubmissionFormError.SnackDescription {
+                } catch RMSSubmissionFormError.SnackDescription {
+                        incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackDescription, didDismiss: { (UIAlertAction) -> () in
+            })
             // TODO: What goes here?
             // code code
         } catch {
