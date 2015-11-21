@@ -9,19 +9,26 @@
 /* Begin PBXBuildFile section */
 		2A0C19001B6466FB005A5F48 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C18FF1B6466FA005A5F48 /* Snack.swift */; };
 		2A0C19011B646723005A5F48 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C18FF1B6466FA005A5F48 /* Snack.swift */; };
-		2A7B292E1BAEA8B600EF04FB /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
-		2AB3D2CC1BAE0CF2002D84E3 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; settings = {ASSET_TAGS = (); }; };
-		2AB7D1361BB91BD6000944A3 /* RMSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		2AF54FBD1BBA74F200FAD40F /* RMSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7F31D9D01BBAE79700B6CCE8 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; settings = {ASSET_TAGS = (); }; };
-		7F3CB93A1BC9FD7B00E759F7 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F9A01BB9FDFA00D22757 /* ParseExtensions.swift */; settings = {ASSET_TAGS = (); }; };
-		7F3CB93B1BC9FED900E759F7 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99E1BB9FD5300D22757 /* AllSnacks.swift */; settings = {ASSET_TAGS = (); }; };
+		2A7B292E1BAEA8B600EF04FB /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; };
+		2AB3D2CC1BAE0CF2002D84E3 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; };
+		2AB7D1361BB91BD6000944A3 /* RMSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */; };
+		2AF54FBD1BBA74F200FAD40F /* RMSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */; };
+		2F8DDF811C00E566005A4002 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7F1C00E566005A4002 /* Bolts.framework */; };
+		2F8DDF821C00E566005A4002 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF801C00E566005A4002 /* Parse.framework */; };
+		2F8DDF831C00E5AD005A4002 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; };
+		2F8DDF841C00E662005A4002 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF801C00E566005A4002 /* Parse.framework */; };
+		2F8DDF851C00E668005A4002 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7F1C00E566005A4002 /* Bolts.framework */; };
+		2FFE1D251C00FA9B00E1203E /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7C1C00E4D4005A4002 /* LocationManager.framework */; };
+		2FFE1D261C00FAA200E1203E /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7C1C00E4D4005A4002 /* LocationManager.framework */; };
+		7F31D9D01BBAE79700B6CCE8 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; };
+		7F3CB93A1BC9FD7B00E759F7 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F9A01BB9FDFA00D22757 /* ParseExtensions.swift */; };
+		7F3CB93B1BC9FED900E759F7 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99E1BB9FD5300D22757 /* AllSnacks.swift */; };
 		7F67A94F1B5AF95400230509 /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
-		7F69D9871BB9137C0079FF0E /* Guage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F69D9861BB9137C0079FF0E /* Guage.storyboard */; settings = {ASSET_TAGS = (); }; };
-		7F84F99D1BB9F53300D22757 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; settings = {ASSET_TAGS = (); }; };
-		7F84F9A21BB9FE0300D22757 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F9A01BB9FDFA00D22757 /* ParseExtensions.swift */; settings = {ASSET_TAGS = (); }; };
-		7F84F9A31BB9FEDE00D22757 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99E1BB9FD5300D22757 /* AllSnacks.swift */; settings = {ASSET_TAGS = (); }; };
-		7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; settings = {ASSET_TAGS = (); }; };
+		7F69D9871BB9137C0079FF0E /* Guage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F69D9861BB9137C0079FF0E /* Guage.storyboard */; };
+		7F84F99D1BB9F53300D22757 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; };
+		7F84F9A21BB9FE0300D22757 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F9A01BB9FDFA00D22757 /* ParseExtensions.swift */; };
+		7F84F9A31BB9FEDE00D22757 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99E1BB9FD5300D22757 /* AllSnacks.swift */; };
+		7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; };
 		7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260171B5B5E9800F3288C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260161B5B5E9800F3288C /* CFNetwork.framework */; };
 		7FE260191B5B5EA700F3288C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260181B5B5EA700F3288C /* CoreGraphics.framework */; };
@@ -38,8 +45,6 @@
 		7FE2604D1B5B610A00F3288C /* BackendServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2604C1B5B610A00F3288C /* BackendServerTests.swift */; };
 		7FE260541B5B612D00F3288C /* BESInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */; };
 		7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67A94E1B5AF95400230509 /* BackendDelegate.swift */; };
-		7FE260671B5B628100F3288C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260111B5B5E7800F3288C /* Parse.framework */; };
-		7FE260681B5B628100F3288C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2600D1B5B5E6300F3288C /* Bolts.framework */; };
 		7FE2606B1B5B62C700F3288C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260221B5B5EE300F3288C /* SystemConfiguration.framework */; };
 		7FE2606D1B5B62C700F3288C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2601E1B5B5EC900F3288C /* Security.framework */; };
 		7FE2606E1B5B62C700F3288C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2601C1B5B5EBE00F3288C /* QuartzCore.framework */; };
@@ -47,13 +52,11 @@
 		7FE260701B5B62C700F3288C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260181B5B5EA700F3288C /* CoreGraphics.framework */; };
 		7FE260711B5B62C700F3288C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260161B5B5E9800F3288C /* CFNetwork.framework */; };
 		7FE260721B5B62C700F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
-		7FE260731B5B62C700F3288C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260111B5B5E7800F3288C /* Parse.framework */; };
-		7FE260741B5B62C700F3288C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE2600D1B5B5E6300F3288C /* Bolts.framework */; };
-		7FEF02E91BB5AC450058EF8C /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF02E81BB5AC450058EF8C /* StarRating.swift */; settings = {ASSET_TAGS = (); }; };
-		7FEF02EA1BB5AC450058EF8C /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF02E81BB5AC450058EF8C /* StarRating.swift */; settings = {ASSET_TAGS = (); }; };
+		7FEF02E91BB5AC450058EF8C /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF02E81BB5AC450058EF8C /* StarRating.swift */; };
+		7FEF02EA1BB5AC450058EF8C /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF02E81BB5AC450058EF8C /* StarRating.swift */; };
 		825F6C241BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; };
 		82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5308B1B644EC900B07F24 /* RMSStarView.swift */; };
-		82C049CF1BC09DD200CDD031 /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		82C049CF1BC09DD200CDD031 /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; };
 		82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D700C81B927AC300967D64 /* RMSStarViewController.swift */; };
 		C473686E1B50458400E97743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686D1B50458400E97743 /* AppDelegate.swift */; };
 		C47368701B50458400E97743 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686F1B50458400E97743 /* ViewController.swift */; };
@@ -64,16 +67,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7FC3FF2D1C00194F006514E3 /* PBXContainerItemProxy */ = {
+		2F8DDF7B1C00E4D4005A4002 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7FC3FF281C00194E006514E3 /* LocationManager.xcodeproj */;
+			containerPortal = 2F8DDF761C00E4D4005A4002 /* LocationManager.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7FC3FF031C001721006514E3;
 			remoteInfo = LocationManager;
 		};
-		7FC3FF2F1C00194F006514E3 /* PBXContainerItemProxy */ = {
+		2F8DDF7D1C00E4D4005A4002 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7FC3FF281C00194E006514E3 /* LocationManager.xcodeproj */;
+			containerPortal = 2F8DDF761C00E4D4005A4002 /* LocationManager.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7FC3FF0D1C001722006514E3;
 			remoteInfo = LocationManagerTests;
@@ -96,20 +99,20 @@
 
 /* Begin PBXFileReference section */
 		2A0C18FF1B6466FA005A5F48 /* Snack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
-		2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BESInterface.swift; path = ../RateMySnack/BESInterface.swift; sourceTree = "<group>"; };
+		2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BESInterface.swift; sourceTree = "<group>"; };
 		2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSPopUp.swift; sourceTree = "<group>"; };
-		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSMapViewController.swift; sourceTree = "<group>"; };
+		2F8DDF761C00E4D4005A4002 /* LocationManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LocationManager.xcodeproj; path = Frameworks3rdParty/LocationManager/LocationManager_Framework/LocationManager.xcodeproj; sourceTree = "<group>"; };
+		2F8DDF7F1C00E566005A4002 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks3rdParty/Bolts.framework; sourceTree = "<group>"; };
+		2F8DDF801C00E566005A4002 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks3rdParty/Parse.framework; sourceTree = "<group>"; };
 		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendDelegate.swift; sourceTree = "<group>"; };
 		7F69D9841BB85AAF0079FF0E /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
-		7F69D9861BB9137C0079FF0E /* Guage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Guage.storyboard; sourceTree = "<group>"; };
+		7F69D9861BB9137C0079FF0E /* Guage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Guage.storyboard; path = Base.lproj/Guage.storyboard; sourceTree = "<group>"; };
 		7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorOverload.swift; sourceTree = "<group>"; };
 		7F84F99E1BB9FD5300D22757 /* AllSnacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllSnacks.swift; path = RateMySnack/AllSnacks.swift; sourceTree = SOURCE_ROOT; };
 		7F84F9A01BB9FDFA00D22757 /* ParseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParseExtensions.swift; path = RateMySnack/ParseExtensions.swift; sourceTree = SOURCE_ROOT; };
 		7F84F9A51BBA034D00D22757 /* ParseVisualModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParseVisualModel.xcdatamodel; sourceTree = "<group>"; };
-		7FC3FF281C00194E006514E3 /* LocationManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LocationManager.xcodeproj; path = LocationManager/LocationManager_Framework/LocationManager.xcodeproj; sourceTree = "<group>"; };
-		7FE2600D1B5B5E6300F3288C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		7FE260111B5B5E7800F3288C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7FE260141B5B5E9100F3288C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7FE260161B5B5E9800F3288C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7FE260181B5B5EA700F3288C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,6 +151,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFE1D251C00FA9B00E1203E /* LocationManager.framework in Frameworks */,
+				2F8DDF811C00E566005A4002 /* Bolts.framework in Frameworks */,
+				2F8DDF821C00E566005A4002 /* Parse.framework in Frameworks */,
 				7FE2606B1B5B62C700F3288C /* SystemConfiguration.framework in Frameworks */,
 				7FE2606D1B5B62C700F3288C /* Security.framework in Frameworks */,
 				7FE2606E1B5B62C700F3288C /* QuartzCore.framework in Frameworks */,
@@ -155,8 +161,6 @@
 				7FE260701B5B62C700F3288C /* CoreGraphics.framework in Frameworks */,
 				7FE260711B5B62C700F3288C /* CFNetwork.framework in Frameworks */,
 				7FE260721B5B62C700F3288C /* AudioToolbox.framework in Frameworks */,
-				7FE260731B5B62C700F3288C /* Parse.framework in Frameworks */,
-				7FE260741B5B62C700F3288C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,8 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FE260671B5B628100F3288C /* Parse.framework in Frameworks */,
-				7FE260681B5B628100F3288C /* Bolts.framework in Frameworks */,
+				2FFE1D261C00FAA200E1203E /* LocationManager.framework in Frameworks */,
 				7FE260231B5B5EE300F3288C /* SystemConfiguration.framework in Frameworks */,
 				7FE2601F1B5B5EC900F3288C /* Security.framework in Frameworks */,
 				7FE2601D1B5B5EBE00F3288C /* QuartzCore.framework in Frameworks */,
@@ -180,6 +183,8 @@
 				7FE260191B5B5EA700F3288C /* CoreGraphics.framework in Frameworks */,
 				7FE260171B5B5E9800F3288C /* CFNetwork.framework in Frameworks */,
 				7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */,
+				2F8DDF841C00E662005A4002 /* Parse.framework in Frameworks */,
+				2F8DDF851C00E668005A4002 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +201,7 @@
 		2A4AA07D1B5B11B200DDDA0B /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7FC3FF281C00194E006514E3 /* LocationManager.xcodeproj */,
+				2F8DDF761C00E4D4005A4002 /* LocationManager.xcodeproj */,
 				7FE260221B5B5EE300F3288C /* SystemConfiguration.framework */,
 				7FE2601E1B5B5EC900F3288C /* Security.framework */,
 				7FE2601C1B5B5EBE00F3288C /* QuartzCore.framework */,
@@ -204,10 +209,19 @@
 				7FE260181B5B5EA700F3288C /* CoreGraphics.framework */,
 				7FE260161B5B5E9800F3288C /* CFNetwork.framework */,
 				7FE260141B5B5E9100F3288C /* AudioToolbox.framework */,
-				7FE260111B5B5E7800F3288C /* Parse.framework */,
-				7FE2600D1B5B5E6300F3288C /* Bolts.framework */,
+				2F8DDF7F1C00E566005A4002 /* Bolts.framework */,
+				2F8DDF801C00E566005A4002 /* Parse.framework */,
 			);
 			name = frameworks;
+			sourceTree = "<group>";
+		};
+		2F8DDF771C00E4D4005A4002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F8DDF7C1C00E4D4005A4002 /* LocationManager.framework */,
+				2F8DDF7E1C00E4D4005A4002 /* LocationManagerTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7F7E42F81BB73B1A00CD31A7 /* ParseClasses */ = {
@@ -219,15 +233,6 @@
 			name = ParseClasses;
 			sourceTree = "<group>";
 		};
-		7FC3FF291C00194E006514E3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7FC3FF2E1C00194F006514E3 /* LocationManager.framework */,
-				7FC3FF301C00194F006514E3 /* LocationManagerTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		7FE260331B5B610A00F3288C /* BackendServer */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +241,7 @@
 				7FE260361B5B610A00F3288C /* AppDelegate.swift */,
 				7FE260381B5B610A00F3288C /* BESViewController.swift */,
 				2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */,
+				7F67A94E1B5AF95400230509 /* BackendDelegate.swift */,
 				7FE2603A1B5B610A00F3288C /* Main.storyboard */,
 				7FE2603D1B5B610A00F3288C /* Images.xcassets */,
 				7FE2603F1B5B610A00F3288C /* LaunchScreen.xib */,
@@ -273,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				7F69D9841BB85AAF0079FF0E /* ReadMe.md */,
-				2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */,
 				2A4AA07D1B5B11B200DDDA0B /* frameworks */,
 				C473686A1B50458400E97743 /* RateMySnack */,
 				C47368801B50458400E97743 /* RateMySnackTests */,
@@ -300,7 +305,7 @@
 				C473686D1B50458400E97743 /* AppDelegate.swift */,
 				C473686F1B50458400E97743 /* ViewController.swift */,
 				2A0C18FF1B6466FA005A5F48 /* Snack.swift */,
-				7F67A94E1B5AF95400230509 /* BackendDelegate.swift */,
+				2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */,
 				C47368711B50458400E97743 /* Main.storyboard */,
 				7F69D9861BB9137C0079FF0E /* Guage.storyboard */,
 				C47368741B50458400E97743 /* Images.xcassets */,
@@ -461,8 +466,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 7FC3FF291C00194E006514E3 /* Products */;
-					ProjectRef = 7FC3FF281C00194E006514E3 /* LocationManager.xcodeproj */;
+					ProductGroup = 2F8DDF771C00E4D4005A4002 /* Products */;
+					ProjectRef = 2F8DDF761C00E4D4005A4002 /* LocationManager.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -476,18 +481,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		7FC3FF2E1C00194F006514E3 /* LocationManager.framework */ = {
+		2F8DDF7C1C00E4D4005A4002 /* LocationManager.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = LocationManager.framework;
-			remoteRef = 7FC3FF2D1C00194F006514E3 /* PBXContainerItemProxy */;
+			remoteRef = 2F8DDF7B1C00E4D4005A4002 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7FC3FF301C00194F006514E3 /* LocationManagerTests.xctest */ = {
+		2F8DDF7E1C00E4D4005A4002 /* LocationManagerTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = LocationManagerTests.xctest;
-			remoteRef = 7FC3FF2F1C00194F006514E3 /* PBXContainerItemProxy */;
+			remoteRef = 2F8DDF7D1C00E4D4005A4002 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -546,6 +551,7 @@
 				7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */,
 				7F3CB93A1BC9FD7B00E759F7 /* ParseExtensions.swift in Sources */,
 				2A0C19011B646723005A5F48 /* Snack.swift in Sources */,
+				2F8DDF831C00E5AD005A4002 /* OperatorOverload.swift in Sources */,
 				2AF54FBD1BBA74F200FAD40F /* RMSMapViewController.swift in Sources */,
 				7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */,
 			);
@@ -665,6 +671,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks3rdParty",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -689,6 +696,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks3rdParty",
 				);
 				INFOPLIST_FILE = BackendServer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -830,6 +838,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)/Frameworks3rdParty",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = RateMySnack/Info.plist;
@@ -853,6 +862,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)/Frameworks3rdParty",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = RateMySnack/Info.plist;
