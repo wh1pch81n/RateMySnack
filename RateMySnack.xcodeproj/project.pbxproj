@@ -18,6 +18,8 @@
 		2F8DDF831C00E5AD005A4002 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; };
 		2F8DDF841C00E662005A4002 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF801C00E566005A4002 /* Parse.framework */; };
 		2F8DDF851C00E668005A4002 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7F1C00E566005A4002 /* Bolts.framework */; };
+		2FFE1D251C00FA9B00E1203E /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7C1C00E4D4005A4002 /* LocationManager.framework */; };
+		2FFE1D261C00FAA200E1203E /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7C1C00E4D4005A4002 /* LocationManager.framework */; };
 		7F31D9D01BBAE79700B6CCE8 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; };
 		7F3CB93A1BC9FD7B00E759F7 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F9A01BB9FDFA00D22757 /* ParseExtensions.swift */; };
 		7F3CB93B1BC9FED900E759F7 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99E1BB9FD5300D22757 /* AllSnacks.swift */; };
@@ -99,12 +101,12 @@
 		2A0C18FF1B6466FA005A5F48 /* Snack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BESInterface.swift; sourceTree = "<group>"; };
 		2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSPopUp.swift; sourceTree = "<group>"; };
-		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = RateMySnack/Base.lproj/Map.storyboard; sourceTree = "<group>"; };
+		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSMapViewController.swift; sourceTree = "<group>"; };
 		2F8DDF761C00E4D4005A4002 /* LocationManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LocationManager.xcodeproj; path = Frameworks3rdParty/LocationManager/LocationManager_Framework/LocationManager.xcodeproj; sourceTree = "<group>"; };
 		2F8DDF7F1C00E566005A4002 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks3rdParty/Bolts.framework; sourceTree = "<group>"; };
 		2F8DDF801C00E566005A4002 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks3rdParty/Parse.framework; sourceTree = "<group>"; };
-		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendDelegate.swift; path = ../BackendServer/BackendDelegate.swift; sourceTree = "<group>"; };
+		7F67A94E1B5AF95400230509 /* BackendDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendDelegate.swift; sourceTree = "<group>"; };
 		7F69D9841BB85AAF0079FF0E /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		7F69D9861BB9137C0079FF0E /* Guage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Guage.storyboard; path = Base.lproj/Guage.storyboard; sourceTree = "<group>"; };
 		7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorOverload.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFE1D251C00FA9B00E1203E /* LocationManager.framework in Frameworks */,
 				2F8DDF811C00E566005A4002 /* Bolts.framework in Frameworks */,
 				2F8DDF821C00E566005A4002 /* Parse.framework in Frameworks */,
 				7FE2606B1B5B62C700F3288C /* SystemConfiguration.framework in Frameworks */,
@@ -172,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFE1D261C00FAA200E1203E /* LocationManager.framework in Frameworks */,
 				7FE260231B5B5EE300F3288C /* SystemConfiguration.framework in Frameworks */,
 				7FE2601F1B5B5EC900F3288C /* Security.framework in Frameworks */,
 				7FE2601D1B5B5EBE00F3288C /* QuartzCore.framework in Frameworks */,
@@ -237,6 +241,7 @@
 				7FE260361B5B610A00F3288C /* AppDelegate.swift */,
 				7FE260381B5B610A00F3288C /* BESViewController.swift */,
 				2A4AA0821B5B16FB00DDDA0B /* BESInterface.swift */,
+				7F67A94E1B5AF95400230509 /* BackendDelegate.swift */,
 				7FE2603A1B5B610A00F3288C /* Main.storyboard */,
 				7FE2603D1B5B610A00F3288C /* Images.xcassets */,
 				7FE2603F1B5B610A00F3288C /* LaunchScreen.xib */,
@@ -274,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				7F69D9841BB85AAF0079FF0E /* ReadMe.md */,
-				2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */,
 				2A4AA07D1B5B11B200DDDA0B /* frameworks */,
 				C473686A1B50458400E97743 /* RateMySnack */,
 				C47368801B50458400E97743 /* RateMySnackTests */,
@@ -301,7 +305,7 @@
 				C473686D1B50458400E97743 /* AppDelegate.swift */,
 				C473686F1B50458400E97743 /* ViewController.swift */,
 				2A0C18FF1B6466FA005A5F48 /* Snack.swift */,
-				7F67A94E1B5AF95400230509 /* BackendDelegate.swift */,
+				2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */,
 				C47368711B50458400E97743 /* Main.storyboard */,
 				7F69D9861BB9137C0079FF0E /* Guage.storyboard */,
 				C47368741B50458400E97743 /* Images.xcassets */,
