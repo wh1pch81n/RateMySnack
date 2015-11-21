@@ -15,11 +15,11 @@ private let CONSTRAINT_CHANGE_ANIMATION_TIME = NSTimeInterval(0.5)
 enum RMSSubmissionFormError: ErrorType {
     case SnackName
     case SnackDescription
-//    case SnackRating // TODO: Include a value for the Star Rating
+    //    case SnackRating // TODO: Include a value for the Star Rating
 }
 
 func keyboardFrameFrom(notification: NSNotification) -> CGRect? {
-   return (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
+    return (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
 }
 
 class RMSSnackSubmissionFormViewController: UIViewController {
@@ -28,7 +28,7 @@ class RMSSnackSubmissionFormViewController: UIViewController {
     @IBOutlet var snackNameEntry: UITextField!
     @IBOutlet var snackDescription: UITextView!
     @IBOutlet var submitButton: UIButton!
-
+    
     override func viewDidLoad() {
         addKeyboardNotifications()
         
@@ -79,6 +79,7 @@ class RMSSnackSubmissionFormViewController: UIViewController {
         }
     }
     
+    
     @IBAction func tappedCancelButton(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -89,15 +90,30 @@ class RMSSnackSubmissionFormViewController: UIViewController {
             try verifyFormData()
             // TODO: Add Loading Screen
             // <#code code #>
+            let alertView = UIAlertView.init(title: "loading", message: nil, delegate: nil, cancelButtonTitle: nil)
+   //         UIAlertView.show(alertView)()
+            alertView.show()
             
             BESInterface.submit(Snack(name: snackNameEntry.text!, description: snackDescription.text)) { (err) -> Void in
-                // TODO: It failes it should show the submission form again.
-                // <#code code #>
+                //                if (error: true = RMSSubmissionFormError.SnackDescription {
+                //                incompleteSnackFormPopUpOn(dismissViewControllerAnimated(true, completion: nil)
+                //                    )
+                // TODO: It failes it should show the submission form again. i can dismiss the loading screen, and find out if there is an error, or duplicate or the other one, 3 pop ups i should handle here.
+                alertView.dismissWithClickedButtonIndex(1, animated: false)
             }
+        } catch RMSSubmissionFormError.SnackName {
+            incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackName, didDismiss: { (UIAlertAction) -> () in
+                
+            })
+        } catch RMSSubmissionFormError.SnackDescription {
+            incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackDescription, didDismiss: { (UIAlertAction) -> () in
+            })
+            // TODO: What goes here?
+            // code code
         } catch {
-            // TODO: Display Error Pop Ups
-            // <#code code #>
+            assertionFailure("Impossible Error")
         }
     }
+    
 }
 

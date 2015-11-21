@@ -53,6 +53,7 @@
 		7FEF02EA1BB5AC450058EF8C /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF02E81BB5AC450058EF8C /* StarRating.swift */; settings = {ASSET_TAGS = (); }; };
 		825F6C241BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; };
 		82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5308B1B644EC900B07F24 /* RMSStarView.swift */; };
+		82C049CF1BC09DD200CDD031 /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D700C81B927AC300967D64 /* RMSStarViewController.swift */; };
 		C473686E1B50458400E97743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686D1B50458400E97743 /* AppDelegate.swift */; };
 		C47368701B50458400E97743 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686F1B50458400E97743 /* ViewController.swift */; };
@@ -541,6 +542,7 @@
 				7F3CB93B1BC9FED900E759F7 /* AllSnacks.swift in Sources */,
 				7FEF02EA1BB5AC450058EF8C /* StarRating.swift in Sources */,
 				7FE260371B5B610A00F3288C /* AppDelegate.swift in Sources */,
+				82C049CF1BC09DD200CDD031 /* RMSSnackSubmissionFormViewController.swift in Sources */,
 				7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */,
 				7F3CB93A1BC9FD7B00E759F7 /* ParseExtensions.swift in Sources */,
 				2A0C19011B646723005A5F48 /* Snack.swift in Sources */,
