@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import CoreLocation
+import LocationManager
 
 protocol RMSMapPicker {
     weak var delegate: RMSMapPickerDelegate? { get set }

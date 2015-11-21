@@ -71,7 +71,9 @@ class RMSSnackSubmissionFormViewController: UIViewController {
     }
     
     func verifyFormData() throws {
-        guard let s = snackNameEntry.text where s != ""  else { throw RMSSubmissionFormError.SnackName }
+        guard let s = snackNameEntry.text where s != ""  else {
+            throw RMSSubmissionFormError.SnackName
+        }
         if snackDescription.text == "" {
             throw RMSSubmissionFormError.SnackDescription
         }
