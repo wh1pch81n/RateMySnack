@@ -49,7 +49,7 @@ extension PFObject: SnackProtocol {
             self[AllSnacksKeys.snackDescription] = newValue
         }
     }
-    
+	
     static func createAllSnacks(snack: SnackProtocol) -> PFObject {
         let obj = PFObject(className: AllSnacksKeys.allSnacks)
         obj.objectId = snack.objectId

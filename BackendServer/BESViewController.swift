@@ -12,15 +12,19 @@ class BESViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        var s = Snack(name: "", description: "")
-        s.objectId = "gppjXFzUQg"
-        BESInterface.getRatingOfSnack(s) { (rating, err) -> () in
-            if err != nil {
-                
-            }
-            print(rating)
-        }
+//        var s = Snack(name: "", description: "")
+//        s.objectId = "gppjXFzUQg"
+//        BESInterface.getRatingOfSnack(s) { (rating, err) -> () in
+//            if err != nil {
+//                
+//            }
+//            print(rating)
+//        }
+		BESInterface.retrieve { (objs, err) -> Void in
+			objs.forEach({
+				print("\($0.snackName) \($0.snackName) \($0.snackRating)")
+			})
+		}
     }
-    
 }
 

@@ -13,6 +13,7 @@
 		2AB3D2CC1BAE0CF2002D84E3 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */; };
 		2AB7D1361BB91BD6000944A3 /* RMSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */; };
 		2AF54FBD1BBA74F200FAD40F /* RMSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */; };
+		2F5A7A9B1C14E7C6001362B5 /* RMSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5308B1B644EC900B07F24 /* RMSStarView.swift */; };
 		2F8DDF811C00E566005A4002 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7F1C00E566005A4002 /* Bolts.framework */; };
 		2F8DDF821C00E566005A4002 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF801C00E566005A4002 /* Parse.framework */; };
 		2F8DDF831C00E5AD005A4002 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; };
@@ -28,7 +29,6 @@
 		7F84F99D1BB9F53300D22757 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; };
 		7F84F9A21BB9FE0300D22757 /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F9A01BB9FDFA00D22757 /* ParseExtensions.swift */; };
 		7F84F9A31BB9FEDE00D22757 /* AllSnacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99E1BB9FD5300D22757 /* AllSnacks.swift */; };
-		7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */; };
 		7FE260151B5B5E9100F3288C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260141B5B5E9100F3288C /* AudioToolbox.framework */; };
 		7FE260171B5B5E9800F3288C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260161B5B5E9800F3288C /* CFNetwork.framework */; };
 		7FE260191B5B5EA700F3288C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE260181B5B5EA700F3288C /* CoreGraphics.framework */; };
@@ -56,7 +56,6 @@
 		7FEF02EA1BB5AC450058EF8C /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF02E81BB5AC450058EF8C /* StarRating.swift */; };
 		825F6C241BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; };
 		82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5308B1B644EC900B07F24 /* RMSStarView.swift */; };
-		82C049CF1BC09DD200CDD031 /* RMSSnackSubmissionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F6C231BA3CB4300717BBF /* RMSSnackSubmissionFormViewController.swift */; };
 		82D700C91B927AC300967D64 /* RMSStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D700C81B927AC300967D64 /* RMSStarViewController.swift */; };
 		C473686E1B50458400E97743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686D1B50458400E97743 /* AppDelegate.swift */; };
 		C47368701B50458400E97743 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473686F1B50458400E97743 /* ViewController.swift */; };
@@ -547,13 +546,12 @@
 				7F3CB93B1BC9FED900E759F7 /* AllSnacks.swift in Sources */,
 				7FEF02EA1BB5AC450058EF8C /* StarRating.swift in Sources */,
 				7FE260371B5B610A00F3288C /* AppDelegate.swift in Sources */,
-				82C049CF1BC09DD200CDD031 /* RMSSnackSubmissionFormViewController.swift in Sources */,
 				7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */,
 				7F3CB93A1BC9FD7B00E759F7 /* ParseExtensions.swift in Sources */,
+				2F5A7A9B1C14E7C6001362B5 /* RMSStarView.swift in Sources */,
 				2A0C19011B646723005A5F48 /* Snack.swift in Sources */,
 				2F8DDF831C00E5AD005A4002 /* OperatorOverload.swift in Sources */,
 				2AF54FBD1BBA74F200FAD40F /* RMSMapViewController.swift in Sources */,
-				7FB6457A1BAFF196006B7045 /* RMSPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

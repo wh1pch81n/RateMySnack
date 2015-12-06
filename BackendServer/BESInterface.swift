@@ -12,7 +12,7 @@ import Bolts
 
 class BESInterface: BackendDelegate {
 
-    static func submit(item: SnackProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void)) {
+    static func submit(item: SnackWithRatingProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void)) {
         do {
             let result = try BESInterface.hasSnack(item)
             guard result else {
@@ -23,7 +23,11 @@ class BESInterface: BackendDelegate {
                 snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                     // When the save finishes call the completion block
                     if (success) {
-                        completion(err: nil)
+						var snackWithRating = Snack(name: item.snackName, description: item.snackDescription, rating: item.snackRating)
+						snackWithRating.objectId = snack.objectId!
+						BESInterface.submitRatingForSnack(snackWithRating, completion: { (err: NSError?) -> () in
+							completion(err: nil)
+						})
                         return
                     }
                     if error?.code == PFErrorCode.ErrorTimeout.rawValue {
@@ -40,23 +44,36 @@ class BESInterface: BackendDelegate {
         }
     }
     
-    static func retrieve(requestCompleted request: ((objs: [SnackProtocol], err: RMSBackendError?) -> Void)) {
+    static func retrieve(requestCompleted request: ((objs: [SnackWithRatingProtocol], err: RMSBackendError?) -> Void)) {
         
         let findSnacks = PFQuery(className: AllSnacksKeys.allSnacks)
         findSnacks.includeKey(ParseObjectKeys.objectId)
-        
+		
+		var nameOfSnack: [Int : (name: String, description: String, rating: Int)] = [:]
+		let group = dispatch_group_create()
+		dispatch_group_enter(group)
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-            var nameOfSnack: [SnackProtocol] = []
             if error == nil {
                 if let objs = objects {
-                    for i in objs {
-                        let fo = Snack(snack: i)
-                        nameOfSnack.append(fo)
+                    for i in objs.enumerate() {
+						{ (row: Int, element: PFObject) -> () in
+							dispatch_group_enter(group)
+							BESInterface.getRatingOfSnack(element, completion: { (rating, err) -> () in
+								nameOfSnack[row] = (name: element.snackName, description: element.snackDescription, rating: Int(rating))
+								dispatch_group_leave(group)
+							})
+						}(i.index, i.element)
                     }
-                    request(objs: nameOfSnack, err: nil)
                 }
             }
-        }
+			dispatch_group_leave(group)
+		}
+		
+		dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
+			let arr: [(name: String, description: String, rating: Int)] = Array(0..<nameOfSnack.count).map({ nameOfSnack[$0]! })
+			let arr2: [SnackWithRatingProtocol] = arr.map({ Snack(name: $0.name, description: $0.description, rating: $0.rating) })
+			request(objs: arr2, err: nil)
+		}
     }
     
     private static func hasSnack(snack: SnackProtocol, withClassName name: String = AllSnacksKeys.allSnacks) throws -> Bool {
@@ -83,6 +100,18 @@ class BESInterface: BackendDelegate {
             throw RMSBackendError.UnexpectedNetworkError
         } //TODO:you can actually simplied this line of code with countObject
     }
+	
+	static func submitRatingForSnack(snack: SnackWithRatingProtocol, completion: (err: NSError?) -> ()) {
+		let ratingObject = PFObject(className: StarRatingKeys.StarRating.rawValue)
+		let allSnack = PFObject(className: AllSnacksKeys.allSnacks)
+		allSnack.objectId = snack.objectId!
+		ratingObject[StarRatingKeys.allSnacks] = allSnack
+		ratingObject[StarRatingKeys.rating] = snack.snackRating
+//		ratingObject[StarRatingKeys.User.rawValue] = 
+		ratingObject.saveInBackgroundWithBlock { (b: Bool, err: NSError?) -> Void in
+			completion(err: err)
+		}
+	}
     
     /**
     Retrieves the average rating of a SnackProtocol object based on its objectId. DEPRECATED: (Will be replaced with an Cloud Code Equivalent)

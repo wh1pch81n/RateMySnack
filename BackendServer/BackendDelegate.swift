@@ -24,6 +24,14 @@ protocol SnackProtocol {
     var snackDescription: String { get set }
 }
 
+protocol StarRatingProtocol {
+	var snackRating: Int { get set }
+}
+
+protocol SnackWithRatingProtocol: SnackProtocol, StarRatingProtocol {
+	
+}
+
 protocol BackendDelegate {
     /**
     Submits ⬆️ a FormObject to the object that comforms to BackendDelegate
@@ -31,11 +39,11 @@ protocol BackendDelegate {
     - parameter item: an object that conforms to FormObject
     - parameter completion: a block with one parameter for NSError? and void return type.  It's called by the object that conforms to the BackendDelegate when the request finishes
     */
-    static func submit(item: SnackProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void))
+    static func submit(item: SnackWithRatingProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void))
     /**
     Requests ⬇️ all snack data from the server
     
     - parameter request: a block with one parameter for NSError? and one parameter for an array of FormObjects. It is called when the request to the server is complete.
     */
-    static func retrieve(requestCompleted request: ((objs: [SnackProtocol], err: RMSBackendError?) -> Void))
+    static func retrieve(requestCompleted request: ((objs: [SnackWithRatingProtocol], err: RMSBackendError?) -> Void))
 }

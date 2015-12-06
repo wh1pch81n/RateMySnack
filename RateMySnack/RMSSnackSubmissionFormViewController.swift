@@ -15,7 +15,7 @@ private let CONSTRAINT_CHANGE_ANIMATION_TIME = NSTimeInterval(0.5)
 enum RMSSubmissionFormError: ErrorType {
     case SnackName
     case SnackDescription
-    //    case SnackRating // TODO: Include a value for the Star Rating
+	case SnackRating
 }
 
 func keyboardFrameFrom(notification: NSNotification) -> CGRect? {
@@ -27,6 +27,7 @@ class RMSSnackSubmissionFormViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var snackNameEntry: UITextField!
     @IBOutlet var snackDescription: UITextView!
+	weak var snackRating: RMSStarViewController!
     @IBOutlet var submitButton: UIButton!
     
     override func viewDidLoad() {
@@ -77,6 +78,9 @@ class RMSSnackSubmissionFormViewController: UIViewController {
         if snackDescription.text == "" {
             throw RMSSubmissionFormError.SnackDescription
         }
+		if snackRating.starRating == 0 {
+			throw RMSSubmissionFormError.SnackRating
+		}
     }
     
     
@@ -88,19 +92,12 @@ class RMSSnackSubmissionFormViewController: UIViewController {
         do {
             cleanFormData()
             try verifyFormData()
-            // TODO: Add Loading Screen
-            // <#code code #>
-            let alertView = UIAlertView.init(title: "loading", message: nil, delegate: nil, cancelButtonTitle: nil)
-   //         UIAlertView.show(alertView)()
+            let alertView = UIAlertView(title: "loading", message: nil, delegate: nil, cancelButtonTitle: nil)
             alertView.show()
             
-            BESInterface.submit(Snack(name: snackNameEntry.text!, description: snackDescription.text)) { (err) -> Void in
-                //                if (error: true = RMSSubmissionFormError.SnackDescription {
-                //                incompleteSnackFormPopUpOn(dismissViewControllerAnimated(true, completion: nil)
-                //                    )
-                // TODO: It failes it should show the submission form again. i can dismiss the loading screen, and find out if there is an error, or duplicate or the other one, 3 pop ups i should handle here.
+            BESInterface.submit(Snack(name: snackNameEntry.text!, description: snackDescription.text, rating: snackRating.starRating)) { (err) -> Void in
                 alertView.dismissWithClickedButtonIndex(1, animated: false)
-                self.dismissViewControllerAnimated(true, completion: nil)
+				self.dismissViewControllerAnimated(true, completion: nil)
             }
         } catch RMSSubmissionFormError.SnackName {
             incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackName, didDismiss: { (UIAlertAction) -> () in
@@ -109,12 +106,22 @@ class RMSSnackSubmissionFormViewController: UIViewController {
         } catch RMSSubmissionFormError.SnackDescription {
             incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackDescription, didDismiss: { (UIAlertAction) -> () in
             })
-            // TODO: What goes here?
-            // code code
+		}
+		catch RMSSubmissionFormError.SnackRating {
+			incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackRating, didDismiss: { (UIAlertAction) -> () in
+				
+			})
         } catch {
             assertionFailure("Impossible Error")
         }
     }
-    
+	
+	// MARK: Segue
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if let vc = segue.destinationViewController as? RMSStarViewController {
+			self.snackRating = vc
+		}
+	}
+	
 }
 

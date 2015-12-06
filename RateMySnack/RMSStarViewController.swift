@@ -15,7 +15,7 @@ class RMSStarViewController: UIViewController {
     @IBOutlet weak var starTwo: RMSStarView!
     @IBOutlet weak var starThree: RMSStarView!
     @IBOutlet weak var starFour: RMSStarView!
-    
+	var starRating: Int = 0
     /**
     Turns the stars on or off depending on which star was tapped by the user
     
@@ -27,18 +27,23 @@ class RMSStarViewController: UIViewController {
         
         if tag == 1 {
             starSettings = (true, false, false, false, false)
+			starRating = tag
         }
         if tag == 2 {
             starSettings = (true, true, false, false, false)
+			starRating = tag
         }
         if tag == 3 {
             starSettings = (true, true, true, false, false)
+			starRating = tag
         }
         if tag == 4 {
             starSettings = (true, true, true, true, false)
+			starRating = tag
         }
         if tag == 5 {
             starSettings = (true, true, true, true, true)
+			starRating = tag
         }
         
         (starZero.enabled, starOne.enabled, starTwo.enabled, starThree.enabled, starFour.enabled) = starSettings

@@ -51,8 +51,10 @@ func incompleteSnackFormPopUpOn(vc: UIViewController, withError err:RMSSubmissio
         alertMessage = "Please fill out the snack description"
     } else if err == RMSSubmissionFormError.SnackName {
         alertMessage = "Please enter a valid snack name"
-    }
-    
+	} else if err == RMSSubmissionFormError.SnackRating {
+		alertMessage = "Please insert a rating for the snack"
+	}
+		
     let messageAlert = UIAlertController(title: "oops!",
         message: alertMessage,
         preferredStyle: UIAlertControllerStyle.Alert)
