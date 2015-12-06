@@ -67,7 +67,7 @@ class RMSSnackSubmissionFormViewController: UIViewController {
         var description = snackDescription.text
         description = (description >% " ").filter(blanks).joinWithSeparator(" ")
         description = (description >% "\n").filter(blanks).joinWithSeparator("\n")
-        snackDescription.text = name
+        snackDescription.text = description
     }
     
     func verifyFormData() throws {
@@ -100,6 +100,7 @@ class RMSSnackSubmissionFormViewController: UIViewController {
                 //                    )
                 // TODO: It failes it should show the submission form again. i can dismiss the loading screen, and find out if there is an error, or duplicate or the other one, 3 pop ups i should handle here.
                 alertView.dismissWithClickedButtonIndex(1, animated: false)
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
         } catch RMSSubmissionFormError.SnackName {
             incompleteSnackFormPopUpOn(self, withError: RMSSubmissionFormError.SnackName, didDismiss: { (UIAlertAction) -> () in
