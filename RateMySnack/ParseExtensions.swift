@@ -18,9 +18,3 @@ enum ParseObjectKeys: String {
     static let updatedAt = ParseObjectKeys.UpdatedAt.rawValue
 }
 
-enum ParseKeys: String {
-    case ApplicationId = "r7EqA8YMRx0ew2OaE2ebKZnErKWdJgmR1hBtQBAQ"
-    case ClientKey = "tIWDqmLYrdcquuzznkZS9iJ5CqX8ieOYZhhT4bnz"
-    static let applicationId = ParseKeys.ApplicationId.rawValue
-    static let clientKey = ParseKeys.ClientKey.rawValue
-}

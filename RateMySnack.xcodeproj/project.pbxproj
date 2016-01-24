@@ -102,6 +102,8 @@
 		2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSPopUp.swift; sourceTree = "<group>"; };
 		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSMapViewController.swift; sourceTree = "<group>"; };
+		2F40C8541C5474A0001FE91E /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; wrapsLines = 0; };
+		2F40C8551C547A8B001FE91E /* RateMySnack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RateMySnack-Bridging-Header.h"; sourceTree = "<group>"; };
 		2F8DDF761C00E4D4005A4002 /* LocationManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LocationManager.xcodeproj; path = Frameworks3rdParty/LocationManager/LocationManager_Framework/LocationManager.xcodeproj; sourceTree = "<group>"; };
 		2F8DDF7F1C00E566005A4002 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks3rdParty/Bolts.framework; sourceTree = "<group>"; };
 		2F8DDF801C00E566005A4002 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks3rdParty/Parse.framework; sourceTree = "<group>"; };
@@ -214,6 +216,14 @@
 			name = frameworks;
 			sourceTree = "<group>";
 		};
+		2F40C8511C5473B9001FE91E /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				2F40C8541C5474A0001FE91E /* Common.xcconfig */,
+			);
+			name = Configurations;
+			sourceTree = "<group>";
+		};
 		2F8DDF771C00E4D4005A4002 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +287,7 @@
 		C473685F1B50458400E97743 = {
 			isa = PBXGroup;
 			children = (
+				2F40C8511C5473B9001FE91E /* Configurations */,
 				7F69D9841BB85AAF0079FF0E /* ReadMe.md */,
 				2A4AA07D1B5B11B200DDDA0B /* frameworks */,
 				C473686A1B50458400E97743 /* RateMySnack */,
@@ -325,6 +336,7 @@
 			children = (
 				C473686C1B50458400E97743 /* Info.plist */,
 				7F84F9A41BBA034D00D22757 /* ParseVisualModel.xcdatamodeld */,
+				2F40C8551C547A8B001FE91E /* RateMySnack-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -746,6 +758,7 @@
 		};
 		C47368851B50458400E97743 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F40C8541C5474A0001FE91E /* Common.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -784,7 +797,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "RateMySnack/RateMySnack-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -822,7 +837,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "RateMySnack/RateMySnack-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
