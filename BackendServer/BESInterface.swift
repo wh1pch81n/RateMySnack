@@ -44,42 +44,22 @@ class BESInterface: BackendDelegate {
         }
     }
     
-    static func retrieve(requestCompleted request: ((objs: [Dictionary<String, AnyObject>], err: RMSBackendError?) -> Void)) {
+    static func retrieve(requestCompleted request: ((objs: [SnackWithRatingBlock], err: RMSBackendError?) -> Void)) {
         
         let findSnacks = PFQuery(className: PC_ALLSNACKS)
 		
-		var nameOfSnack = [Int:[String : AnyObject]]()
-		let group = dispatch_group_create()
-		dispatch_group_enter(group)
+		var nameOfSnack: [SnackWithRatingBlock] = []
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             guard error == nil,
 			let objs = objects
 			else {
 				return
 			}
-			let arrOfAllSnacks = objs.map({ $0 as AllSnacksProtocol })
-			arrOfAllSnacks.enumerate().forEach { (i) -> () in
-				{ (row: Int, element: AllSnacksProtocol) -> () in
-					dispatch_group_enter(group)
-					BESInterface.getRatingOfSnack(element, completion: { (rating, err) -> () in
-						nameOfSnack[row] = [
-							ALLSNACKS_SNACKNAME : element.snackName,
-							ALLSNACKS_SNACKDESCRIPTION : element.snackDescription,
-							STARRATING_RATING : Int(rating)
-						]
-						
-						dispatch_group_leave(group)
-					})
-				}(i.index, i.element)
-            }
-			dispatch_group_leave(group)
-		}
-		
-		dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
-			let arr: [Dictionary<String, AnyObject>] = Array(0..<nameOfSnack.count).map {
-				nameOfSnack[$0]!
-			}
-			request(objs: arr, err: nil)
+			nameOfSnack = objs
+				.map({ $0 as AllSnacksProtocol })
+				.map({ ($0, BESInterface.getRatingOfSnack($0)) })
+			
+			request(objs: nameOfSnack, err: nil)
 		}
     }
     
@@ -124,7 +104,7 @@ class BESInterface: BackendDelegate {
     - parameter completion: a block object with rating and err
     */
     typealias RatingTotal = (rating: UInt, total:UInt)
-    private static func getRatingOfSnack(snack: AllSnacksProtocol, completion: (rating: UInt, err: RMSBackendError?) -> ()) {
+    private static func getRatingOfSnack(snack: AllSnacksProtocol)(completion: (rating: UInt, err: RMSBackendError?) -> ()) {
 		assert(snack.objectId != nil)
 		func getTotalNumberOf(snack: AllSnacksProtocol, withRating rating: UInt) throws -> RatingTotal {
             let queryTotal = PFQuery(className: PC_STARRATING)

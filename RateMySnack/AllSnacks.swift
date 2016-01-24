@@ -26,6 +26,7 @@ extension PFObject: AllSnacksProtocol {
 			self["SnackName"] = newValue
 		}
 	}
+	
 	var snackDescription: String {
 		get {
 			assert(self.parseClassName == PC_ALLSNACKS)
@@ -35,6 +36,7 @@ extension PFObject: AllSnacksProtocol {
 			self["SnackDescription"] = newValue
 		}
 	}
+	
 }
 
 

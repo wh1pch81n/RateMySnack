@@ -35,13 +35,5 @@ extension PFObject: StarRatingProtocol {
 			self["AllSnacks"] = newValue as! PFObject
 		}
 	}
-	var user: UserProtocol? {
-		get {
-			assert(self.parseClassName == PC_STARRATING)
-			return self["User"] as! UserProtocol?
-		} set {
-			assert(self.parseClassName == PC_STARRATING)
-			self["User"] = newValue as! PFUser
-		}
-	}
+	
 }

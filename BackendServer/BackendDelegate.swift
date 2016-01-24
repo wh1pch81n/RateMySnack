@@ -8,11 +8,36 @@
 
 import Foundation
 
+typealias SnackWithRatingBlock = (SnackProtocol, ((rating: UInt, error: RMSBackendError?) -> ()) -> ())
+
 enum RMSBackendError: ErrorType {
     case None
     case Timeout
     case Duplication
     case UnexpectedNetworkError
+}
+
+//----------------------------
+// backend
+protocol ParseObjectProtocol {
+	var objectId: String? { get set }
+	var updatedAt: NSDate? { get }
+	var createdAt: NSDate? { get }
+	
+	func saveInBackgroundWithBlock(block: ((Bool, NSError?) -> Void)?)
+}
+
+protocol AllSnacksProtocol: ParseObjectProtocol, SnackProtocol {
+	static func initWithAllSnacks() -> AllSnacksProtocol
+}
+
+protocol SnackRatingProtocol {
+	var snackRating: Int { get set }
+	var allSnacks: AllSnacksProtocol? { get set }
+}
+
+protocol StarRatingProtocol: ParseObjectProtocol, SnackRatingProtocol {
+	static func initWithStarRating() -> StarRatingProtocol
 }
 
 protocol BackendDelegate {
@@ -28,5 +53,6 @@ protocol BackendDelegate {
     
     - parameter request: a block with one parameter for NSError? and one parameter for an array of FormObjects. It is called when the request to the server is complete.
     */
-    static func retrieve(requestCompleted request: ((objs: [Dictionary<String, AnyObject>], err: RMSBackendError?) -> Void))
+	
+    static func retrieve(requestCompleted request: ((objs: [SnackWithRatingBlock], err: RMSBackendError?) -> Void))
 }
