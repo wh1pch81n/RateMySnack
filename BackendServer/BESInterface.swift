@@ -12,20 +12,20 @@ import Bolts
 
 class BESInterface: BackendDelegate {
 
-    static func submit(item: SnackWithRatingProtocol, completionHandler completion: ((err: RMSBackendError?) -> Void)) {
+	static func submit(item: SnackProtocol, rating: Int, completionHandler completion: ((err: RMSBackendError?) -> Void)) {
         do {
             let result = try BESInterface.hasSnack(item)
             guard result else {
                 // Creates an instance of AllSnack Object
-                let snack = PFObject.createAllSnacks(item)
+                var snack = PFObject.initWithAllSnacks()
+				snack.snackName = item.snackName
+				snack.snackDescription = item.snackDescription
 
                 // Save new snack in background asynhronously
                 snack.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                     // When the save finishes call the completion block
                     if (success) {
-						var snackWithRating = Snack(name: item.snackName, description: item.snackDescription, rating: item.snackRating)
-						snackWithRating.objectId = snack.objectId!
-						BESInterface.submitRatingForSnack(snackWithRating, completion: { (err: NSError?) -> () in
+						BESInterface.submitRating(rating, forSnack:snack, completion: { (err: NSError?) -> () in
 							completion(err: nil)
 						})
                         return
@@ -44,46 +44,53 @@ class BESInterface: BackendDelegate {
         }
     }
     
-    static func retrieve(requestCompleted request: ((objs: [SnackWithRatingProtocol], err: RMSBackendError?) -> Void)) {
+    static func retrieve(requestCompleted request: ((objs: [Dictionary<String, AnyObject>], err: RMSBackendError?) -> Void)) {
         
-        let findSnacks = PFQuery(className: AllSnacksKeys.allSnacks)
-        findSnacks.includeKey(ParseObjectKeys.objectId)
+        let findSnacks = PFQuery(className: PC_ALLSNACKS)
 		
-		var nameOfSnack: [Int : (name: String, description: String, rating: Int)] = [:]
+		var nameOfSnack = [Int:[String : AnyObject]]()
 		let group = dispatch_group_create()
 		dispatch_group_enter(group)
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-                if let objs = objects {
-                    for i in objs.enumerate() {
-						{ (row: Int, element: PFObject) -> () in
-							dispatch_group_enter(group)
-							BESInterface.getRatingOfSnack(element, completion: { (rating, err) -> () in
-								nameOfSnack[row] = (name: element.snackName, description: element.snackDescription, rating: Int(rating))
-								dispatch_group_leave(group)
-							})
-						}(i.index, i.element)
-                    }
-                }
+            guard error == nil,
+			let objs = objects
+			else {
+				return
+			}
+			let arrOfAllSnacks = objs.map({ $0 as AllSnacksProtocol })
+			arrOfAllSnacks.enumerate().forEach { (i) -> () in
+				{ (row: Int, element: AllSnacksProtocol) -> () in
+					dispatch_group_enter(group)
+					BESInterface.getRatingOfSnack(element, completion: { (rating, err) -> () in
+						nameOfSnack[row] = [
+							ALLSNACKS_SNACKNAME : element.snackName,
+							ALLSNACKS_SNACKDESCRIPTION : element.snackDescription,
+							STARRATING_RATING : Int(rating)
+						]
+						
+						dispatch_group_leave(group)
+					})
+				}(i.index, i.element)
             }
 			dispatch_group_leave(group)
 		}
 		
 		dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
-			let arr: [(name: String, description: String, rating: Int)] = Array(0..<nameOfSnack.count).map({ nameOfSnack[$0]! })
-			let arr2: [SnackWithRatingProtocol] = arr.map({ Snack(name: $0.name, description: $0.description, rating: $0.rating) })
-			request(objs: arr2, err: nil)
+			let arr: [Dictionary<String, AnyObject>] = Array(0..<nameOfSnack.count).map {
+				nameOfSnack[$0]!
+			}
+			request(objs: arr, err: nil)
 		}
     }
     
-    private static func hasSnack(snack: SnackProtocol, withClassName name: String = AllSnacksKeys.allSnacks) throws -> Bool {
+    private static func hasSnack(snack: SnackProtocol) throws -> Bool {
         // Make Query "AllSnacks"
-        let queryAllSnack = PFQuery(className: name) //1.querying for objects with the class name "AllSnacks"
+        let queryAllSnack = PFQuery(className: PC_ALLSNACKS) //1.querying for objects with the class name "AllSnacks"
         
         // Refine queryAllSnack query to include all with the specified snameName
         
-        queryAllSnack.whereKey(AllSnacksKeys.snackName, equalTo: snack.snackName) //2.Key = colum ; equalTo <the input of data>
-        queryAllSnack.selectKeys([AllSnacksKeys.snackName]) //3.Only pulling data from the specified key
+        queryAllSnack.whereKey(ALLSNACKS_SNACKNAME, equalTo: snack.snackName) //2.Key = colum ; equalTo <the input of data>
+        queryAllSnack.selectKeys([ALLSNACKS_SNACKNAME]) //3.Only pulling data from the specified key
         queryAllSnack.limit = 1 //4.setting a limit of returning of the same snack as 1
         
         do {
@@ -101,13 +108,11 @@ class BESInterface: BackendDelegate {
         } //TODO:you can actually simplied this line of code with countObject
     }
 	
-	static func submitRatingForSnack(snack: SnackWithRatingProtocol, completion: (err: NSError?) -> ()) {
-		let ratingObject = PFObject(className: StarRatingKeys.StarRating.rawValue)
-		let allSnack = PFObject(className: AllSnacksKeys.allSnacks)
-		allSnack.objectId = snack.objectId!
-		ratingObject[StarRatingKeys.allSnacks] = allSnack
-		ratingObject[StarRatingKeys.rating] = snack.snackRating
-//		ratingObject[StarRatingKeys.User.rawValue] = 
+	static func submitRating(rating: Int, forSnack snack: AllSnacksProtocol, completion: (err: NSError?) -> ()) {
+		var ratingObject = PFObject.initWithStarRating()
+		ratingObject.allSnacks = snack
+		ratingObject.snackRating = rating
+//		ratingObject.user = user
 		ratingObject.saveInBackgroundWithBlock { (b: Bool, err: NSError?) -> Void in
 			completion(err: err)
 		}
@@ -119,16 +124,14 @@ class BESInterface: BackendDelegate {
     - parameter completion: a block object with rating and err
     */
     typealias RatingTotal = (rating: UInt, total:UInt)
-    static func getRatingOfSnack(snack: SnackProtocol, completion: (rating: UInt, err: RMSBackendError?) -> ()) {
-      
-        func getTotalNumberOf(snack: SnackProtocol, withRating rating: UInt) throws -> RatingTotal {
-            assert(RMSStarRatingLimit.minimum < rating && rating <= RMSStarRatingLimit.maximum)
-            assert(snack.objectId != nil)
-            
-            let queryTotal = PFQuery(className: StarRatingKeys.starRating)
-            
-            queryTotal.whereKey(StarRatingKeys.allSnacks, equalTo: PFObject.createAllSnacks(snack))
-            queryTotal.whereKey(StarRatingKeys.rating, equalTo: rating)
+    private static func getRatingOfSnack(snack: AllSnacksProtocol, completion: (rating: UInt, err: RMSBackendError?) -> ()) {
+		assert(snack.objectId != nil)
+		func getTotalNumberOf(snack: AllSnacksProtocol, withRating rating: UInt) throws -> RatingTotal {
+            let queryTotal = PFQuery(className: PC_STARRATING)
+			var allSnackPtr = PFObject.initWithAllSnacks()
+			allSnackPtr.objectId = snack.objectId
+            queryTotal.whereKey(STARRATING_ALLSNACKS, equalTo: allSnackPtr as! PFObject)
+            queryTotal.whereKey(STARRATING_RATING, equalTo: rating)
             var err: NSError?
             let totalRatingsForSnack = queryTotal.countObjects(&err)
             if totalRatingsForSnack == -1 {
@@ -139,7 +142,8 @@ class BESInterface: BackendDelegate {
             
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
             do {
-                var ratings = [RatingTotal](); for i: UInt in 1...5 {
+                var ratings = [RatingTotal]()
+				for i: UInt in 1...5 {
                     ratings.append(try getTotalNumberOf(snack, withRating: i))
                 }
                 

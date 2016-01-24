@@ -21,9 +21,7 @@ class BESViewController: UIViewController {
 //            print(rating)
 //        }
 		BESInterface.retrieve { (objs, err) -> Void in
-			objs.forEach({
-				print("\($0.snackName) \($0.snackName) \($0.snackRating)")
-			})
+			print(objs as NSArray)
 		}
     }
 }
