@@ -11,6 +11,7 @@ import Parse
 import Bolts
 
 extension StarRatingProtocol where Self: PFObject {
+	/** Creates a StarRatingProtocol conforming Object*/
 	static func initWithStarRating() -> StarRatingProtocol {
 		return PFObject(className: PC_STARRATING)
 	}

@@ -1,15 +1,8 @@
-//
-//  BackendDelegate.swift
-//  RateMySnack
-//
-//  Created by Derrick  Ho on 7/18/15.
-//  Copyright (c) 2015 Ho, Derrick. All rights reserved.
-//
-
 import Foundation
 
 typealias SnackWithRatingBlock = (SnackProtocol, ((rating: UInt, error: RMSBackendError?) -> ()) -> ())
 
+/** Used by the backend to inform the frontend of an error*/
 enum RMSBackendError: ErrorType {
     case None
     case Timeout
@@ -17,8 +10,7 @@ enum RMSBackendError: ErrorType {
     case UnexpectedNetworkError
 }
 
-//----------------------------
-// backend
+/** Used internally as a wrapper around the PFObject */
 protocol ParseObjectProtocol {
 	var objectId: String? { get set }
 	var updatedAt: NSDate? { get }
@@ -27,19 +19,23 @@ protocol ParseObjectProtocol {
 	func saveInBackgroundWithBlock(block: ((Bool, NSError?) -> Void)?)
 }
 
+/** Used internally as a wrapper around the PFObject to make it easier to access properties related to the AllSnacks class*/
 protocol AllSnacksProtocol: ParseObjectProtocol, SnackProtocol {
 	static func initWithAllSnacks() -> AllSnacksProtocol
 }
 
+/** Defines a protocol specifying the unique traits of a StarRating Class*/
 protocol SnackRatingProtocol {
 	var snackRating: Int { get set }
 	var allSnacks: AllSnacksProtocol? { get set }
 }
 
+/** Used internally as a wrapper around the PFObject to make it easier to access properties related to the SnackRating class*/
 protocol StarRatingProtocol: ParseObjectProtocol, SnackRatingProtocol {
 	static func initWithStarRating() -> StarRatingProtocol
 }
 
+/** Defines a protocol defining the minimum requirements for class to be a backend delegate */
 protocol BackendDelegate {
     /**
     Submits ⬆️ a FormObject to the object that comforms to BackendDelegate

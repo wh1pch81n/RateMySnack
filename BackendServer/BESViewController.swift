@@ -28,7 +28,7 @@ class BESViewController: UIViewController {
 				let group = dispatch_group_create()
 				dispatch_group_enter(group)
 				obj.1({ (rating: UInt, err: RMSBackendError?) ->() in
-					print(obj.0.snackName + " : " + "\(rating)")
+					print("%@: %@", obj.0.snackName, rating)
 					dispatch_group_leave(group)
 				})
 				dispatch_group_wait(group,

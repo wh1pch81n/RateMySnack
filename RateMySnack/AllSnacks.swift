@@ -11,6 +11,7 @@ import Parse
 import Bolts
 
 extension AllSnacksProtocol where Self: PFObject {
+	/** Creates a ALLSnackProtocol conforming Object*/
 	static func initWithAllSnacks() -> AllSnacksProtocol {
 		return PFObject(className: PC_ALLSNACKS)
 	}
