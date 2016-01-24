@@ -97,7 +97,8 @@ class RMSSnackSubmissionFormViewController: UIViewController {
 			
 			let snack = Snack(snackName: snackNameEntry.text!, snackDescription: snackDescription.text)
 			let rating = snackRating.starRating
-            BESInterface.submit(snack, rating: rating) { (err) -> Void in
+			
+            BackendDelegate_SharedInstance().submit(snack, rating: rating) { (err) -> Void in
                 alertView.dismissWithClickedButtonIndex(1, animated: false)
 				self.dismissViewControllerAnimated(true, completion: nil)
             }

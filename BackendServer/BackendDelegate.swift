@@ -1,9 +1,9 @@
 import Foundation
 
-typealias SnackWithRatingBlock = (SnackProtocol, ((rating: UInt, error: RMSBackendError?) -> ()) -> ())
+public typealias SnackWithRatingBlock = (SnackProtocol, ((rating: UInt, error: RMSBackendError?) -> ()) -> ())
 
 /** Used by the backend to inform the frontend of an error*/
-enum RMSBackendError: ErrorType {
+public enum RMSBackendError: ErrorType {
     case None
     case Timeout
     case Duplication
@@ -36,19 +36,20 @@ protocol StarRatingProtocol: ParseObjectProtocol, SnackRatingProtocol {
 }
 
 /** Defines a protocol defining the minimum requirements for class to be a backend delegate */
-protocol BackendDelegate {
+public protocol BackendDelegate {
+	
     /**
     Submits ⬆️ a FormObject to the object that comforms to BackendDelegate
     
     - parameter item: an object that conforms to FormObject
     - parameter completion: a block with one parameter for NSError? and void return type.  It's called by the object that conforms to the BackendDelegate when the request finishes
     */
-	static func submit(item: SnackProtocol, rating: Int, completionHandler completion: ((err: RMSBackendError?) -> Void))
+	func submit(item: SnackProtocol, rating: Int, completionHandler completion: ((err: RMSBackendError?) -> Void))
     /**
     Requests ⬇️ all snack data from the server
     
     - parameter request: a block with one parameter for NSError? and one parameter for an array of FormObjects. It is called when the request to the server is complete.
     */
 	
-    static func retrieve(requestCompleted request: ((objs: [SnackWithRatingBlock], err: RMSBackendError?) -> Void))
+	func retrieve(requestCompleted request: ((objs: [SnackWithRatingBlock], err: RMSBackendError?) -> Void))
 }

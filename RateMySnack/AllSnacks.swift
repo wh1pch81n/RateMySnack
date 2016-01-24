@@ -18,7 +18,7 @@ extension AllSnacksProtocol where Self: PFObject {
 }
 
 extension PFObject: AllSnacksProtocol {
-	var snackName: String {
+	public var snackName: String {
 		get {
 			assert(self.parseClassName == PC_ALLSNACKS)
 			return self["SnackName"] as! String
@@ -28,7 +28,7 @@ extension PFObject: AllSnacksProtocol {
 		}
 	}
 	
-	var snackDescription: String {
+	public var snackDescription: String {
 		get {
 			assert(self.parseClassName == PC_ALLSNACKS)
 			return self["SnackDescription"] as! String
