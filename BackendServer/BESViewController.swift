@@ -20,9 +20,21 @@ class BESViewController: UIViewController {
 //            }
 //            print(rating)
 //        }
-		BESInterface.retrieve { (objs, err) -> Void in
-			objs.forEach({
-				print("\($0.snackName) \($0.snackName) \($0.snackRating)")
+		BackendDelegate_SharedInstance().retrieve { (objs, err) -> Void in
+			print(objs)
+			let start = (objs.count - 10) > 0 ? objs.count - 10 : 0
+			let end = objs.count
+			objs[start..<end].forEach({ (obj) -> () in
+				let group = dispatch_group_create()
+				dispatch_group_enter(group)
+				obj.1({ (rating: UInt, err: RMSBackendError?) ->() in
+					print(obj.0.snackName, rating)
+					dispatch_group_leave(group)
+				})
+				dispatch_group_wait(group,
+					dispatch_time(
+						DISPATCH_TIME_NOW,
+						Int64(5 * 60 * NSEC_PER_SEC)))
 			})
 		}
     }

@@ -7,21 +7,34 @@
 //
 
 import Foundation
+import Parse
+import Bolts
 
-enum RMSStarRatingLimit: UInt {
-    case Minimum = 0
-    case Maximum = 5
-    static let minimum = RMSStarRatingLimit.Minimum.rawValue
-    static let maximum = RMSStarRatingLimit.Maximum.rawValue
+extension StarRatingProtocol where Self: PFObject {
+	/** Creates a StarRatingProtocol conforming Object*/
+	static func initWithStarRating() -> StarRatingProtocol {
+		return PFObject(className: PC_STARRATING)
+	}
 }
 
-enum StarRatingKeys: String {
-    case StarRating
-    case Rating
-    case AllSnacks
-    case User
-    static let starRating = StarRatingKeys.StarRating.rawValue
-    static let rating = StarRatingKeys.Rating.rawValue
-    static let allSnacks = StarRatingKeys.AllSnacks.rawValue
-    static let user = StarRatingKeys.User.rawValue
+extension PFObject: StarRatingProtocol {
+	var snackRating: Int {
+		get {
+			assert(self.parseClassName == PC_STARRATING)
+			return self["Rating"] as! Int
+		} set {
+			assert(self.parseClassName == PC_STARRATING)
+			self["Rating"] = newValue
+		}
+	}
+	var allSnacks: AllSnacksProtocol? {
+		get {
+			assert(self.parseClassName == PC_STARRATING)
+			return self["AllSnacks"] as! AllSnacksProtocol?
+		} set {
+			assert(self.parseClassName == PC_STARRATING)
+			self["AllSnacks"] = newValue as! PFObject
+		}
+	}
+	
 }

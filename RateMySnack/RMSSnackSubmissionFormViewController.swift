@@ -94,8 +94,11 @@ class RMSSnackSubmissionFormViewController: UIViewController {
             try verifyFormData()
             let alertView = UIAlertView(title: "loading", message: nil, delegate: nil, cancelButtonTitle: nil)
             alertView.show()
-            
-            BESInterface.submit(Snack(name: snackNameEntry.text!, description: snackDescription.text, rating: snackRating.starRating)) { (err) -> Void in
+			
+			let snack = Snack(snackName: snackNameEntry.text!, snackDescription: snackDescription.text)
+			let rating = snackRating.starRating
+			
+            BackendDelegate_SharedInstance().submit(snack, rating: rating) { (err) -> Void in
                 alertView.dismissWithClickedButtonIndex(1, animated: false)
 				self.dismissViewControllerAnimated(true, completion: nil)
             }
