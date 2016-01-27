@@ -55,17 +55,15 @@ class BESInterface: BackendDelegate {
         
         let findSnacks = PFQuery(className: PC_ALLSNACKS)
 		
-		var nameOfSnack: [SnackWithRatingBlock] = []
         findSnacks.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             guard error == nil,
-			let objs = objects
+			let nameOfSnack: [SnackWithRatingBlock] = objects?
+				.map({ $0 as AllSnacksProtocol })
+				.map({ ($0, self.getRatingOfSnack($0)) })
 			else {
 				return
 			}
-			nameOfSnack = objs
-				.map({ $0 as AllSnacksProtocol })
-				.map({ ($0, self.getRatingOfSnack($0)) })
-			
+						
 			request(objs: nameOfSnack, err: nil)
 		}
     }
