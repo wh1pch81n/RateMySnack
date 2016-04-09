@@ -15,6 +15,8 @@
 		2F40C8581C548667001FE91E /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40C8571C548667001FE91E /* CommonProtocols.swift */; };
 		2F40C8591C548667001FE91E /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40C8571C548667001FE91E /* CommonProtocols.swift */; };
 		2F5A7A9B1C14E7C6001362B5 /* RMSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B5308B1B644EC900B07F24 /* RMSStarView.swift */; };
+		2F73A1331CB98B560043FF31 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73A1321CB98B560043FF31 /* Common.swift */; };
+		2F73A1361CB98B940043FF31 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73A1321CB98B560043FF31 /* Common.swift */; };
 		2F8DDF811C00E566005A4002 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF7F1C00E566005A4002 /* Bolts.framework */; };
 		2F8DDF821C00E566005A4002 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8DDF801C00E566005A4002 /* Parse.framework */; };
 		2F8DDF831C00E5AD005A4002 /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84F99C1BB9F53300D22757 /* OperatorOverload.swift */; };
@@ -101,9 +103,9 @@
 		2A7B292D1BAEA8B600EF04FB /* RMSPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSPopUp.swift; sourceTree = "<group>"; };
 		2AB3D2CB1BAE0CF2002D84E3 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Map.storyboard; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		2AB7D1351BB91BD6000944A3 /* RMSMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSMapViewController.swift; sourceTree = "<group>"; };
-		2F40C8541C5474A0001FE91E /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; wrapsLines = 0; };
 		2F40C8551C547A8B001FE91E /* RateMySnack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RateMySnack-Bridging-Header.h"; sourceTree = "<group>"; };
 		2F40C8571C548667001FE91E /* CommonProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
+		2F73A1321CB98B560043FF31 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		2F8DDF761C00E4D4005A4002 /* LocationManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LocationManager.xcodeproj; path = Frameworks3rdParty/LocationManager/LocationManager_Framework/LocationManager.xcodeproj; sourceTree = "<group>"; };
 		2F8DDF7F1C00E566005A4002 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks3rdParty/Bolts.framework; sourceTree = "<group>"; };
 		2F8DDF801C00E566005A4002 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks3rdParty/Parse.framework; sourceTree = "<group>"; };
@@ -218,7 +220,7 @@
 		2F40C8511C5473B9001FE91E /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				2F40C8541C5474A0001FE91E /* Common.xcconfig */,
+				2F73A1321CB98B560043FF31 /* Common.swift */,
 			);
 			name = Configurations;
 			sourceTree = "<group>";
@@ -564,6 +566,7 @@
 				7FE260391B5B610A00F3288C /* BESViewController.swift in Sources */,
 				7F3CB93B1BC9FED900E759F7 /* AllSnacks.swift in Sources */,
 				7FEF02EA1BB5AC450058EF8C /* StarRating.swift in Sources */,
+				2F73A1361CB98B940043FF31 /* Common.swift in Sources */,
 				7FE260371B5B610A00F3288C /* AppDelegate.swift in Sources */,
 				7FE260551B5B616300F3288C /* BackendDelegate.swift in Sources */,
 				2F5A7A9B1C14E7C6001362B5 /* RMSStarView.swift in Sources */,
@@ -598,6 +601,7 @@
 				82B5308C1B644EC900B07F24 /* RMSStarView.swift in Sources */,
 				C473686E1B50458400E97743 /* AppDelegate.swift in Sources */,
 				7FE260281B5B5F6B00F3288C /* BESInterface.swift in Sources */,
+				2F73A1331CB98B560043FF31 /* Common.swift in Sources */,
 				2A0C19001B6466FB005A5F48 /* Snack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,7 +686,6 @@
 		};
 		7FE2604F1B5B610A00F3288C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F40C8541C5474A0001FE91E /* Common.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -708,7 +711,6 @@
 		};
 		7FE260501B5B610A00F3288C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F40C8541C5474A0001FE91E /* Common.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -766,7 +768,6 @@
 		};
 		C47368851B50458400E97743 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F40C8541C5474A0001FE91E /* Common.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -815,7 +816,6 @@
 		};
 		C47368861B50458400E97743 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F40C8541C5474A0001FE91E /* Common.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -856,7 +856,6 @@
 		};
 		C47368881B50458400E97743 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F40C8541C5474A0001FE91E /* Common.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -881,7 +880,6 @@
 		};
 		C47368891B50458400E97743 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F40C8541C5474A0001FE91E /* Common.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
