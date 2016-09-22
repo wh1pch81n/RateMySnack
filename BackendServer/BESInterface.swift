@@ -109,42 +109,44 @@ class BESInterface: BackendDelegate {
     - parameter completion: a block object with rating and err
     */
     typealias RatingTotal = (rating: UInt, total:UInt)
-    private func getRatingOfSnack(snack: AllSnacksProtocol)(completion: (rating: UInt, err: RMSBackendError?) -> ()) {
+    private func getRatingOfSnack(snack: AllSnacksProtocol) -> ((rating: UInt, err: RMSBackendError?) -> ()) -> () {
 		assert(snack.objectId != nil)
-		func getTotalNumberOf(snack: AllSnacksProtocol, withRating rating: UInt) throws -> RatingTotal {
-            let queryTotal = PFQuery(className: PC_STARRATING)
-			var allSnackPtr = PFObject.initWithAllSnacks()
-			allSnackPtr.objectId = snack.objectId
-            queryTotal.whereKey(STARRATING_ALLSNACKS, equalTo: allSnackPtr as! PFObject)
-            queryTotal.whereKey(STARRATING_RATING, equalTo: rating)
-            var err: NSError?
-            let totalRatingsForSnack = queryTotal.countObjects(&err)
-            if totalRatingsForSnack == -1 {
-                throw RMSBackendError.UnexpectedNetworkError
-            }
-            return (rating: rating, total: UInt(totalRatingsForSnack))
-        }
-            
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            do {
-                var ratings = [RatingTotal]()
-				for i: UInt in 1...5 {
-                    ratings.append(try getTotalNumberOf(snack, withRating: i))
-                }
-                
-                guard let totalRatings: UInt = ratings.map({ $0.total }).reduce(0, combine: +)
-                    , let sumOfRatings: UInt = ratings.map({ $0.rating * $0.total }).reduce(0, combine: +)
-                    where (totalRatings & sumOfRatings) != 0 else
-                {
-                    completion(rating: 0, err: nil)
-                    return
-                }
-                
-                let rating = sumOfRatings / totalRatings
-                completion(rating: rating, err: nil)
-            } catch {
-                completion(rating:0, err: RMSBackendError.UnexpectedNetworkError)
-            }
-        }
+		return { (completion: ((rating: UInt, err: RMSBackendError?) -> ())) -> () in
+			func getTotalNumberOf(snack: AllSnacksProtocol, withRating rating: UInt) throws -> RatingTotal {
+				let queryTotal = PFQuery(className: PC_STARRATING)
+				var allSnackPtr = PFObject.initWithAllSnacks()
+				allSnackPtr.objectId = snack.objectId
+				queryTotal.whereKey(STARRATING_ALLSNACKS, equalTo: allSnackPtr as! PFObject)
+				queryTotal.whereKey(STARRATING_RATING, equalTo: rating)
+				var err: NSError?
+				let totalRatingsForSnack = queryTotal.countObjects(&err)
+				if totalRatingsForSnack == -1 {
+					throw RMSBackendError.UnexpectedNetworkError
+				}
+				return (rating: rating, total: UInt(totalRatingsForSnack))
+			}
+			
+			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+				do {
+					var ratings = [RatingTotal]()
+					for i: UInt in 1...5 {
+						ratings.append(try getTotalNumberOf(snack, withRating: i))
+					}
+					
+					guard let totalRatings: UInt = ratings.map({ $0.total }).reduce(0, combine: +)
+						, let sumOfRatings: UInt = ratings.map({ $0.rating * $0.total }).reduce(0, combine: +)
+						where (totalRatings & sumOfRatings) != 0 else
+					{
+						completion(rating: 0, err: nil)
+						return
+					}
+					
+					let rating = sumOfRatings / totalRatings
+					completion(rating: rating, err: nil)
+				} catch {
+					completion(rating:0, err: RMSBackendError.UnexpectedNetworkError)
+				}
+			}
+		}
     }
 }
